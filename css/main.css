@@ -1,0 +1,41 @@
+.panel {
+	position: absolute;
+	background-color: gray;
+	border: 1px solid black;
+	border-radius: 10px;
+	min-height: 20px;
+}
+
+.panel.body {
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+.panel.info {
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
+}
+
+.panel.resources, .panel.facilities, .panel.regions {
+	top: 100px;
+	bottom: 0;
+}
+
+.panel.resources {
+	left: 0;
+	width: 300px;
+}
+
+.panel.facilities {
+	left: 300px;
+	right: 300px;
+}
+
+.panel.regions {
+	right: 0;
+	width: 300px;
+}
