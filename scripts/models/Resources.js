@@ -1,6 +1,7 @@
 Resources = function () {
 	//this.survivors = new Survivors();
 
+	this.threat = new Resource({name:'Threat'});
 	this.food = new Resource({name:'Food'});
 	this.water = new Resource({name:'Water'});
 	this.scrap = new Resource({name:'Scrap'});
@@ -9,7 +10,8 @@ Resources = function () {
 		//survivors: survivors.controller,
 		water: this.water.controller,
 		food: this.food.controller,
-		scrap: this.scrap.controller
+		scrap: this.scrap.controller,
+		threat:this.threat.controller
 	}
 }
 
