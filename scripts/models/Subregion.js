@@ -90,7 +90,7 @@ Subregion.Patrol = function (resources) {
 	Subregion.Workable.call(this);
 	this.setName('Patrol');
 	this.onTaskComplete = function () {
-		resources.threat.changeBy(-1);
+		resources.threat.changeBy(-10);
 	}
 }
 
@@ -99,8 +99,8 @@ Subregion.Scavenge = function (resources) {
 	this.setName('Scavenge');
 	this.onTaskComplete = function () {
 		console.log('oncomplete')
-		resources.scrap.changeBy(1);
-		resources.threat.changeBy(1);
+		resources.scrap.changeBy(5);
+		resources.threat.changeBy(5);
 	}
 }
 
