@@ -1,0 +1,28 @@
+<div id="resourcesPanel" ng-controller="resourcePanelController">
+	<h3>resources</h3>
+	<ul>
+		<li ng-repeat="r in resources">
+			{{r.name}}:{{r.current}}/{{r.max}}
+		</li>
+	</ul>
+</div>
+<div id="locationPanel" ng-controller="locationPanelController">
+	<h3>location</h3>
+	<div ng-show="activeTab == 'neighborhood'">neighborhood</div>
+	<div ng-show="true">
+		<ul>
+			<li ng-repeat="s in region.subregions" >
+				<span>{{s.name}}</span>
+				<div ng-show="s.clickable">
+					<span> workers: - {{s.workerCount}} +</span>
+					<div ng-click='s.launchTask()' style="width:100px;height:10px;border:1px solid black;"><div style="height:100%;background-color:black;" ng-style="{'width': s.percentComplete+'%'}"></div></div>
+				</div>
+				<div ng-show="s.replaceable" >
+					<div ng-repeat="o in s.replacementOptions" ng-click="o.replace()">{{o.newSubregion.name}}</div>
+				</div>
+				
+			</li>
+		</ul>
+	</div>
+	<div ng-show="activeTab == 'subregion'">subregion</div>
+</div>
