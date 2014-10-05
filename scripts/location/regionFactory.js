@@ -7,10 +7,10 @@ angular
 			this.subregions = [];
 
 			this.addSubregion = function (subregion) {
-
+				var subregions = this.subregions
+				
 				if (subregion.replaceable) {
 					var index = this.subregions.length;
-					var subregions = this.subregions;
 					function replaceWith (newSubregion) {
 						subregions[index] = newSubregion;
 					}
@@ -20,8 +20,8 @@ angular
 			}
 
 			this.tick = function () {
-				for (var i = 0; i < subregions.length; i++) {
-					subregions[i].tick();
+				for (var i = 0; i < this.subregions.length; i++) {
+					this.subregions[i].tick();
 				}
 			}
 			this.replaceSubregion = function (position, newSubregion) {

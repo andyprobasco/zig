@@ -18,7 +18,7 @@ angular
 			}; 
 			this.tick = function () {
 				for (var i = 0; i < this.regions.length; i++) {
-					regions[i].tick();
+					this.regions[i].tick();
 				}
 			}
 		}

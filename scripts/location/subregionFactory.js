@@ -34,6 +34,18 @@ angular
 		function makeWorkable (subregion) {
 			subregion.workable = true;
 			subregion.currentWorkers = 0;
+			subregion.addWorker = function () {
+				if (resourceManager.survivors.current > 0) {
+					resourceManager.survivors.changeBy(-1);
+					subregion.currentWorkers += 1;
+				}
+			}
+			subregion.removeWorker = function () {
+				if (subregion.currentWorkers > 0) {
+					subregion.currentWorkers -= 1;
+					resourceManager.survivors.changeBy(1);
+				}
+			}
 		}
 		function makeUpgradeable (subregion) {
 			subregion.upgradeable = true;
@@ -53,6 +65,7 @@ angular
 				var subregion = new Subregion();
 				subregion.name = "Patrol";
 				makeClickable(subregion);
+				makeWorkable(subregion);
 				subregion.onTaskComplete = function (){
 					resourceManager.threat.changeBy(-10);
 				}
@@ -63,6 +76,7 @@ angular
 				var subregion = new Subregion();
 				subregion.name = "Scavenge";
 				makeClickable(subregion);
+				makeWorkable(subregion);
 				subregion.onTaskComplete = function (){
 					resourceManager.scrap.changeBy(5);
 					resourceManager.threat.changeBy(5);
@@ -75,7 +89,25 @@ angular
 				makeReplaceable(subregion);
 				subregion.addReplacementOption(constructors.newPatrol);
 				subregion.addReplacementOption(constructors.newScavenge);
+				subregion.addReplacementOption(constructors.newWell);
 				return subregion;
+			},
+			newWell: function () {
+				var subregion = new Subregion();
+				subregion.name = "Well";
+				makeUpgradeable(subregion);
+				subregion.tick = function () {
+					resourceManager.water.changeBy(1);
+				}
+				return subregion;
+			},
+			newBeds: function () {
+				var subregion = new Subregion();
+				subregion.name = "Beds";
+				makeUpgradeable(subregion);
+				subregion.tick = function () {
+					//resourceManager.morale.changeBy(1);
+				}
 			}
 		}
 		return constructors;

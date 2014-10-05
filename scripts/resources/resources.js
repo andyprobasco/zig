@@ -2,13 +2,18 @@ angular
 	.module('resources', [])
 	.controller('resourcePanelController', ['$scope', 'resourceManager', function($scope, resourceManager) {
 		$scope.resources = [
+			resourceManager.survivors,
 			resourceManager.threat,
 			resourceManager.food,
 			resourceManager.water,
 			resourceManager.scrap
 		]
 	}])
+	
+angular
+	.module('resources')
 	.service('resourceManager', function () {
+		this.survivors = new Resource({name:'Survivors',max:5,current:5})
 		this.threat = new Resource({name:'Threat'});
 		this.food = new Resource({name:'Food'});
 		this.water = new Resource({name:'Water'});

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="styles/css.css">
 		<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>-->
 		<script src="scripts/angular.min.js"></script>
 		<script src="scripts/app.js"></script>
@@ -16,6 +17,9 @@
 
 
 <script type="text/ng-template" id="views/main.html">
+<div id="gameSettingsPanel" ng-controller="gameSettingsController">
+	<button ng-click="startGameLoop()">StartGame</button>
+</div>
 <div id="resourcesPanel" ng-controller="resourcePanelController">
 	<h3>resources</h3>
 	<ul>
@@ -35,7 +39,7 @@
 					<div ng-click='s.launchTask()' style="width:100px;height:10px;border:1px solid black;"><div style="height:100%;background-color:black;" ng-style="{'width': s.percentComplete+'%'}"></div></div>
 				</div>
 				<div ng-show="s.workable">
-					<span> workers: - {{s.workerCount}} +</span>
+					<span>workers:</span><span ng-click='s.removeWorker()'>-</span><span>{{s.currentWorkers}}</span><span ng-click='s.addWorker();'>+</span>
 				</div>
 				<div ng-show="s.replaceable" >
 					<button ng-repeat="o in s.replacementOptions" ng-click="s.replaceThisWith(o);">{{o.name}}</button>
@@ -48,5 +52,5 @@
 </div>
 </script>
 
-	</body>
+</body>
 </html>
