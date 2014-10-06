@@ -10,47 +10,13 @@
 		<script src="scripts/location/regionFactory.js"></script>
 		<script src="scripts/location/subregionFactory.js"></script>
 		<script src="scripts/resources/resources.js"></script>
+		<script src="views/statusBar/statusBar.js"></script>
 
 	</head>
 	<body ng-app="zigApp">
 		<div class="container" ng-include src="'views/main.html'"></div>
 
-
-<script type="text/ng-template" id="views/main.html">
-<div id="gameSettingsPanel" ng-controller="gameSettingsController">
-	<button ng-click="startGameLoop()">StartGame</button>
-</div>
-<div id="resourcesPanel" ng-controller="resourcePanelController">
-	<h3>resources</h3>
-	<ul>
-		<li ng-repeat="r in resources">
-			{{r.name}}:{{r.current}}/{{r.max}}
-		</li>
-	</ul>
-</div>
-<div id="locationPanel" ng-controller="locationPanelController">
-	<h3>location</h3>
-	<div ng-show="activeTab == 'neighborhood'">neighborhood</div>
-	<div ng-show="true">
-		<ul>
-			<li ng-repeat="s in region.subregions" >
-				<span>{{s.name}}</span>
-				<div ng-show="s.clickable">
-					<div ng-click='s.launchTask()' style="width:100px;height:10px;border:1px solid black;"><div style="height:100%;background-color:black;" ng-style="{'width': s.percentComplete+'%'}"></div></div>
-				</div>
-				<div ng-show="s.workable">
-					<span>workers:</span><span ng-click='s.removeWorker()'>-</span><span>{{s.currentWorkers}}</span><span ng-click='s.addWorker();'>+</span>
-				</div>
-				<div ng-show="s.replaceable" >
-					<button ng-repeat="o in s.replacementOptions" ng-click="s.replaceThisWith(o);">{{o.name}}</button>
-				</div>
-				
-			</li>
-		</ul>
-	</div>
-	<div ng-show="activeTab == 'subregion'">subregion</div>
-</div>
-</script>
+		<ng-replace src="views/main/html">
 
 </body>
 </html>

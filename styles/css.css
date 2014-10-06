@@ -1,3 +1,47 @@
 body {
 	cursor:default;
+	background-color:black;
+	color:white;
+	font-family:monospace;
+}
+
+button {
+	background-color:black;
+	border:1px solid white;
+	color:white;
+}
+button:hover {
+	background-color:gray;
+}
+
+.status-bar {
+	border: 1px solid white;
+	width: 100px;
+	height: 10px;
+}
+.status-bar-inner {
+	background-color: white;
+}
+
+ul {
+	list-style-type: none
+}
+
+.subregion {
+	border: 1px solid white;
+	margin: 10px;
+	padding: 10px;
+	width: 600px;
+}
+
+#resourcesPanel {
+	position:absolute;
+	left:0;
+	width:200px;
+}
+
+#locationPanel {
+	position:absolute;
+	right:0;
+	left:200px;
 }

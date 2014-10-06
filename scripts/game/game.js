@@ -1,13 +1,13 @@
 angular
 	.module('game', [])
-	.service('gameManager', ['locationManager', '$interval', function (locationManager, $interval) {
+	.service('gameManager', ['locationManager', 'resourceManager', '$interval', function (locationManager, resourceManager, $interval) {
 		function gameTick(){
 			locationManager.neighborhood.tick();
-			console.log("hey");
+			resourceManager.morale.tick();
+
 		}
 		this.launchGameTick = function () {
 			$interval(gameTick, 1000);
-			console.log('heyhey');
 		}
 	}])
 	.controller('gameSettingsController', ['$scope', 'gameManager', function ($scope, gameManager){

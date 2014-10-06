@@ -9,7 +9,7 @@ angular
 		}
 		function makeClickable (subregion) {
 			subregion.clickable = true;
-			subregion.percentComplete = 0;
+			subregion.percentFull = 0;
 			subregion.taskLength = 2; // in seconds
 			var currentTask
 			var taskActive = false;
@@ -19,9 +19,9 @@ angular
 					currentTask = $interval(taskTick, taskInterval);
 					taskActive = true;
 					function taskTick () {
-						subregion.percentComplete += 1;
-						if (subregion.percentComplete >= 100) {
-							subregion.percentComplete = 0;
+						subregion.percentFull += 1;
+						if (subregion.percentFull >= 100) {
+							subregion.percentFull = 0;
 							taskActive = false;
 							subregion.onTaskComplete();
 							$interval.cancel(currentTask);
@@ -69,6 +69,9 @@ angular
 				subregion.onTaskComplete = function (){
 					resourceManager.threat.changeBy(-10);
 				}
+				subregion.tick = function () {
+					resourceManager.threat.changeBy(-this.currentWorkers*2);
+				}
 
 				return subregion;
 			},
@@ -80,6 +83,10 @@ angular
 				subregion.onTaskComplete = function (){
 					resourceManager.scrap.changeBy(5);
 					resourceManager.threat.changeBy(5);
+				}
+				subregion.tick = function () {
+					resourceManager.scrap.changeBy(this.currentWorkers);
+					resourceManager.threat.changeBy(this.currentWorkers);
 				}
 				return subregion;
 			},
@@ -98,6 +105,7 @@ angular
 				makeUpgradeable(subregion);
 				subregion.tick = function () {
 					resourceManager.water.changeBy(1);
+					resourceManager.morale.changeBy(10);
 				}
 				return subregion;
 			},
@@ -112,3 +120,12 @@ angular
 		}
 		return constructors;
 	}])
+
+angular
+	.module('location')
+	.directive('zgSubregion', function () {
+		return {
+			templateUrl: "scripts/location/subregion.html"
+		}
+	})
+
