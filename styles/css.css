@@ -18,9 +18,12 @@ button:hover {
 	border: 1px solid white;
 	width: 100px;
 	height: 10px;
+	position:relative;
 }
 .status-bar-inner {
 	background-color: white;
+	position:absolute;
+	height:100%;
 }
 
 ul {

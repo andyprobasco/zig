@@ -1,10 +1,10 @@
 angular
 	.module('resources', [])
 	.controller('resourcePanelController', ['$scope', 'resourceManager', function($scope, resourceManager) {
-		$scope.resources = [
-			resourceManager.morale,
+		$scope.threat = resourceManager.threat;
+		$scope.morale = resourceManager.morale;
+		$scope.standardResources = [
 			resourceManager.survivors,
-			resourceManager.threat,
 			resourceManager.food,
 			resourceManager.water,
 			resourceManager.scrap
@@ -44,37 +44,59 @@ angular
 	.factory('morale', ['resourceFactory', 'survivors', function (resourceFactory, survivors) {
 		var morale = resourceFactory.getInstance({
 			name: 'Morale',
-			current: 0,
+			current: -100,
 			max: 100,
 			min: -100
 		});
 		var UP = 1;
 		var DOWN = -1;
 
-		morale.percentFull = 0;
+		morale.survivorProgressPercent = 0;
 		morale.progressDirection = UP;
+		morale.percentFullPositive = 0;
+		morale.percentFullNegative = 0;
+
+		morale.changeBy = function (increment) {
+					this.current += increment;
+					if (this.current > this.max) {
+						this.current = this.max;
+					} else if (this.current < this.min) {
+						this.current = this.min;
+					}
+
+					if (this.current < 0) {
+						this.percentFullNegative = this.current/this.max*-50;
+						this.percentFullPositive = 0
+					} else {
+						this.percentFullPositive = this.current/this.max*50;
+						this.percentFullNegative = 0
+					}
+					//this.percentFull = this.current/this.max*100;
+					//this.
+
+				};
 
 		morale.tick = function () {
 			if (this.current > 50) {
 				//move towards makeaguy
 				if (this.progressDirection == UP) {
-					this.percentFull += 1;
+					this.survivorProgressPercent += 1;
 				} else {
-					this.percentFull -= 1;
+					this.survivorProgressPercent -= 1;
 				}
 			} else if (this.current < -50) {
 				//move towards loseaguy
 				if (this.progressDirection == DOWN) {
-					this.percentFull += 1;
+					this.survivorProgressPercent += 1;
 				} else {
-					this.percentFull -= 1;
+					this.survivorProgressPercent -= 1;
 				}
 			} else {
-				this.percentFull -= 1;
+				this.survivorProgressPercent -= 1;
 			}
 
-			if (this.percentFull < 0) {
-				this.percentFull = 0;
+			if (this.survivorProgressPercent < 0) {
+				this.survivorProgressPercent = 0;
 				if (this.progressDirection == UP) {
 					this.progressDirection = DOWN;
 				} else {
@@ -82,18 +104,16 @@ angular
 				}
 			}
 
-			if (this.percentFull >= 100) {
+			if (this.survivorProgressPercent >= 100) {
 				if (this.progressDirection == UP) {
 					survivors.changeMaxBy(1);
 				} else {
 					survivors.changeMaxBy(-1);
 				}
-				this.percentFull = 0;
+				this.survivorProgressPercent = 0;
 			}
-
-
 		}
-
+		morale.changeBy(0);
 		return morale;
 	}])
 
@@ -118,7 +138,6 @@ angular
 						this.current = this.min;
 					}
 					this.percentFull = this.current/this.max*100;
-					console.log(this.percentFull);
 				};
 				return resource;
 			}
