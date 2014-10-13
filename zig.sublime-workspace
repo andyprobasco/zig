@@ -1,0 +1,416 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"clica",
+				"clickableDecorator"
+			],
+			[
+				"neighbor",
+				"neighborhoodFactory"
+			],
+			[
+				"ticks",
+				"ticksUntilReady"
+			],
+			[
+				"new",
+				"new_job_list"
+			],
+			[
+				"tr",
+				"transferWarningCount"
+			],
+			[
+				"transfer",
+				"transferErrorCount"
+			],
+			[
+				"tran",
+				"transferSuccessCount"
+			],
+			[
+				"sum",
+				"submitUserEmail"
+			],
+			[
+				"avera",
+				"average_time"
+			],
+			[
+				"write",
+				"writerow"
+			],
+			[
+				"sour",
+				"source_data"
+			],
+			[
+				"mysQL",
+				"mysqlQuery"
+			],
+			[
+				"mysql",
+				"mysql_credentials"
+			],
+			[
+				"exec",
+				"executemany"
+			],
+			[
+				"my",
+				"mysql_credentials"
+			],
+			[
+				"comp",
+				"companyHandle"
+			],
+			[
+				"com",
+				"companyHandle"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 165,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 267.0,
+		"selected_items":
+		[
+			[
+				"markd",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"marks",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/aprobasco/Projects/github/zig/app/scripts/location/Subregion.js",
+		"/Users/aprobasco/Projects/github/zig/app/scripts/location/Region.js",
+		"/Users/aprobasco/Projects/github/zig/app/views/main.html",
+		"/Users/aprobasco/Projects/github/zig/app/scripts/location/location.js",
+		"/Users/aprobasco/Projects/github/zig/app/scripts/app.js",
+		"/Users/aprobasco/Projects/github/zig/app/scripts/resources/resources.js",
+		"/Users/aprobasco/Projects/github/zig/app/scripts/angular.min.js",
+		"/Users/aprobasco/Projects/github/zig/app/scripts/game/game.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/models/Neighborhood.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/models/Resources.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/views/DefaultView.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/models/Subregion.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/models/Region.js",
+		"/Users/aprobasco/Projects/github/zig/app/home.html",
+		"/Users/aprobasco/Projects/github/zig/angulartest.html",
+		"/Users/aprobasco/Projects/github/zig/scripts/models/DefaultNeighborhood.js",
+		"/Users/aprobasco/Projects/github/zig/css/main-backup.css",
+		"/Users/aprobasco/Projects/github/zig/scripts/views.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/models.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/main.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/lib/jquery.min.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/controllers",
+		"/Users/aprobasco/Projects/github/zig/scripts/widgets.js",
+		"/Users/aprobasco/Documents/workspace-sts-3.4.0.RELEASE/image-rename-service/src/main/webapp/resources/js/image-rename-tool-refactor.js",
+		"/Users/aprobasco/Desktop/image-rename-tool-refactor.js",
+		"/Users/aprobasco/Library/Application Support/Sublime Text 2/Packages/User/MultiMarkdown.sublime-settings",
+		"/Users/aprobasco/Library/Application Support/Sublime Text 2/Packages/MarkdownEditing/Markdown (Standard).sublime-settings",
+		"/Users/aprobasco/Library/Application Support/Sublime Text 2/Packages/User/Markdown.sublime-settings",
+		"/Users/aprobasco/Library/Application Support/Sublime Text 2/Packages/User/Markdown (Standard).sublime-settings",
+		"/Users/aprobasco/Library/Application Support/Sublime Text 2/Packages/MarkdownEditing/README.md",
+		"/Users/aprobasco/Desktop/image rename tool upgrades.md",
+		"/Users/aprobasco/Library/Application Support/Sublime Text 2/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/Users/aprobasco/Desktop/image rename tool upgrades",
+		"/Users/aprobasco/Desktop/grixis",
+		"/Users/aprobasco/Desktop/svn to git cloning",
+		"/Users/aprobasco/Projects/github/zig/index.html",
+		"/Users/aprobasco/Projects/github/zig/scripts/view/_buildui.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/model/_gamedata.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/_main.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/require.js",
+		"/Users/aprobasco/Projects/github/zig/main.css",
+		"/Users/aprobasco/Projects/github/zig/scripts/view/buildui.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/model/gamedata.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/model/gametick.js",
+		"/Users/aprobasco/Library/Application Support/Sublime Text 2/Packages/User/JavaScript.sublime-settings",
+		"/Users/aprobasco/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/aprobasco/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/aprobasco/Library/Application Support/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"/Users/aprobasco/Downloads/Clickpocalypse Source/Clickpocalypse_source/default_big.html",
+		"/Users/aprobasco/jboss/smartnetexperiences/jboss-5.0.1.GA/server/default/conf/smartnet-experiences-configuration.properties",
+		"/Volumes/Archive_extracts/moveit.sh",
+		"/Users/aprobasco/Desktop/SmartNet Deployment Instructions",
+		"/Users/aprobasco/Projects/s7 stat tracker/s7_reporter.py.mine",
+		"/Users/aprobasco/jboss-4.2.3.GA/server/default/conf/login-config.xml",
+		"/Users/aprobasco/Downloads/Scripts.zip",
+		"/Users/aprobasco/Projects/s7 stat tracker/ADD_COLUMN_METADATA.txt",
+		"/Users/aprobasco/Library/Caches/TemporaryItems/Outlook Temp/xsrv02 scripts/archive_indexer.py",
+		"/private/var/log/scene7export.log",
+		"/Volumes/Export_Logs/scene7export.log-20140423",
+		"/Users/aprobasco/Projects/s7 stat tracker/app.properties",
+		"/Users/aprobasco/Library/Caches/TemporaryItems/Outlook Temp/app.properties[2].prd",
+		"/Users/aprobasco/Projects/s7 stat tracker/savelog.txt",
+		"/Users/aprobasco/Desktop/dsw8r",
+		"/Users/aprobasco/Projects/s7 stat tracker/getstats.py",
+		"/Users/aprobasco/Projects/sudstest.py",
+		"/Users/aprobasco/jboss-5.1.0.GA/server/default/conf/app.properties",
+		"/Volumes/Export_Logs/scene7export.log-20140219",
+		"/Volumes/Export_Logs/scene7export.log-20140211",
+		"/Volumes/Export_Logs/scene7export.log",
+		"/Users/aprobasco/Desktop/Scene7Control.war",
+		"/Users/aprobasco/Downloads/script.awk",
+		"/Users/aprobasco/Downloads/desccomp.awk"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\n				",
+			");\n",
+			"Neighborhood",
+			"neighborhood",
+			"<!DOCTYPE html>\n<html>\n	<head>\n		<script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js\"></script>\n		<script src=\"scripts/app.js\"></script>\n		<script src=\"scripts/game/game.js\"></script>\n\n\n	</head>\n	<body ng-app=\"zigApp\">\n		<div class=\"container\" ng-include src=\"'main.html'\"></div>\n\n		\n		<script type=\"text/ng-template\" id=\"main.html\">>\n			<h1>whattt?</h1>\n		</script>\n	</body>\n\n</html>",
+			"console",
+			"10px",
+			"DefaultNeighborhood",
+			"draggable",
+			"sortable",
+			"setToUnsaved",
+			"312346",
+			"66617",
+			"logout",
+			"logger",
+			"\n'''",
+			")\n",
+			"print",
+			"setimag",
+			"imagefilesuffix",
+			"packageimage",
+			"1211608819_1_nocolor",
+			"1211608819",
+			"job 38",
+			"140307",
+			"client",
+			"3010309813_1_nocolor.tif",
+			"3010309813_1",
+			"3010309813_",
+			"error",
+			"true",
+			"warn",
+			"file_format",
+			"1411194216_1",
+			"1411194216",
+			"mysql",
+			"com."
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								34,
+								34
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/aprobasco/Desktop/image rename tool upgrades.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 249.0,
+	"status_bar_visible": true
+}
