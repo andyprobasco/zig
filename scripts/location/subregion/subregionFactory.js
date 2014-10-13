@@ -5,6 +5,7 @@ angular
 			this.name = 'Subregion';
 			this.type = null;
 			this.art = 'no art path specified';
+			this.buildCost = 0;
 			this.tick = function () {}
 		}
 		function makeClickable (subregion) {
@@ -102,6 +103,7 @@ angular
 			newWell: function () {
 				var subregion = new Subregion();
 				subregion.name = "Well";
+				subregion.buildCost = 50;
 				makeUpgradeable(subregion);
 				subregion.tick = function () {
 					resourceManager.water.changeBy(1);
@@ -125,7 +127,7 @@ angular
 	.module('location')
 	.directive('zgSubregion', function () {
 		return {
-			templateUrl: "scripts/location/subregion.html"
+			templateUrl: "scripts/location/subregion/subregion.html"
 		}
 	})
 

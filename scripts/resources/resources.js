@@ -44,7 +44,7 @@ angular
 	.factory('morale', ['resourceFactory', 'survivors', function (resourceFactory, survivors) {
 		var morale = resourceFactory.getInstance({
 			name: 'Morale',
-			current: -100,
+			current: 1,
 			max: 100,
 			min: -100
 		});
