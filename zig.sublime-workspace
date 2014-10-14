@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"log",
+				"logService"
+			],
+			[
+				"mess",
+				"messageQueue"
+			],
+			[
+				"me",
+				"messageQueue"
+			],
+			[
+				"change",
+				"changePerSecondSources"
+			],
+			[
 				"clica",
 				"clickableDecorator"
 			],
@@ -76,9 +92,51 @@
 	"buffers":
 	[
 		{
+			"file": "scripts/game/game.js",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 692,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/logger/logger.js",
+			"settings":
+			{
+				"buffer_size": 797,
+				"line_ending": "Unix",
+				"name": "logger.js"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 848,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/main.html",
+			"settings":
+			{
+				"buffer_size": 1327,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/app.js",
+			"settings":
+			{
+				"buffer_size": 257,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/location/subregion/subregionFactory.js",
+			"settings":
+			{
+				"buffer_size": 5496,
 				"line_ending": "Unix"
 			}
 		},
@@ -86,7 +144,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 165,
+				"buffer_size": 319,
 				"line_ending": "Unix"
 			}
 		}
@@ -139,6 +197,14 @@
 	},
 	"file_history":
 	[
+		"/Users/aprobasco/Projects/github/zig/scripts/location/subregion/subregion.html",
+		"/Users/aprobasco/Projects/github/zig/README.md",
+		"/Users/aprobasco/Projects/github/zig/scripts/location/region/regionFactory.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/location/subregion/subregionFactory.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/resources/resource.html",
+		"/Users/aprobasco/Projects/github/zig/scripts/resources/resources.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/resources/morale-gauge.html",
+		"/Users/aprobasco/Projects/github/zig/styles/main.css",
 		"/Users/aprobasco/Projects/github/zig/app/scripts/location/Subregion.js",
 		"/Users/aprobasco/Projects/github/zig/app/scripts/location/Region.js",
 		"/Users/aprobasco/Projects/github/zig/app/views/main.html",
@@ -228,6 +294,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\");\n",
 			"\n				",
 			");\n",
 			"Neighborhood",
@@ -282,27 +349,29 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "scripts/game/game.js",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 692,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								692,
+								692
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -312,18 +381,153 @@
 				},
 				{
 					"buffer": 1,
-					"file": "README.md",
+					"file": "scripts/logger/logger.js",
 					"settings":
 					{
-						"buffer_size": 165,
+						"buffer_size": 797,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								34,
-								34
+								170,
+								170
+							]
+						],
+						"settings":
+						{
+							"auto_name": "logger.js",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 848,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								324,
+								324
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/main.html",
+					"settings":
+					{
+						"buffer_size": 1327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1299,
+								1299
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "scripts/app.js",
+					"settings":
+					{
+						"buffer_size": 257,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								79,
+								79
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "scripts/location/subregion/subregionFactory.js",
+					"settings":
+					{
+						"buffer_size": 5496,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1704,
+								1704
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 313.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 319,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								250,
+								250
 							]
 						],
 						"settings":
@@ -372,7 +576,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.873843566022,
 			1.0
 		],
 		"rows":

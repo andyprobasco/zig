@@ -4,6 +4,11 @@ angular
 		function gameTick(){
 			locationManager.neighborhood.tick();
 			resourceManager.morale.tick();
+			resourceManager.survivors.tick();
+			resourceManager.food.tick();
+			resourceManager.water.tick();
+			resourceManager.scrap.tick();
+			resourceManager.threat.tick();
 		}
 		this.launchGameTick = function () {
 			$interval(gameTick, 1000);

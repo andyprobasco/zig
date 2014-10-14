@@ -7,6 +7,6 @@
 		<span>workers:</span><button ng-click='s.removeWorker()'>-</button><span>{{s.currentWorkers}}</span><button ng-click='s.addWorker();'>+</button>
 	</div>
 	<div ng-show="s.replaceable" >
-		<button ng-repeat="o in s.replacementOptions" ng-click="s.replaceThisWith(o);">{{o.name}}</button>
+		<button ng-repeat="o in s.replacementOptions" ng-click="s.replaceThisWith(o);">build {{o.name}}</button>
 	</div>
 </div>

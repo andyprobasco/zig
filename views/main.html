@@ -1,5 +1,4 @@
 <div id="gameSettingsPanel" ng-controller="gameSettingsController">
-	<button ng-click="startGameLoop()">StartGame</button>
 </div>
 <div id="resourcesPanel" ng-controller="resourcePanelController">
 	<h3>resources</h3>
@@ -28,4 +27,11 @@
 		<ul><li ng-repeat="s in region.subregions" zg-subregion="s"></li></ul>
 	</div>
 	<div ng-show="activeTab == 'subregion'">subregion</div>
+</div>
+<div id="logPanel" ng-controller="logController">
+	<ul>
+		<li>{{firstMessage}}</li>
+		<li>{{secondMessage}}</li>
+		<li>{{thirdMessage}}</li>
+	</ul>
 </div>

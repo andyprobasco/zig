@@ -12,7 +12,10 @@ angular
 				if (subregion.replaceable) {
 					var index = this.subregions.length;
 					function replaceWith (newSubregion) {
+						console.log(subregions[index].buildable);
+						subregions[index].onDestroy();
 						subregions[index] = newSubregion;
+						subregions[index].onBuild();
 					}
 					subregion.replaceThisWith = replaceWith;
 				}
@@ -42,6 +45,9 @@ angular
 				region.addSubregion(subregionFactory.newEmptyPlot());
 				region.addSubregion(subregionFactory.newEmptyPlot());
 				region.addSubregion(subregionFactory.newEmptyPlot());
+				for (var i = 0; i < region.subregions.length; i++) {
+					region.subregions[i].onBuild();
+				}
 				console.log(region);
 				return region;
 			}

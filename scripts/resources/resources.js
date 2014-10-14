@@ -10,7 +10,64 @@ angular
 			resourceManager.scrap
 		]
 	}])
-	
+
+angular
+	.module('resources')
+	.factory('resourceFactory', function () {
+		return {
+			getInstance: function (params) {
+				var resource = {};
+				var changePerSecondSources = [];
+				var multiplierSources = [];
+
+				resource.name = params.name || 'Resource';
+				resource.current = params.current || 0;
+				resource.max = params.max || 100;
+				resource.min = params.min || 0;
+				resource.percentFull = resource.current/resource.max*100;
+
+				resource.totalChangePerSecond = 0;
+
+				resource.onChange = function () {};
+				resource.changeBy = function (increment) {
+					this.current += increment;
+					if (this.current > this.max) {
+						this.current = this.max;
+					} else if (this.current < this.min) {
+						this.current = this.min;
+					}
+					this.percentFull = this.current/this.max*100;
+				};
+				resource.setChangePerSecond = function (changeBy, source) {
+					for (var i = 0; i < changePerSecondSources.length; i++) {
+						if (changePerSecondSources[i].source = source) {
+							changePerSecondSources[i].changeBy += changeBy;
+							this.totalChangePerSecond += changeBy;
+							if (changePerSecondSources[i].changeBy === 0) {
+								changePerSecondSources.splice(i, 1);
+							}
+							return;
+						}
+					}
+					changePerSecondSources.push({
+						source: source,
+						changeBy: changeBy
+					});
+					this.totalChangePerSecond += changeBy;
+					return;
+				}
+				resource.setMultiplier = function (changeBy, source) {
+
+				}
+				resource.tick = function () {
+					this.changeBy(this.totalChangePerSecond);
+				}
+
+				return resource;
+			}
+		}
+	})
+
 angular
 	.module('resources')
 	.service('resourceManager', ['resourceFactory', 'morale', 'survivors', function (resourceFactory, morale, survivors) {
@@ -21,6 +78,24 @@ angular
 		this.water = resourceFactory.getInstance({name:'Water'});
 		this.scrap = resourceFactory.getInstance({name:'Scrap'});
 		
+		this.canPayCost = function (cost) {
+			if (cost.survivors && cost.survivors > this.survivors.current) return false;
+			if (cost.morale && cost.morale > this.morale.current) return false;
+			if (cost.threat && cost.threat > this.threat.current) return false;
+			if (cost.food && cost.food > this.food.current) return false;
+			if (cost.water && cost.water > this.water.current) return false;
+			if (cost.scrap && cost.scrap > this.scrap.current) return false;
+			return true;
+		}
+		this.payCost = function (cost) {
+			if (cost.survivors) this.survivors.changeBy(-cost.survivors);
+			if (cost.morale) this.morale.changeBy(-cost.morale);
+			if (cost.threat) this.threat.changeBy(-cost.threat);
+			if (cost.food) this.food.changeBy(-cost.food);
+			if (cost.water) this.water.changeBy(-cost.water);
+			if (cost.scrap) this.scrap.changeBy(-cost.scrap);
+
+		}
 	}])
 
 angular
@@ -118,31 +193,7 @@ angular
 	}])
 
 
-angular
-	.module('resources')
-	.factory('resourceFactory', function () {
-		return {
-			getInstance: function (params) {
-				var resource = {};
-				resource.name = params.name || 'Resource';
-				resource.current = params.current || 0;
-				resource.max = params.max || 100;
-				resource.min = params.min || 0;
-				resource.percentFull = resource.current/resource.max*100;
 
-				resource.changeBy = function (increment) {
-					this.current += increment;
-					if (this.current > this.max) {
-						this.current = this.max;
-					} else if (this.current < this.min) {
-						this.current = this.min;
-					}
-					this.percentFull = this.current/this.max*100;
-				};
-				return resource;
-			}
-		}
-	})
 
 angular
 	.module('resources')
