@@ -3,10 +3,13 @@
 	<div ng-show="s.clickable">
 		<div ng-click='s.launchTask()' zg-status-bar percent-full="s.percentFull"></div>
 	</div>
-	<div ng-show="s.workable">
-		<span>workers:</span><button ng-click='s.removeWorker()'>-</button><span>{{s.currentWorkers}}</span><button ng-click='s.addWorker();'>+</button>
+	<div ng-show="s.upgradeable">
+		<span>level: {{s.level}} </span><button ng-click='s.upgrade()'>upgrade</button>
 	</div>
 	<div ng-show="s.replaceable" >
 		<button ng-repeat="o in s.replacementOptions" ng-click="s.replaceThisWith(o);">build {{o.name}}</button>
+	</div>
+	<div ng-show="s.workable">
+		<span>workers:</span><button ng-click='s.removeWorker()'>-</button><span>{{s.currentWorkers}}</span><button ng-click='s.addWorker();'>+</button>
 	</div>
 </div>

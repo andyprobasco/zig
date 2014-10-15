@@ -59,16 +59,16 @@ angular
 		function makeUpgradeable (subregion) {
 			subregion.upgradeable = true;
 			subregion.level = 0;
-			subregion.updgradeCost = {};
+			subregion.upgradeCost = {};
 			subregion.upgrade = function () {
 				if (resourceManager.canPayCost(this.upgradeCost)) {
 					resourceManager.payCost(this.upgradeCost);
 					this.level += 1;
 					this.onUpgrade();
 					this.updateUpgradeCost();
-					logService("upgraded " + this.name);
+					logService.log("upgraded " + this.name);
 				} else {
-					logService("can't afford to upgrade " + this.name);
+					logService.log("can't afford to upgrade " + this.name);
 				}
 			};
 			subregion.updateUpgradeCost = function () {};
@@ -134,22 +134,21 @@ angular
 				var subregion = new Subregion();
 				subregion.name = "Empty Plot";
 				makeReplaceable(subregion);
-				subregion.addReplacementOption(constructors.newPatrol);
-				subregion.addReplacementOption(constructors.newScavenge);
 				subregion.addReplacementOption(constructors.newWell);
+				subregion.addReplacementOption(constructors.newBeds);
 				return subregion;
 			},
 			newWell: function () {
 				var subregion = new Subregion();
 				subregion.name = "Well";
 				subregion.buildCost = 50;
-				//makeUpgradeable(subregion);
+				makeUpgradeable(subregion);
 				//makeBuildable(subregion);
 				subregion.onBuild = function () {
-					resourceManager.morale.changeBy(10);
+					resourceManager.water.setChangePerSecond(1, "Wells");
 				}
 				subregion.onDestroy = function () {
-					resourceManager.morale.changeBy(-10);
+					resourceManager.water.setChangePerSecond(-1, "Wells");
 				}
 				return subregion;
 			},
@@ -157,7 +156,7 @@ angular
 				var subregion = new Subregion();
 				subregion.name = "Beds";
 				subregion.buildCost = 50;
-				//makeUpgradeable(subregion);
+				makeUpgradeable(subregion);
 				//makeBuildable(subregion);
 				subregion.onBuild = function () {
 					resourceManager.morale.changeBy(10);
@@ -165,6 +164,7 @@ angular
 				subregion.onDestroy = function () {
 					resourceManager.morale.changeBy(-10);
 				}
+				return subregion;
 
 			}
 		}

@@ -79,6 +79,11 @@ angular
 		this.scrap = resourceFactory.getInstance({name:'Scrap'});
 		
 		this.canPayCost = function (cost) {
+			if (cost.survivors) {
+				if (cost.survivors > this.survivors.current) {
+					//
+				}
+			}
 			if (cost.survivors && cost.survivors > this.survivors.current) return false;
 			if (cost.morale && cost.morale > this.morale.current) return false;
 			if (cost.threat && cost.threat > this.threat.current) return false;

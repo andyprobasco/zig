@@ -48,3 +48,8 @@ ul {
 	right:0;
 	left:200px;
 }
+#logPanel {
+	position:absolute;
+	bottom:0px;
+	height:100px;
+}
