@@ -5,9 +5,13 @@
 	</div>
 	<div ng-show="s.upgradeable">
 		<span>level: {{s.level}} </span><button ng-click='s.upgrade()'>upgrade</button>
+		<span><ul><li ng-repeat="(resource, value) in s.upgradeCost">{{resource}}:{{value}}</li></ul></span>
 	</div>
 	<div ng-show="s.replaceable" >
-		<button ng-repeat="o in s.replacementOptions" ng-click="s.replaceThisWith(o);">build {{o.name}}</button>
+		<div ng-repeat="o in s.replacementOptions">
+			<button ng-click="s.replaceThisWith(o);">build {{o.name}}</button>
+			<span><ul><li ng-repeat="(resource, value) in o.buildCost">{{resource}}:{{value}}</li></ul></span>
+		</div>
 	</div>
 	<div ng-show="s.workable">
 		<span>workers:</span><button ng-click='s.removeWorker()'>-</button><span>{{s.currentWorkers}}</span><button ng-click='s.addWorker();'>+</button>

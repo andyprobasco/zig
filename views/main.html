@@ -8,15 +8,19 @@
 			<div zg-status-bar percent-full="threat.percentFull"></div>
 		</li>
 		<li>
-			{{morale.name}}:{{morale.current}}/{{morale.max}}
+			{{morale.name}}:{{morale.current}}
 			<div class="status-bar">
-				<div class="status-bar-inner" style="right:50%;background-color:lightcoral" ng-style="{'width':morale.percentFullNegative+'%'}"></div>
-				<div class="status-bar-inner" style="left:50%;background-color:lightgreen" ng-style="{'width':morale.percentFullPositive+'%'}"></div>
+				<div ng-show="morale.percentFull<0" class="status-bar-inner" style="right:50%;background-color:lightcoral" ng-style="{'width':-morale.percentFull/2+'%'}"></div>
+				<div ng-show="morale.percentFull>=0" class="status-bar-inner" style="left:50%;background-color:lightgreen" ng-style="{'width':morale.percentFull/2+'%'}"></div>
 			</div>
-			new survivors:
-			<div zg-status-bar percent-full="morale.survivorProgressPercent"></div>
-			<hr>
+			<!--<div class="status-bar">
+				<div class="status-bar-inner" style="right:50%;background-color:lightcoral" ng-style="{'width':moraleService.moralePercentFullNegative/2+'%'}"></div>
+				<div class="status-bar-inner" style="left:50%;background-color:lightgreen" ng-style="{'width':moraleService.moralePercentFullPositive/2+'%'}"></div>
+			</div>
+			{{moraleService.survivorProgressText}}
+			<div zg-status-bar percent-full="moraleService.survivorProgressPercentFull"></div>-->
 		</li>
+		<hr>
 		<li ng-repeat="r in standardResources" zg-resource="r"></li>
 	</ul>
 </div>
@@ -28,9 +32,12 @@
 	</div>
 	<div ng-show="activeTab == 'subregion'">subregion</div>
 </div>
+<div id="statusPanel" ng-controller="statusController">
+	<ul><li ng-repeat="s in statuses" class="status-indicator">{{s.name}}</li></ul>
+</div>
 <div id="logPanel" ng-controller="logController">
 	<ul>
-		<li>{{messageQueue[0]}}</li>
+		<li ng-class="logService.newMessageClass">{{messageQueue[0]}}</li>
 		<li>{{messageQueue[1]}}</li>
 		<li>{{messageQueue[2]}}</li>
 		<li>{{messageQueue[3]}}</li>

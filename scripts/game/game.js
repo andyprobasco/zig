@@ -1,6 +1,6 @@
 angular
 	.module('game', [])
-	.service('gameManager', ['locationManager', 'resourceManager', '$interval', function (locationManager, resourceManager, $interval) {
+	.service('gameManager', ['locationManager', 'resourceManager', 'survivorService', '$interval', function (locationManager, resourceManager, survivorService, $interval) {
 		function gameTick(){
 			locationManager.neighborhood.tick();
 			resourceManager.morale.tick();
@@ -9,6 +9,7 @@ angular
 			resourceManager.water.tick();
 			resourceManager.scrap.tick();
 			resourceManager.threat.tick();
+			survivorService.tick();
 		}
 		this.launchGameTick = function () {
 			$interval(gameTick, 1000);

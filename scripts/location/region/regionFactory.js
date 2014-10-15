@@ -1,6 +1,6 @@
 angular
 	.module('location')
-	.factory('regionFactory', ['subregionFactory', function (subregionFactory) {
+	.factory('regionFactory', ['subregionFactory', 'resourceManager', 'logService', function (subregionFactory, resourceManager, logService) {
 
 		var Region = function () {
 			this.name = 'Region';
@@ -12,10 +12,15 @@ angular
 				if (subregion.replaceable) {
 					var index = this.subregions.length;
 					function replaceWith (newSubregion) {
-						console.log(subregions[index].buildable);
-						subregions[index].onDestroy();
-						subregions[index] = newSubregion;
-						subregions[index].onBuild();
+						if (resourceManager.canPayCost(newSubregion.buildCost)) {
+							logService.log("built new " + newSubregion.name);
+							resourceManager.payCost(newSubregion.buildCost);
+							subregions[index].onDestroy();
+							subregions[index] = newSubregion;
+							subregions[index].onBuild();
+						} else {
+							logService.log("can't afford " + newSubregion.name)
+						}
 					}
 					subregion.replaceThisWith = replaceWith;
 				}
@@ -40,6 +45,8 @@ angular
 			newHQ: function () {
 				region = new Region();
 				region.name = 'HQ';
+				region.addSubregion(subregionFactory.newBeds());
+				region.addSubregion(subregionFactory.newAntiBeds());
 				region.addSubregion(subregionFactory.newPatrol());
 				region.addSubregion(subregionFactory.newScavenge());
 				region.addSubregion(subregionFactory.newEmptyPlot());

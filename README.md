@@ -5,10 +5,12 @@
 
 ##TODO
 
-paying and checking costs;
+
+morale and survivor resource can (should be able to) "go negative"
+morale source breakdown
+
 map>region>subregion tabs;
-logger;
-fix logger binding
+
 
 ...
 upgrading buildings

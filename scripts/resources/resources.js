@@ -9,6 +9,8 @@ angular
 			resourceManager.water,
 			resourceManager.scrap
 		]
+		//$scope.moraleService = moraleService;
+		console.log($scope);
 	}])
 
 angular
@@ -28,7 +30,6 @@ angular
 
 				resource.totalChangePerSecond = 0;
 
-				resource.onChange = function () {};
 				resource.changeBy = function (increment) {
 					this.current += increment;
 					if (this.current > this.max) {
@@ -38,6 +39,14 @@ angular
 					}
 					this.percentFull = this.current/this.max*100;
 				};
+				resource.changeMaxBy = function (increment) {
+					this.max += increment;
+					if (this.max < this.min) {
+						this.max = this.min;
+					}
+					this.percentFull = this.current/this.max*100;
+				}
+
 				resource.setChangePerSecond = function (changeBy, source) {
 					for (var i = 0; i < changePerSecondSources.length; i++) {
 						if (changePerSecondSources[i].source = source) {
@@ -70,20 +79,15 @@ angular
 
 angular
 	.module('resources')
-	.service('resourceManager', ['resourceFactory', 'morale', 'survivors', function (resourceFactory, morale, survivors) {
-		this.survivors = survivors;
-		this.morale = morale;
+	.service('resourceManager', ['resourceFactory', 'survivors', function (resourceFactory, survivors) {
+		this.morale = resourceFactory.getInstance({name:'Morale',current:0, max:100,min:-100});
+		this.survivors = resourceFactory.getInstance({name:'Survivors', current:1, max:1});
 		this.threat = resourceFactory.getInstance({name:'Threat'});
 		this.food = resourceFactory.getInstance({name:'Food'});
 		this.water = resourceFactory.getInstance({name:'Water'});
-		this.scrap = resourceFactory.getInstance({name:'Scrap'});
+		this.scrap = resourceFactory.getInstance({name:'Scrap', current:10000, max:10000});
 		
 		this.canPayCost = function (cost) {
-			if (cost.survivors) {
-				if (cost.survivors > this.survivors.current) {
-					//
-				}
-			}
 			if (cost.survivors && cost.survivors > this.survivors.current) return false;
 			if (cost.morale && cost.morale > this.morale.current) return false;
 			if (cost.threat && cost.threat > this.threat.current) return false;
@@ -116,9 +120,10 @@ angular
 			this.max += increment;
 			this.percentFull = this.current/this.max*100;
 		}
+
 		return survivors;
 	}])
-
+/*
 angular
 	.module('resources')
 	.factory('morale', ['resourceFactory', 'survivors', function (resourceFactory, survivors) {
@@ -196,7 +201,7 @@ angular
 		morale.changeBy(0);
 		return morale;
 	}])
-
+*/
 
 
 
