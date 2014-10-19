@@ -19,7 +19,8 @@ angular
 		return {
 			getInstance: function (params) {
 				var resource = {};
-				var changePerSecondSources = [];
+				resource.changePerSecondSources = [];
+				resource.tooltip = "<h3>Total: 0 p/s</h3>";
 				var multiplierSources = [];
 
 				resource.name = params.name || 'Resource';
@@ -48,39 +49,44 @@ angular
 				}
 
 				resource.modifyChangePerSecond = function (changeBy, source) {
-					for (var i = 0; i < changePerSecondSources.length; i++) {
-						if (changePerSecondSources[i].source = source) {
-							changePerSecondSources[i].changeBy += changeBy;
+					for (var i = 0; i < this.changePerSecondSources.length; i++) {
+						if (this.changePerSecondSources[i].source === source) {
+							this.changePerSecondSources[i].changeBy += changeBy;
 							this.totalChangePerSecond += changeBy;
-							if (changePerSecondSources[i].changeBy === 0) {
-								changePerSecondSources.splice(i, 1);
+							if (this.changePerSecondSources[i].changeBy === 0) {
+								this.changePerSecondSources.splice(i, 1);
 							}
+							this.setTooltip();
 							return;
 						}
 					}
-					changePerSecondSources.push({
+					this.changePerSecondSources.push({
 						source: source,
 						changeBy: changeBy
 					});
 					this.totalChangePerSecond += changeBy;
+					this.setTooltip();
 					return;
 				}
+
 				resource.setChangePerSecond = function (changeBy, source) {
-					for (var i = 0; i < changePerSecondSources.length; i++) {
-						if (changePerSecondSources[i].source = source) {
-							this.totalChangePerSecond += changeBy - changePerSecondSources[i].changeBy;
-							changePerSecondSources[i].changeBy = changeBy;
-							if (changePerSecondSources[i].changeBy === 0) {
-								changePerSecondSources.splice(i, 1);
+					for (var i = 0; i < this.changePerSecondSources.length; i++) {
+						if (this.changePerSecondSources[i].source === source) {
+							this.totalChangePerSecond += changeBy - this.changePerSecondSources[i].changeBy;
+							this.changePerSecondSources[i].changeBy = changeBy;
+							if (this.changePerSecondSources[i].changeBy === 0) {
+								this.changePerSecondSources.splice(i, 1);
 							}
+							this.setTooltip();
 							return;
 						}
 					}
-					changePerSecondSources.push({
+					this.changePerSecondSources.push({
 						source: source,
 						changeBy: changeBy
 					});
 					this.totalChangePerSecond += changeBy;
+					this.setTooltip;
 					return;
 				}
 				resource.setMultiplier = function (changeBy, source) {
@@ -89,7 +95,12 @@ angular
 				resource.tick = function () {
 					this.changeBy(this.totalChangePerSecond);
 				}
-
+				resource.setTooltip = function () {
+					this.tooltip = "<h3>Total: " + this.totalChangePerSecond + " p/s</h3>";
+					for (var i = 0; i < this.changePerSecondSources.length; i++) {
+						this.tooltip += "<p>" + this.changePerSecondSources[i].changeBy + " p/s from: " + this.changePerSecondSources[i].source + "</p>"
+					}
+				}
 				return resource;
 			}
 		}

@@ -5,11 +5,9 @@
 
 ##TODO
 
-
-upgrade workable building css to be more clear
+tooltips
 morale source breakdown
-map>region>subregion tabs;
-
+fix well functionality
 
 ...
 upgrading buildings

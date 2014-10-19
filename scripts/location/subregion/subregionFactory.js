@@ -157,6 +157,7 @@ angular
 					resourceManager.water.modifyChangePerSecond(-1, "Wells");
 				}
 				subregion.onUpgrade = function () {
+					console.log("upgrading a well");
 					resourceManager.water.modifyChangePerSecond(1, "Wells");
 				}
 				subregion.onDowngrade = function () {

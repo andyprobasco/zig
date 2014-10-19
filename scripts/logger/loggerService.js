@@ -4,11 +4,9 @@ angular
 		var timeout;
 		this.messageQueue = [];
 		this.log = function (message) {
-			console.log("[GAMELOG]: " + message);
 			this.messageQueue.unshift(message);
 			this.newMessageClass = "log-message-new";
 			var that = this;
-			console.log(that);
 			$timeout.cancel(timeout);
 			timeout = $timeout(function(){$timeout.cancel(timeout); that.newMessageClass = "log-message"; console.log(that); }, 3000)
 
