@@ -6,9 +6,8 @@
 ##TODO
 
 
-morale and survivor resource can (should be able to) "go negative"
+upgrade workable building css to be more clear
 morale source breakdown
-
 map>region>subregion tabs;
 
 

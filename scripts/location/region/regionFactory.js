@@ -45,13 +45,20 @@ angular
 			newHQ: function () {
 				region = new Region();
 				region.name = 'HQ';
-				region.addSubregion(subregionFactory.newBeds());
+
+				region.addSubregion(subregionFactory.newPerimeter());
+				region.addSubregion(subregionFactory.newJunkPile());
+				region.addSubregion(subregionFactory.newEmptyPlot());
+				region.addSubregion(subregionFactory.newEmptyPlot());
+				region.addSubregion(subregionFactory.newEmptyPlot());
+
+				/*region.addSubregion(subregionFactory.newBeds());
 				region.addSubregion(subregionFactory.newAntiBeds());
-				region.addSubregion(subregionFactory.newPatrol());
-				region.addSubregion(subregionFactory.newScavenge());
+				region.addSubregion(subregionFactory.newPerimeter());
+				region.addSubregion(subregionFactory.newJunkPile());
 				region.addSubregion(subregionFactory.newEmptyPlot());
 				region.addSubregion(subregionFactory.newEmptyPlot());
-				region.addSubregion(subregionFactory.newEmptyPlot());
+				region.addSubregion(subregionFactory.newEmptyPlot());*/
 				for (var i = 0; i < region.subregions.length; i++) {
 					region.subregions[i].onBuild();
 				}

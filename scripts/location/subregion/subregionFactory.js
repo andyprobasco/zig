@@ -12,6 +12,7 @@ angular
 		}
 		function makeClickable (subregion) {
 			subregion.clickable = true;
+			subregion.clickText = "Click Here"
 			subregion.percentFull = 0;
 			subregion.taskLength = 2; // in seconds
 			var currentTask
@@ -23,6 +24,7 @@ angular
 					taskActive = true;
 					function taskTick () {
 						subregion.percentFull += 1;
+						console.log(subregion.percentFull);
 						if (subregion.percentFull >= 100) {
 							subregion.percentFull = 0;
 							taskActive = false;
@@ -86,10 +88,11 @@ angular
 		}
 
 		var constructors = {
-			newPatrol: function () {
+			newPerimeter: function () {
 				var subregion = new Subregion();
-				subregion.name = "Patrol";
+				subregion.name = "Perimeter";
 				makeClickable(subregion);
+				subregion.clickText = "Patrol";
 				makeWorkable(subregion);
 				subregion.onTaskComplete = function (){
 					resourceManager.threat.changeBy(-10);
@@ -98,34 +101,34 @@ angular
 					resourceManager.threat.changeBy(-this.currentWorkers*2);
 				}*/
 				subregion.onAddWorker = function () {
-					resourceManager.threat.setChangePerSecond(-2, "Patrolling");
+					resourceManager.threat.modifyChangePerSecond(-2, "Patrolling");
 				}
 				subregion.onRemoveWorker = function () {
-					resourceManager.threat.setChangePerSecond(2, "Patrolling");
+					resourceManager.threat.modifyChangePerSecond(2, "Patrolling");
 				}
 
 				return subregion;
 			},
-			newScavenge: function () {
+			newJunkPile: function () {
 				var subregion = new Subregion();
-				subregion.name = "Scavenge";
+				subregion.name = "Junk Pile";
 				makeClickable(subregion);
-				makeWorkable(subregion);
+
+				subregion.clickText = "Scavenge"
 				subregion.onTaskComplete = function (){
 					resourceManager.scrap.changeBy(5);
 					resourceManager.threat.changeBy(5);
 				}
-				/*subregion.tick = function () {
-					resourceManager.scrap.changeBy(this.currentWorkers);
-					resourceManager.threat.changeBy(this.currentWorkers);
-				}*/
+
+
+				makeWorkable(subregion);
 				subregion.onAddWorker = function () {
-					resourceManager.threat.setChangePerSecond(1, "Scavenging");
-					resourceManager.scrap.setChangePerSecond(1, "Scavenging");
+					resourceManager.threat.modifyChangePerSecond(1, "Scavenging");
+					resourceManager.scrap.modifyChangePerSecond(1, "Scavenging");
 				}
 				subregion.onRemoveWorker = function () {
-					resourceManager.threat.setChangePerSecond(-1, "Scavenging");
-					resourceManager.scrap.setChangePerSecond(-1, "Scavenging");
+					resourceManager.threat.modifyChangePerSecond(-1, "Scavenging");
+					resourceManager.scrap.modifyChangePerSecond(-1, "Scavenging");
 				}
 
 				return subregion;
@@ -148,16 +151,16 @@ angular
 				subregion.upgradeCost= {scrap:50};
 				//makeBuildable(subregion);
 				subregion.onBuild = function () {
-					resourceManager.water.setChangePerSecond(1, "Wells");
+					resourceManager.water.modifyChangePerSecond(1, "Wells");
 				}
 				subregion.onDestroy = function () {
-					resourceManager.water.setChangePerSecond(-1, "Wells");
+					resourceManager.water.modifyChangePerSecond(-1, "Wells");
 				}
 				subregion.onUpgrade = function () {
-					resourceManager.water.setChangePerSecond(1, "Wells");
+					resourceManager.water.modifyChangePerSecond(1, "Wells");
 				}
 				subregion.onDowngrade = function () {
-					resourceManager.water.setChangePerSecond(-1, "Wells");
+					resourceManager.water.modifyChangePerSecond(-1, "Wells");
 				}
 				return subregion;
 			},
@@ -169,16 +172,16 @@ angular
 				subregion.upgradeCost = {scrap:50};
 				//makeBuildable(subregion);
 				subregion.onBuild = function () {
-					resourceManager.morale.changeBy(10);
+					resourceManager.morale.modifyChangePerSecond(1);
 				}
 				subregion.onUpgrade = function () {
-					resourceManager.morale.changeBy(10);
+					resourceManager.morale.modifyChangePerSecond(1);
 				}
 				subregion.onDestroy = function () {
-					resourceManager.morale.changeBy(-10);
+					resourceManager.morale.modifyChangePerSecond(-1);
 				}
 				subregion.onDowngrade = function () {
-					resourceManager.morale.changeBy(-10);
+					resourceManager.morale.modifyChangePerSecond(-1);
 				}
 				return subregion;
 
@@ -191,16 +194,16 @@ angular
 				subregion.upgradeCost = {scrap:50};
 				//makeBuildable(subregion);
 				subregion.onBuild = function () {
-					resourceManager.morale.changeBy(-10);
+					resourceManager.morale.modifyChangePerSecond(-1);
 				}
 				subregion.onUpgrade = function () {
-					resourceManager.morale.changeBy(-10);
+					resourceManager.morale.modifyChangePerSecond(-1);
 				}
 				subregion.onDestroy = function () {
-					resourceManager.morale.changeBy(10);
+					resourceManager.morale.modifyChangePerSecond(1);
 				}
 				subregion.onDowngrade = function () {
-					resourceManager.morale.changeBy(10);
+					resourceManager.morale.modifyChangePerSecond(1);
 				}
 				return subregion;
 
@@ -214,6 +217,11 @@ angular
 	.directive('zgSubregion', function () {
 		return {
 			templateUrl: "scripts/location/subregion/subregion.html"
+		}
+	})
+	.directive('zgSubregionReplacement', function () {
+		return {
+			templateUrl: "scripts/location/subregion/subregionReplacement.html"
 		}
 	})
 

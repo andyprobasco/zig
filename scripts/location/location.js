@@ -1,7 +1,30 @@
 angular
 	.module('location', [])
 	.controller('locationPanelController', ['$scope', 'locationManager', function ($scope, locationManager) {
-		$scope.region = locationManager.neighborhood.regions[0];
+		$scope.neighborhood = locationManager.neighborhood;
+		//$scope.region = locationManager.neighborhood.regions[0];
+		$scope.activeRegion = locationManager.neighborhood.regions[0];
+		$scope.activeSubregion = locationManager.neighborhood.regions[0].subregions[0];
+		$scope.neighborhoodIsActive = true;
+		$scope.regionIsActive = false;
+		$scope.subregionIsActive = false;
+		$scope.gotoNeighborhood = function () {
+			$scope.neighborhoodIsActive = true;
+			$scope.regionIsActive = false;
+			$scope.subregionIsActive = false;
+		};
+		$scope.gotoRegion = function (region) {
+			$scope.activeRegion = region
+			$scope.neighborhoodIsActive = false;
+			$scope.regionIsActive = true;
+			$scope.subregionIsActive = false;
+		};
+		$scope.gotoSubregion = function (subregion) {
+			$scope.activeSubregion = subregion;
+			$scope.neighborhoodIsActive = false;
+			$scope.regionIsActive = false;
+			$scope.subregionIsActive = true;
+		};
 	}])
 	.service('locationManager', ['resourceManager', 'neighborhoodFactory', function (resourceManager, neighborhoodFactory) {
 		this.neighborhood = neighborhoodFactory.newDefaultNeighborhood();

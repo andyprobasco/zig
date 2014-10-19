@@ -47,11 +47,29 @@ angular
 					this.percentFull = this.current/this.max*100;
 				}
 
-				resource.setChangePerSecond = function (changeBy, source) {
+				resource.modifyChangePerSecond = function (changeBy, source) {
 					for (var i = 0; i < changePerSecondSources.length; i++) {
 						if (changePerSecondSources[i].source = source) {
 							changePerSecondSources[i].changeBy += changeBy;
 							this.totalChangePerSecond += changeBy;
+							if (changePerSecondSources[i].changeBy === 0) {
+								changePerSecondSources.splice(i, 1);
+							}
+							return;
+						}
+					}
+					changePerSecondSources.push({
+						source: source,
+						changeBy: changeBy
+					});
+					this.totalChangePerSecond += changeBy;
+					return;
+				}
+				resource.setChangePerSecond = function (changeBy, source) {
+					for (var i = 0; i < changePerSecondSources.length; i++) {
+						if (changePerSecondSources[i].source = source) {
+							this.totalChangePerSecond += changeBy - changePerSecondSources[i].changeBy;
+							changePerSecondSources[i].changeBy = changeBy;
 							if (changePerSecondSources[i].changeBy === 0) {
 								changePerSecondSources.splice(i, 1);
 							}
@@ -80,7 +98,7 @@ angular
 angular
 	.module('resources')
 	.service('resourceManager', ['resourceFactory', 'survivors', function (resourceFactory, survivors) {
-		this.morale = resourceFactory.getInstance({name:'Morale',current:0, max:100,min:-100});
+		this.morale = resourceFactory.getInstance({name:'Morale',current:-100, max:100,min:-100});
 		this.survivors = resourceFactory.getInstance({name:'Survivors', current:1, max:1});
 		this.threat = resourceFactory.getInstance({name:'Threat'});
 		this.food = resourceFactory.getInstance({name:'Food'});

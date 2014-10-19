@@ -1,0 +1,5 @@
+<div ng-repeat="o in activeSubregion.replacementOptions">
+	<button ng-click="activeSubregion.replaceThisWith(o);gotoRegion(activeRegion);">build {{o.name}}</button>
+	<span>{{o.description}}</span>
+	<span><ul><li ng-repeat="(resource, value) in o.buildCost">{{resource}}:{{value}}</li></ul></span>
+</div>	

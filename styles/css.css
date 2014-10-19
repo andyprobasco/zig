@@ -14,6 +14,25 @@ button:hover {
 	background-color:gray;
 }
 
+.subregion.subregion-replaceable {
+	border-style:dashed;
+}
+.subregion-clickable .status-bar-inner {
+	transition:none;
+}
+.subregion-clickable .status-bar {
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	height:20px;
+	width:auto;
+	border:none;
+}
+.subregion-clickable button {
+	margin-bottom:20px;
+}
+
 .status-bar {
 	border: 1px solid white;
 	width: 100px;
@@ -22,7 +41,7 @@ button:hover {
 }
 .status-bar-inner {
 	background-color: white;
-	position:absolute;
+	position:relative;
 	height:100%;
 	transition:width 1s;
 }
@@ -81,4 +100,11 @@ ul {
 	line-height: 20px;
 	margin: 10px;
 	text-align: center;
+}
+
+.tab-link {
+	color:gray;
+}
+.active-tab-link {
+	color:white;
 }

@@ -1,6 +1,6 @@
 angular
 	.module('resources')
-	.service('survivorService', ['resourceManager', 'statusService', function (resourceManager, statusService) {
+	.service('survivorService', ['resourceManager', 'locationManager', 'statusService', function (resourceManager, locationManager, statusService) {
 		this.tick = function () {
 			var survivors = resourceManager.survivors.current;
 
@@ -11,7 +11,11 @@ angular
 				resourceManager.morale.changeBy(-resourceManager.morale.current);
 				resourceManager.survivors.changeMaxBy(1);
 				resourceManager.survivors.changeBy(1);
-			} else if (resourceManager.morale.percentFull <= -100) {
+			} else if (resourceManager.morale.percentFull <= -100 && resourceManager.survivors.max > 1) {
+				console.log("checking for 0 survivors free");
+				if (survivors === 0) {
+					pullAWorker();
+				}
 				resourceManager.morale.changeBy(-resourceManager.morale.current);
 				resourceManager.survivors.changeMaxBy(-1);
 				resourceManager.survivors.changeBy(-1);
@@ -38,7 +42,22 @@ angular
 			} else {
 				statusService.setStatus('High Threat', false);
 			}
-			resourceManager.morale.setChangePerSecond(resourceManager.survivors.current * moraleFactor)
+			resourceManager.morale.setChangePerSecond(resourceManager.survivors.current * moraleFactor, "Survivors")
+		}
+
+		function pullAWorker () {
+			var regions = locationManager.neighborhood.regions
+			for (var i = 0; i < regions.length; i++) {
+				var region = regions[i];
+				for (var j = 0; j < region.subregions.length; j++) {
+					var subregion = region.subregions[j];
+					if (subregion.workable && subregion.currentWorkers > 0) {
+						subregion.removeWorker();
+						console.log("removed a worker from " + subregion.name)
+						return;
+					}
+				}
+			}
 		}
 
 	}]);
