@@ -1,7 +1,6 @@
 angular
 	.module('zigApp')
 	.directive("tooltip", function () {
-		console.log("getting tooltip")
     return {
         link: function (scope, element, attrs) {
 

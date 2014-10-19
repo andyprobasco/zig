@@ -3,16 +3,16 @@ angular
 	.service('survivorService', ['resourceManager', 'locationManager', 'statusService', function (resourceManager, locationManager, statusService) {
 		this.tick = function () {
 			var survivors = resourceManager.survivors.current;
+			var maxSurvivors = resourceManager.survivors.max;
 
-			resourceManager.food.setChangePerSecond(-survivors, "Survivors");
-			resourceManager.water.setChangePerSecond(-survivors, "Survivors");
+			resourceManager.food.setChangePerSecond(-maxSurvivors-1, "Survivors");
+			resourceManager.water.setChangePerSecond(-maxSurvivors-1, "Survivors");
 			setMorale();
 			if (resourceManager.morale.percentFull >= 100) {
 				resourceManager.morale.changeBy(-resourceManager.morale.current);
 				resourceManager.survivors.changeMaxBy(1);
 				resourceManager.survivors.changeBy(1);
-			} else if (resourceManager.morale.percentFull <= -100 && resourceManager.survivors.max > 1) {
-				console.log("checking for 0 survivors free");
+			} else if (resourceManager.morale.percentFull <= -100 && maxSurvivors > 0) {
 				if (survivors === 0) {
 					pullAWorker();
 				}
@@ -24,25 +24,30 @@ angular
 
 		function setMorale () {
 			var moraleFactor = -1;
+			var survivors = resourceManager.survivors.current;
+
 			if (resourceManager.water.current <= 0) {
 				statusService.setStatus('Thirsty', true);
-				moraleFactor--;
+				resourceManager.morale.setChangePerSecond(-survivors-1, "Thirsty Survivors");
 			} else {
 				statusService.setStatus('Thirsty', false);
+				resourceManager.morale.setChangePerSecond(0, "Thirsty Survivors");
 			}
 			if (resourceManager.food.current <= 0) {
 				statusService.setStatus('Starving', true);
-				moraleFactor--;
+				resourceManager.morale.setChangePerSecond(-survivors-1, "Starving Survivors");
 			} else {
 				statusService.setStatus('Starving', false);
+				resourceManager.morale.setChangePerSecond(0, "Starving Survivors");
 			}
 			if (resourceManager.threat.current >= 100) {
 				statusService.setStatus('High Threat', true);
-				moraleFactor--;
+				resourceManager.morale.setChangePerSecond(-survivors-1, "Scared Survivors");
 			} else {
 				statusService.setStatus('High Threat', false);
-			}
-			resourceManager.morale.setChangePerSecond(resourceManager.survivors.current * moraleFactor, "Survivors")
+				resourceManager.morale.setChangePerSecond(0, "Scared Survivors");
+			} 
+			resourceManager.morale.setChangePerSecond(-survivors, "Survivors");
 		}
 
 		function pullAWorker () {

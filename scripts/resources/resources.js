@@ -25,9 +25,12 @@ angular
 
 				resource.name = params.name || 'Resource';
 				resource.current = params.current || 0;
-				resource.max = params.max || 100;
 				resource.min = params.min || 0;
 				resource.percentFull = resource.current/resource.max*100;
+				resource.max = params.max;
+				if (resource.max === undefined) {
+					resource.max = 100;
+				}
 
 				resource.totalChangePerSecond = 0;
 
@@ -69,24 +72,26 @@ angular
 					return;
 				}
 
-				resource.setChangePerSecond = function (changeBy, source) {
+				resource.setChangePerSecond = function (changeTo, source) {
 					for (var i = 0; i < this.changePerSecondSources.length; i++) {
 						if (this.changePerSecondSources[i].source === source) {
-							this.totalChangePerSecond += changeBy - this.changePerSecondSources[i].changeBy;
-							this.changePerSecondSources[i].changeBy = changeBy;
-							if (this.changePerSecondSources[i].changeBy === 0) {
+							this.totalChangePerSecond += changeTo - this.changePerSecondSources[i].changeBy;
+							this.changePerSecondSources[i].changeBy = changeTo;
+							if (changeTo === 0) {
 								this.changePerSecondSources.splice(i, 1);
 							}
 							this.setTooltip();
 							return;
 						}
 					}
-					this.changePerSecondSources.push({
-						source: source,
-						changeBy: changeBy
-					});
-					this.totalChangePerSecond += changeBy;
-					this.setTooltip;
+					if (changeTo !== 0) {
+						this.changePerSecondSources.push({
+							source: source,
+							changeBy: changeTo
+						});
+						this.totalChangePerSecond += changeTo;
+					}
+					this.setTooltip();
 					return;
 				}
 				resource.setMultiplier = function (changeBy, source) {
@@ -98,8 +103,9 @@ angular
 				resource.setTooltip = function () {
 					this.tooltip = "<h3>Total: " + this.totalChangePerSecond + " p/s</h3>";
 					for (var i = 0; i < this.changePerSecondSources.length; i++) {
-						this.tooltip += "<p>" + this.changePerSecondSources[i].changeBy + " p/s from: " + this.changePerSecondSources[i].source + "</p>"
+						this.tooltip += "<div>" + this.changePerSecondSources[i].changeBy + " p/s from: " + this.changePerSecondSources[i].source + "</div>"
 					}
+					this.tooltip += "<p></p>"
 				}
 				return resource;
 			}
@@ -110,11 +116,11 @@ angular
 	.module('resources')
 	.service('resourceManager', ['resourceFactory', 'survivors', function (resourceFactory, survivors) {
 		this.morale = resourceFactory.getInstance({name:'Morale',current:-100, max:100,min:-100});
-		this.survivors = resourceFactory.getInstance({name:'Survivors', current:1, max:1});
+		this.survivors = resourceFactory.getInstance({name:'Survivors', current:0, max:0});
 		this.threat = resourceFactory.getInstance({name:'Threat'});
 		this.food = resourceFactory.getInstance({name:'Food'});
 		this.water = resourceFactory.getInstance({name:'Water'});
-		this.scrap = resourceFactory.getInstance({name:'Scrap', current:10000, max:10000});
+		this.scrap = resourceFactory.getInstance({name:'Scrap', current:100, max:100});
 		
 		this.canPayCost = function (cost) {
 			if (cost.survivors && cost.survivors > this.survivors.current) return false;

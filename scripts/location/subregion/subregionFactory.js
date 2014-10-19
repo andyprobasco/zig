@@ -24,7 +24,6 @@ angular
 					taskActive = true;
 					function taskTick () {
 						subregion.percentFull += 1;
-						console.log(subregion.percentFull);
 						if (subregion.percentFull >= 100) {
 							subregion.percentFull = 0;
 							taskActive = false;
@@ -44,8 +43,6 @@ angular
 					resourceManager.survivors.changeBy(-1);
 					this.currentWorkers += 1;
 					this.onAddWorker();
-					logService.log("added worker to " + this.name);
-
 				}
 			}
 			subregion.removeWorker = function () {
@@ -60,7 +57,7 @@ angular
 		}
 		function makeUpgradeable (subregion) {
 			subregion.upgradeable = true;
-			subregion.level = 0;
+			subregion.level = 1;
 			subregion.upgradeCost = {};
 			subregion.upgrade = function () {
 				if (resourceManager.canPayCost(this.upgradeCost)) {
@@ -139,7 +136,7 @@ angular
 				makeReplaceable(subregion);
 				subregion.addReplacementOption(constructors.newWell);
 				subregion.addReplacementOption(constructors.newBeds);
-				subregion.addReplacementOption(constructors.newAntiBeds);
+				subregion.addReplacementOption(constructors.newGarden);
 
 				return subregion;
 			},
@@ -149,7 +146,11 @@ angular
 				subregion.buildCost = {scrap:50};
 				makeUpgradeable(subregion);
 				subregion.upgradeCost= {scrap:50};
-				//makeBuildable(subregion);
+				subregion.updateUpgradeCost = function () {
+					this.upgradeCost = {
+						scrap: Math.floor(50 * Math.pow(1.15, this.level))
+					}
+				}
 				subregion.onBuild = function () {
 					resourceManager.water.modifyChangePerSecond(1, "Wells");
 				}
@@ -157,11 +158,35 @@ angular
 					resourceManager.water.modifyChangePerSecond(-1, "Wells");
 				}
 				subregion.onUpgrade = function () {
-					console.log("upgrading a well");
 					resourceManager.water.modifyChangePerSecond(1, "Wells");
 				}
 				subregion.onDowngrade = function () {
 					resourceManager.water.modifyChangePerSecond(-1, "Wells");
+				}
+				return subregion;
+			},
+			newGarden: function () {
+				var subregion = new Subregion();
+				subregion.name = "Garden";
+				subregion.buildCost = {scrap:50};
+				makeUpgradeable(subregion);
+				subregion.upgradeCost = {scrap:50};
+				subregion.updateUpgradeCost = function () {
+					this.upgradeCost = {
+						scrap: Math.floor(50 * Math.pow(1.15, this.level))
+					}
+				}
+				subregion.onBuild = function () {
+					resourceManager.food.modifyChangePerSecond(1, "Garden");
+				}
+				subregion.onDestroy = function () {
+					resourceManager.food.modifyChangePerSecond(-1, "Garden");
+				}
+				subregion.onUpgrade = function () {
+					resourceManager.food.modifyChangePerSecond(1, "Garden");
+				}
+				subregion.onDowngrade = function () {
+					resourceManager.food.modifyChangePerSecond(-1, "Garden");
 				}
 				return subregion;
 			},
@@ -171,18 +196,23 @@ angular
 				subregion.buildCost = {scrap:50};
 				makeUpgradeable(subregion);
 				subregion.upgradeCost = {scrap:50};
+				subregion.updateUpgradeCost = function () {
+					this.upgradeCost = {
+						scrap: Math.floor(50 * Math.pow(1.15, this.level))
+					}
+				}
 				//makeBuildable(subregion);
 				subregion.onBuild = function () {
-					resourceManager.morale.modifyChangePerSecond(1);
+					resourceManager.morale.modifyChangePerSecond(1, "Beds");
 				}
 				subregion.onUpgrade = function () {
-					resourceManager.morale.modifyChangePerSecond(1);
+					resourceManager.morale.modifyChangePerSecond(1, "Beds");
 				}
 				subregion.onDestroy = function () {
-					resourceManager.morale.modifyChangePerSecond(-1);
+					resourceManager.morale.modifyChangePerSecond(-1, "Beds");
 				}
 				subregion.onDowngrade = function () {
-					resourceManager.morale.modifyChangePerSecond(-1);
+					resourceManager.morale.modifyChangePerSecond(-1, "Beds");
 				}
 				return subregion;
 
@@ -194,6 +224,11 @@ angular
 				makeUpgradeable(subregion);
 				subregion.upgradeCost = {scrap:50};
 				//makeBuildable(subregion);
+				subregion.updateUpgradeCost = function () {
+					this.upgradeCost = {
+						scrap: Math.floor(50 * Math.pow(1.15, this.level))
+					}
+				}
 				subregion.onBuild = function () {
 					resourceManager.morale.modifyChangePerSecond(-1);
 				}
