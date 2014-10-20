@@ -81,7 +81,7 @@ ul {
 #statusPanel {
 	position:absolute;
 	right:0px;
-	top:0px;
+	top:35px;
 	width:300px;
 	height:300px;
 }
@@ -139,4 +139,8 @@ ul {
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   z-index: 1000;
+}
+
+.horde-attack-meter .status-bar {
+	width: 100%;
 }

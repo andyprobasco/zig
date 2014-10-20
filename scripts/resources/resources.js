@@ -115,6 +115,8 @@ angular
 angular
 	.module('resources')
 	.service('resourceManager', ['resourceFactory', 'survivors', function (resourceFactory, survivors) {
+		this.horde = resourceFactory.getInstance({name:'Horde',current:0,max:100000});
+		this.defense = resourceFactory.getInstance({name:'Defense Rating', current:0, max:10000})
 		this.morale = resourceFactory.getInstance({name:'Morale',current:-100, max:100,min:-100});
 		this.survivors = resourceFactory.getInstance({name:'Survivors', current:0, max:0});
 		this.threat = resourceFactory.getInstance({name:'Threat'});

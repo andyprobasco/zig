@@ -5,10 +5,24 @@
 
 ##TODO
 
-tooltips
-morale source breakdown
-fix well functionality
+hordemeter
+horde count
+defense rating
+popups
+threat modifies horde
 
-...
-upgrading buildings
-resource change per second source tracking
+
+
+###
+tutorial (action hiding)
+events / modals
+threat/kill zombies
+expansion into new regions
+'
+
+
+
+
+##
+
+

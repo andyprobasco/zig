@@ -5,8 +5,8 @@ angular
 		//$scope.region = locationManager.neighborhood.regions[0];
 		$scope.activeRegion = locationManager.neighborhood.regions[0];
 		$scope.activeSubregion = locationManager.neighborhood.regions[0].subregions[0];
-		$scope.neighborhoodIsActive = true;
-		$scope.regionIsActive = false;
+		$scope.neighborhoodIsActive = false;
+		$scope.regionIsActive = true;
 		$scope.subregionIsActive = false;
 		$scope.gotoNeighborhood = function () {
 			$scope.neighborhoodIsActive = true;

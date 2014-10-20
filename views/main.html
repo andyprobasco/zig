@@ -1,5 +1,13 @@
 <div id="gameSettingsPanel" ng-controller="gameSettingsController">
 </div>
+<div id="hordePanel" ng-controller="hordePanelController">
+	<span>{{horde.current}} Zombies are preparing to attack, you can hold off </span>
+	<span ng-show="defense.current>=horde.current">all</span>
+	<span ng-show="defense.current<horde.current&&defense.current>0">{{defense.current}}</span>
+	<span ng-show="defense.current===0&&horde.current!==0">none</span>
+	<span> of them</span>
+	<span zg-status-bar percent-full="horde.progress" class="horde-attack-meter"></span>
+</div>
 <div id="resourcesPanel" ng-controller="resourcePanelController">
 	<h3>resources</h3>
 	<ul>
