@@ -5,20 +5,14 @@
 
 ##TODO
 
-hordemeter
-horde count
-defense rating
 popups
-threat modifies horde
-
-
 
 ###
 tutorial (action hiding)
 events / modals
 threat/kill zombies
 expansion into new regions
-'
+
 
 
 

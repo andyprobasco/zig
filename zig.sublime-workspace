@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"total",
+				"totalChangePerSecond"
+			],
+			[
+				"nei",
+				"neighborhood"
+			],
+			[
+				"loc",
+				"locationManager"
+			],
+			[
 				"mo",
 				"modifyChangePerSecond"
 			],
@@ -148,12 +160,71 @@
 	"buffers":
 	[
 		{
-			"contents": "You disappeared!",
+			"file": "views/directives/tooltip.js",
 			"settings":
 			{
-				"buffer_size": 16,
+				"buffer_size": 707,
 				"line_ending": "Unix",
-				"name": "You disappeared!"
+				"name": "tooltip.js"
+			}
+		},
+		{
+			"file": "views/main.html",
+			"settings":
+			{
+				"buffer_size": 2720,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/resources/resources.js",
+			"settings":
+			{
+				"buffer_size": 7484,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/location/subregion/subregionFactory.js",
+			"settings":
+			{
+				"buffer_size": 8075,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styles/css.css",
+			"settings":
+			{
+				"buffer_size": 2184,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/resources/survivorService.js",
+			"settings":
+			{
+				"buffer_size": 2570,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/logger/loggerService.js",
+			"settings":
+			{
+				"buffer_size": 670,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#zig\n##zombie incremental game\n\n`ruby -r webrick -e \"s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\"`\n\n##TODO\n\n\nmodal\n\n\n\n\n\n###\ntutorial (action hiding)\nregion mapping\nevents / modals\nthreat/kill zombies\nexpansion into new regions\n##",
+			"file": "README.md",
+			"file_size": 280,
+			"file_write_time": 1413819110000000,
+			"settings":
+			{
+				"buffer_size": 291,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -205,23 +276,26 @@
 	},
 	"file_history":
 	[
-		"/Users/aprobasco/Projects/github/zig/README.md",
-		"/Users/aprobasco/Projects/github/zig/scripts/location/subregion/subregionFactory.js",
+		"/Users/aprobasco/Projects/github/zig/views/directives/statusBar.js",
+		"/Users/aprobasco/Projects/github/zig/index.html",
+		"/Users/aprobasco/Projects/github/zig/scripts/logger/loggerService.js",
+		"/Users/aprobasco/Projects/github/zig/styles/css.css",
 		"/Users/aprobasco/Projects/github/zig/scripts/resources/survivorService.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/location/subregion/subregionReplacement.html",
+		"/Users/aprobasco/Projects/github/zig/scripts/location/subregion/subregion.html",
+		"/Users/aprobasco/Projects/github/zig/scripts/location/subregion/subregionFactory.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/location/location.js",
+		"/Users/aprobasco/Projects/github/zig/views/main.html",
+		"/Users/aprobasco/Projects/github/zig/README.md",
 		"/Users/aprobasco/Projects/github/zig/scripts/resources/resources.js",
+		"/Users/aprobasco/Projects/github/zig/scripts/location/region/regionFactory.js",
 		"/Users/aprobasco/Projects/github/zig/views/statusBar/statusBar.html",
 		"/Users/aprobasco/Projects/github/zig/scripts/game/game.js",
-		"/Users/aprobasco/Projects/github/zig/views/main.html",
 		"/Users/aprobasco/Projects/github/zig/scripts/resources/moraleService.js",
-		"/Users/aprobasco/Projects/github/zig/styles/css.css",
-		"/Users/aprobasco/Projects/github/zig/scripts/logger/loggerService.js",
-		"/Users/aprobasco/Projects/github/zig/index.html",
 		"/Users/aprobasco/Projects/github/zig/scripts/app.js",
 		"/Users/aprobasco/Projects/github/zig/scripts/status/statusService.js",
 		"/Users/aprobasco/Projects/github/zig/scripts/logger/logger.js",
 		"/Users/aprobasco/Projects/github/zig/styles/main.css",
-		"/Users/aprobasco/Projects/github/zig/scripts/location/region/regionFactory.js",
-		"/Users/aprobasco/Projects/github/zig/scripts/location/subregion/subregion.html",
 		"/Users/aprobasco/Projects/github/zig/scripts/resources/morale-gauge.html",
 		"/Users/aprobasco/Projects/github/zig/zig.sublime-project",
 		"/Users/aprobasco/Projects/github/zig/scripts/resources/resource.html",
@@ -313,6 +387,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console.",
+			"math.pow",
+			"survivors",
+			"clickt",
+			"height",
 			"setchange",
 			"setChange",
 			";\n",
@@ -373,28 +452,219 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "views/directives/tooltip.js",
 					"settings":
 					{
-						"buffer_size": 16,
+						"buffer_size": 707,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16,
-								16
+								64,
+								64
 							]
 						],
 						"settings":
 						{
-							"auto_name": "You disappeared!",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"auto_name": "tooltip.js",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/main.html",
+					"settings":
+					{
+						"buffer_size": 2720,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "scripts/resources/resources.js",
+					"settings":
+					{
+						"buffer_size": 7484,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "scripts/location/subregion/subregionFactory.js",
+					"settings":
+					{
+						"buffer_size": 8075,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1445,
+								1445
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 56.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "styles/css.css",
+					"settings":
+					{
+						"buffer_size": 2184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1943,
+								1943
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1457.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "scripts/resources/survivorService.js",
+					"settings":
+					{
+						"buffer_size": 2570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2092,
+								2092
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "scripts/logger/loggerService.js",
+					"settings":
+					{
+						"buffer_size": 670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								394,
+								394
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 291,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								261
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
