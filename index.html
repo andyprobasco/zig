@@ -2,27 +2,15 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles/css.css">
-		<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>-->
-		<script src="scripts/angular.min.js"></script>
-		<script src="scripts/app.js"></script>
-		<script src="scripts/logger/loggerService.js"></script>
-		<script src="scripts/status/statusService.js"></script>
-		<script src="scripts/game/game.js"></script>
-		<script src="scripts/location/location.js"></script>
-		<script src="scripts/location/region/regionFactory.js"></script>
-		<script src="scripts/location/subregion/subregionFactory.js"></script>
-		<script src="scripts/resources/resources.js"></script>
-		<script src="scripts/resources/survivorService.js"></script>
-		<script src="scripts/resources/hordeService.js"></script>
-		<script src="views/directives/statusBar.js"></script>
-		<script src="views/directives/tooltip.js"></script>
-
+		<script src="angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="game/game.js"></script>
+		<script src="resources/resources.js"></script>
+		<script src="locations/locations.js"></script>
+		<script src="jobs/jobs.js"></script>
 
 	</head>
 	<body ng-app="zigApp">
-		<div class="container" ng-include src="'views/main.html'"></div>
-
-		<ng-replace src="views/main/html">
-
-</body>
+		<div class="container" ng-include src="'game/main.html'" ng-controller="gameController"></div>
+	</body>
 </html>

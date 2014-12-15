@@ -1,0 +1,39 @@
+<div ng-controller="locationPanelController">
+	<h3>location</h3>
+	<div id="freeSurvivors">
+		Total Survivors:{{survivors.current}}/{{survivors.max}}
+		<div>
+		{{restJob.name}}:{{restJob.currentWorkers}}
+		</div>
+	</div>
+
+
+
+	<h4><span ng-click="activeTab='neighborhood'" ng-class="{ 'active-tab': (activeTab=='neighborhood')}">neighborhood</span> | <span ng-click="activeTab='hq'" ng-class="{ 'active-tab': (activeTab=='hq')}">hq</span> | <span ng-click="activeTab='workshop'" ng-class="{ 'active-tab': (activeTab=='workshop')}">workshop</span></h4>
+	
+	<div id="neighborhood" ng-include src="'locations/neighborhood.html'" ng-show="activeTab=='neighborhood'"></div>
+	<div id="hq"  ng-show="activeTab=='hq'" ng-include src="'locations/hq.html'">HQ Panel</div>
+	<div id="workshop"  ng-show="activeTab=='workshop'" ng-include src="'locations/workshop.html'" >Workshop</div>
+</div>
+
+<!--
+<div id="locationPanel" ng-controller="locationPanelController">
+	<h3 class='tab-link'>
+		<span ng-class="{'active-tab-link':neighborhoodIsActive}" ng-click="gotoNeighborhood()"> neighborhood </span>
+		<span ng-show="regionIsActive || subregionIsActive"> > <span ng-class="{'active-tab-link':regionIsActive}" ng-click="gotoRegion()">{{activeRegion.name}}</span></span>
+		<span ng-show="subregionIsActive"> > <span ng-class="{'active-tab-link':subregionIsActive}" ng-click="gotoSubregion()">subregion</span>
+	</h3>
+	<div ng-show="neighborhoodIsActive">
+		<h1>neighborhood</h1>
+		<button ng-repeat="r in neighborhood.regions" ng-click="gotoRegion(r)">{{r.name}}</button>
+	</div>
+	<div ng-show="regionIsActive">
+		<h1>{{activeRegion.name}}</h1>
+		<ul><li ng-repeat="s in activeRegion.subregions" zg-subregion="s"></li></ul>
+	</div>
+	<div ng-show="subregionIsActive">
+		<h1>{{activeSubregion.name}}</h1>
+		<div zg-subregion-replacement></div>
+	</div>
+</div>
+-->

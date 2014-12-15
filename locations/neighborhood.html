@@ -1,0 +1,13 @@
+<table>
+	<tr ng-repeat="row in regions">
+		<td ng-repeat="r in row" class="location">
+			<div ng-hide="r.state == 'locked'" class="location">
+			{{r.name}} ({{r.state}}):
+			<br>
+			<button ng-click='r.removeWorker()'>-</button>{{r.currentWorkers}}<button ng-click='r.addWorker();'>+</button>
+			<br>
+			Progress:{{r.progress}}/{{r.progressNeeded}}
+			</div>
+		</td>
+	</tr>
+</table>

@@ -1,16 +1,13 @@
 angular
 	.module('resources', [])
-	.controller('resourcePanelController', ['$scope', 'resourceManager', function($scope, resourceManager) {
+	.controller('resourcePanelController', ['$scope', 'resourceService', function($scope, resourceManager) {
 		$scope.threat = resourceManager.threat;
 		$scope.morale = resourceManager.morale;
-		$scope.standardResources = [
-			resourceManager.survivors,
+		$scope.resources = [
 			resourceManager.food,
 			resourceManager.water,
 			resourceManager.scrap
 		]
-		//$scope.moraleService = moraleService;
-		console.log($scope);
 	}])
 
 angular
@@ -114,12 +111,13 @@ angular
 
 angular
 	.module('resources')
-	.service('resourceManager', ['resourceFactory', 'survivors', function (resourceFactory, survivors) {
+	.service('resourceService', ['resourceFactory', function (resourceFactory) {
 		this.horde = resourceFactory.getInstance({name:'Horde',current:0,max:100000});
 		this.defense = resourceFactory.getInstance({name:'Defense Rating', current:0, max:10000})
-		this.morale = resourceFactory.getInstance({name:'Morale',current:-100, max:100,min:-100});
-		this.survivors = resourceFactory.getInstance({name:'Survivors', current:0, max:0});
-		this.threat = resourceFactory.getInstance({name:'Threat'});
+		this.morale = resourceFactory.getInstance({name:'Morale', max:100,min:-100});
+		this.threat = resourceFactory.getInstance({name:'Threat', max:100,min:-100});
+		this.survivors = resourceFactory.getInstance({name:'Survivors', current:10, max:10});
+
 		this.food = resourceFactory.getInstance({name:'Food'});
 		this.water = resourceFactory.getInstance({name:'Water'});
 		this.scrap = resourceFactory.getInstance({name:'Scrap', current:100, max:100});
@@ -146,104 +144,6 @@ angular
 
 angular
 	.module('resources')
-	.factory('survivors', ['resourceFactory', function(resourceFactory){
-		var survivors = resourceFactory.getInstance({
-			name:'Survivors',
-			current: 1,
-			max: 1
-		});
-		survivors.changeMaxBy = function (increment) {
-			this.current += increment;
-			this.max += increment;
-			this.percentFull = this.current/this.max*100;
-		}
-
-		return survivors;
-	}])
-/*
-angular
-	.module('resources')
-	.factory('morale', ['resourceFactory', 'survivors', function (resourceFactory, survivors) {
-		var morale = resourceFactory.getInstance({
-			name: 'Morale',
-			current: 1,
-			max: 100,
-			min: -100
-		});
-		var UP = 1;
-		var DOWN = -1;
-
-		morale.survivorProgressPercent = 0;
-		morale.progressDirection = UP;
-		morale.percentFullPositive = 0;
-		morale.percentFullNegative = 0;
-
-		morale.changeBy = function (increment) {
-					this.current += increment;
-					if (this.current > this.max) {
-						this.current = this.max;
-					} else if (this.current < this.min) {
-						this.current = this.min;
-					}
-
-					if (this.current < 0) {
-						this.percentFullNegative = this.current/this.max*-50;
-						this.percentFullPositive = 0
-					} else {
-						this.percentFullPositive = this.current/this.max*50;
-						this.percentFullNegative = 0
-					}
-					//this.percentFull = this.current/this.max*100;
-					//this.
-
-				};
-
-		morale.tick = function () {
-			if (this.current > 50) {
-				//move towards makeaguy
-				if (this.progressDirection == UP) {
-					this.survivorProgressPercent += 1;
-				} else {
-					this.survivorProgressPercent -= 1;
-				}
-			} else if (this.current < -50) {
-				//move towards loseaguy
-				if (this.progressDirection == DOWN) {
-					this.survivorProgressPercent += 1;
-				} else {
-					this.survivorProgressPercent -= 1;
-				}
-			} else {
-				this.survivorProgressPercent -= 1;
-			}
-
-			if (this.survivorProgressPercent < 0) {
-				this.survivorProgressPercent = 0;
-				if (this.progressDirection == UP) {
-					this.progressDirection = DOWN;
-				} else {
-					this.progressDirection = UP;
-				}
-			}
-
-			if (this.survivorProgressPercent >= 100) {
-				if (this.progressDirection == UP) {
-					survivors.changeMaxBy(1);
-				} else {
-					survivors.changeMaxBy(-1);
-				}
-				this.survivorProgressPercent = 0;
-			}
-		}
-		morale.changeBy(0);
-		return morale;
-	}])
-*/
-
-
-
-angular
-	.module('resources')
 	.directive('zgResource', function () {
-		return {templateUrl: "scripts/resources/resource.html"}
+		return {templateUrl: "resources/resource.html"}
 	})
