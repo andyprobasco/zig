@@ -261,3 +261,47 @@ Upgrades:
 
 
 
+
+
+The only action a player has access to is moving workers.
+- each job only has one result?
+- upgrade building vs work at building.
+
+
+----------------------
+|      Resources     |
+----------------------
+|       Threat       |
+----------------------
+|       Morale       |
+----------------------
+| tab    tab     tab |
+|                    |
+|       JOBS         |
+|                    |
+----------------------
+|       info         |
+----------------------
+
+ResourcePanelController
+ThreatPanelController
+MoralePanelController
+JobPanelController
+    neighborhoodPanelController
+    hqPanelController
+    workshopPanelController
+InfoPanelController
+
+ResourceService : NO DEPENDENCIES
+    resources +/-
+     < ResourceService
+MoraleService < ResourceService
+JobService < < ResourceService
+InfoService : no dependencies
+
+
+
+
+
+
+

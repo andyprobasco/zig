@@ -4,24 +4,3 @@
 		<li ng-repeat="r in resources" zg-resource="r" tooltip="{{r.tooltip}}"></li>
 	</ul>
 </div>
-
-
-<!--
-	<div id="resourcesPanel" ng-controller="resourcePanelController">
-	<h3>resources</h3>
-	<ul>
-		<li tooltip="{{threat.tooltip}}">
-			{{threat.name}}:{{threat.current}}/{{threat.max}}
-			<div zg-status-bar percent-full="threat.percentFull"></div>
-		</li>
-		<li tooltip="{{morale.tooltip}}">
-			{{morale.name}}:{{morale.current}}
-			<div class="status-bar">
-				<div ng-show="morale.percentFull<0" class="status-bar-inner" style="position:absolute;right:50%;background-color:lightcoral" ng-style="{'width':-morale.percentFull/2+'%'}"></div>
-				<div ng-show="morale.percentFull>=0" class="status-bar-inner" style="position:absolute;left:50%;background-color:lightgreen" ng-style="{'width':morale.percentFull/2+'%'}"></div>
-			</div>
-		</li>
-		<li ng-repeat="r in standardResources" zg-resource="r" tooltip="{{r.tooltip}}"></li>
-	</ul>
-</div>
--->

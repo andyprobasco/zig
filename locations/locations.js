@@ -8,7 +8,6 @@ angular
 		$scope.regions = locationService.regions;
 	}])
 	.service('locationService', ['jobFactory', 'resourceService', 'regionService', function (jobFactory, resourceService, regionService) {
-		this.restJob = jobFactory.getDefaultJob();
 		this.scavengeJob = jobFactory.getInstance({name:'Scavenge'});
 		this.scavengeJob.onComplete = function(){
 			resourceService.water.changeBy(5);

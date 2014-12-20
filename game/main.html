@@ -1,65 +1,7 @@
-<div ng-include src="'horde/horde.html'" ></div>
+<div style="left:100px; right:100px; position:absolute;">
 <div ng-include src="'resources/resources.html'" ></div>
+<div ng-include src="'horde/horde.html'" ></div>
+<div ng-include src="'survivors/survivors.html'"></div>
 <div ng-include src="'locations/locations.html'" ></div>
 <div ng-include src="'info/info.html'" ></div>
-<!--<div ng-include src="'popup/popup.html'" ></div>->
-
-
-<!--
-<div id="gameSettingsPanel" ng-controller="gameSettingsController"></div>
-<div id="hordePanel" ng-controller="hordePanelController">
-	<span>{{horde.current}} Zombies are preparing to attack, you can hold off </span>
-	<span ng-show="defense.current>=horde.current">all</span>
-	<span ng-show="defense.current<horde.current&&defense.current>0">{{defense.current}}</span>
-	<span ng-show="defense.current===0&&horde.current!==0">none</span>
-	<span> of them</span>
-	<span zg-status-bar percent-full="horde.progress" class="horde-attack-meter"></span>
-</div>
-<div id="resourcesPanel" ng-controller="resourcePanelController">
-	<h3>resources</h3>
-	<ul>
-		<li tooltip="{{threat.tooltip}}">
-			{{threat.name}}:{{threat.current}}/{{threat.max}}
-			<div zg-status-bar percent-full="threat.percentFull"></div>
-		</li>
-		<li tooltip="{{morale.tooltip}}">
-			{{morale.name}}:{{morale.current}}
-			<div class="status-bar">
-				<div ng-show="morale.percentFull<0" class="status-bar-inner" style="position:absolute;right:50%;background-color:lightcoral" ng-style="{'width':-morale.percentFull/2+'%'}"></div>
-				<div ng-show="morale.percentFull>=0" class="status-bar-inner" style="position:absolute;left:50%;background-color:lightgreen" ng-style="{'width':morale.percentFull/2+'%'}"></div>
-			</div>
-		</li>
-		<li ng-repeat="r in standardResources" zg-resource="r" tooltip="{{r.tooltip}}"></li>
-	</ul>
-</div>
-<div id="locationPanel" ng-controller="locationPanelController">
-	<h3 class='tab-link'>
-		<span ng-class="{'active-tab-link':neighborhoodIsActive}" ng-click="gotoNeighborhood()"> neighborhood </span>
-		<span ng-show="regionIsActive || subregionIsActive"> > <span ng-class="{'active-tab-link':regionIsActive}" ng-click="gotoRegion()">{{activeRegion.name}}</span></span>
-		<span ng-show="subregionIsActive"> > <span ng-class="{'active-tab-link':subregionIsActive}" ng-click="gotoSubregion()">subregion</span>
-	</h3>
-	<div ng-show="neighborhoodIsActive">
-		<h1>neighborhood</h1>
-		<button ng-repeat="r in neighborhood.regions" ng-click="gotoRegion(r)">{{r.name}}</button>
-	</div>
-	<div ng-show="regionIsActive">
-		<h1>{{activeRegion.name}}</h1>
-		<ul><li ng-repeat="s in activeRegion.subregions" zg-subregion="s"></li></ul>
-	</div>
-	<div ng-show="subregionIsActive">
-		<h1>{{activeSubregion.name}}</h1>
-		<div zg-subregion-replacement></div>
-	</div>
-</div>
-<div id="statusPanel" ng-controller="statusController">
-	<ul><li ng-repeat="s in statuses" class="status-indicator">{{s.name}}</li></ul>
-</div>
-<div id="logPanel" ng-controller="logController">
-	<ul>
-		<li ng-class="logService.newMessageClass">{{messageQueue[0]}}</li>
-		<li>{{messageQueue[1]}}</li>
-		<li>{{messageQueue[2]}}</li>
-		<li>{{messageQueue[3]}}</li>
-	</ul>
-</div>
--->
+<div>

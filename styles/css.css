@@ -1,3 +1,7 @@
+body {
+	cursor:default;
+}
+
 .location {
 	border: 1px solid black;
 	width: 160px;
@@ -6,4 +10,11 @@
 
 .active-tab {
 	color:gray;
+}
+
+li {
+	display: inline;
+	border: 1px solid black;
+	padding: 2px;
+	margin: 2px;
 }

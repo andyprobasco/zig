@@ -138,7 +138,11 @@ angular
 			if (cost.food) this.food.changeBy(-cost.food);
 			if (cost.water) this.water.changeBy(-cost.water);
 			if (cost.scrap) this.scrap.changeBy(-cost.scrap);
-
+		}
+		this.tick = function () {
+			this.food.tick();
+			this.water.tick();
+			this.scrap.tick();
 		}
 	}])
 

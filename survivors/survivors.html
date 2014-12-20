@@ -1,0 +1,11 @@
+<div ng-controller="survivorPanelController">
+	<h3>morale</h3>
+	Morale:{{morale.totalChangePerSecond}}
+	{{moraleSurvivorChange.text}}:{{moraleSurvivorChange.progress}}
+	<div id="freeSurvivors">
+		Total Survivors:{{survivors.current}}/{{survivors.max}}
+		<div>
+		Idle Survivors:{{idleSurvivors.currentWorkers}}
+		</div>
+	</div>
+</div>

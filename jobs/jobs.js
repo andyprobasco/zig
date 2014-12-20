@@ -3,7 +3,7 @@ angular
 	.service('jobService', [function(){
 
 	}])
-	.factory('jobFactory', [function(){
+	.factory('jobFactory', ['survivorService', function(survivorService){
 		var Job = function (params) {
 			this.name = params.name || 'Job';
 			this.currentWorkers = params.currentWorkers || 0;
@@ -15,7 +15,7 @@ angular
 			this.onComplete = function () {};
 		}
 
-		var defaultJob = new Job({name:'Idle Survivors', currentWorkers:10});
+		//var defaultJob = new Job({name:'Idle Survivors', currentWorkers:10});
 
 		function tick() {
 			this.progress += this.currentWorkers;
@@ -27,7 +27,7 @@ angular
 
 		function addWorker(oldJob) {
 			if (!oldJob) {
-				var oldJob = defaultJob;
+				var oldJob = survivorService.idleSurvivors;
 			}
 			if (oldJob.currentWorkers >= 1) {
 				oldJob.currentWorkers -= 1;
@@ -37,7 +37,7 @@ angular
 
 		function removeWorker() {
 			if (this.currentWorkers > 0) {
-				defaultJob.currentWorkers += 1;
+				survivorService.idleSurvivors.currentWorkers += 1;
 				this.currentWorkers -= 1;
 			}
 		}
@@ -46,8 +46,5 @@ angular
 			getInstance: function (params) {
 				return new Job(params);
 			},
-			getDefaultJob: function () {
-				return defaultJob;
-			}
 		}
 	}])

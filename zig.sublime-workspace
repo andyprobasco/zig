@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"ho",
+				"horde"
+			],
+			[
+				"horde",
+				"hordeService"
+			],
+			[
+				"moral",
+				"moraleSurvivorChange"
+			],
+			[
+				"curr",
+				"currentWorkers"
+			],
+			[
+				"re",
+				"resourceService"
+			],
+			[
 				"location",
 				"locationService"
 			],
@@ -58,14 +78,6 @@
 			[
 				"percent",
 				"percentFullPositive"
-			],
-			[
-				"moral",
-				"moraleService"
-			],
-			[
-				"re",
-				"resourceManager"
 			],
 			[
 				"pro",
@@ -167,38 +179,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "horde/horde.html",
-			"settings":
-			{
-				"buffer_size": 532,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "locations/locations.html",
-			"settings":
-			{
-				"buffer_size": 1840,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "styles/css.css",
-			"settings":
-			{
-				"buffer_size": 100,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 3189,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -252,27 +232,36 @@
 	},
 	"file_history":
 	[
-		"/Users/aprobasco/Projects/github/zig/styles/css.css",
-		"/Users/aprobasco/Projects/github/zig/horde/horde.html",
-		"/Users/aprobasco/Projects/github/zig/info/info.html",
 		"/Users/aprobasco/Projects/github/zig/game/main.html",
-		"/Users/aprobasco/Projects/github/zig/locations/locations.html",
-		"/Users/aprobasco/Projects/github/zig/locations/locations.js",
-		"/Users/aprobasco/Projects/github/zig/game/game.js",
-		"/Users/aprobasco/Projects/github/zig/locations/neighborhood.html",
-		"/Users/aprobasco/Projects/github/zig/index.html",
-		"/Users/aprobasco/Projects/github/zig/jobs/jobs.js",
 		"/Users/aprobasco/Projects/github/zig/resources/resources.js",
+		"/Users/aprobasco/Projects/github/zig/horde/horde.html",
+		"/Users/aprobasco/Projects/github/zig/app.js",
+		"/Users/aprobasco/Projects/github/zig/locations/locations.js",
+		"/Users/aprobasco/Projects/github/zig/jobs/jobs.js",
+		"/Users/aprobasco/Projects/github/zig/survivors/survivors.html",
+		"/Users/aprobasco/Projects/github/zig/survivors/survivors.js",
+		"/Users/aprobasco/Projects/github/zig/horde/horde.js",
+		"/Users/aprobasco/Projects/github/zig/game/game.js",
+		"/Users/aprobasco/Projects/github/zig/styles/css.css",
+		"/Users/aprobasco/Projects/github/zig/index.html",
+		"/Users/aprobasco/Projects/github/zig/morale/morale.html",
+		"/Users/aprobasco/Projects/github/zig/morale/morale.js",
+		"/Users/aprobasco/Projects/github/zig/README.md",
+		"/Users/aprobasco/Projects/github/zig/backup (seriously?)/scripts/resources/survivorService.js",
+		"/Users/aprobasco/Projects/github/zig/locations/locations.html",
+		"/Users/aprobasco/Projects/github/zig/info/info.html",
+		"/Users/aprobasco/Projects/github/zig/resources/resources.html",
+		"/Users/aprobasco/Projects/github/zig/info/info.js",
+		"/Users/aprobasco/Projects/github/zig/threat/threat.html",
+		"/Users/aprobasco/Projects/github/zig/horde/threat.html",
+		"/Users/aprobasco/Projects/github/zig/locations/neighborhood.html",
 		"/Users/aprobasco/Projects/github/zig/backup (seriously?)/scripts/location/location.html",
 		"/Users/aprobasco/Projects/github/zig/locations/hq.html",
 		"/Users/aprobasco/Projects/github/zig/locations/workshop.html",
 		"/Users/aprobasco/Projects/github/zig/backup (seriously?)/scripts/location/subregion/subregion.html",
-		"/Users/aprobasco/Projects/github/zig/README.md",
 		"/Users/aprobasco/Projects/github/zig/location/locations.html",
 		"/Users/aprobasco/Projects/github/zig/location/locations.js",
-		"/Users/aprobasco/Projects/github/zig/app.js",
 		"/Users/aprobasco/Projects/github/zig/backup (seriously?)/scripts/location/subregion/subregionFactory.js",
-		"/Users/aprobasco/Projects/github/zig/resources/resources.html",
 		"/Users/aprobasco/Projects/github/zig/resources/resource.html",
 		"/Users/aprobasco/Projects/github/zig/resource/resources.html",
 		"/Users/aprobasco/Projects/github/zig/backup (seriously?)/scripts/app.js",
@@ -370,16 +359,7 @@
 		"/Users/aprobasco/Projects/s7 stat tracker/s7_reporter.py.mine",
 		"/Users/aprobasco/jboss-4.2.3.GA/server/default/conf/login-config.xml",
 		"/Users/aprobasco/Downloads/Scripts.zip",
-		"/Users/aprobasco/Projects/s7 stat tracker/ADD_COLUMN_METADATA.txt",
-		"/Users/aprobasco/Library/Caches/TemporaryItems/Outlook Temp/xsrv02 scripts/archive_indexer.py",
-		"/private/var/log/scene7export.log",
-		"/Volumes/Export_Logs/scene7export.log-20140423",
-		"/Users/aprobasco/Projects/s7 stat tracker/app.properties",
-		"/Users/aprobasco/Library/Caches/TemporaryItems/Outlook Temp/app.properties[2].prd",
-		"/Users/aprobasco/Projects/s7 stat tracker/savelog.txt",
-		"/Users/aprobasco/Desktop/dsw8r",
-		"/Users/aprobasco/Projects/s7 stat tracker/getstats.py",
-		"/Users/aprobasco/Projects/sudstest.py"
+		"/Users/aprobasco/Projects/s7 stat tracker/ADD_COLUMN_METADATA.txt"
 	],
 	"find":
 	{
@@ -463,122 +443,13 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "horde/horde.html",
-					"settings":
-					{
-						"buffer_size": 532,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								45,
-								45
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "locations/locations.html",
-					"settings":
-					{
-						"buffer_size": 1840,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								757,
-								757
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "styles/css.css",
-					"settings":
-					{
-						"buffer_size": 100,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								97,
-								97
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 3,
-					"file": "README.md",
-					"settings":
-					{
-						"buffer_size": 3189,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3041,
-								3041
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2646.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -610,7 +481,7 @@
 		"cols":
 		[
 			0.0,
-			0.604582986151,
+			0.959774738536,
 			1.0
 		],
 		"rows":
