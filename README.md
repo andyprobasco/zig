@@ -5,8 +5,21 @@
 
 
 #TODO
-##Game Components
-###Controllers
+1 core mechanics
+    - zombie attack
+    - unlock new regions
+    - unlock buildings
+    - game end / restart
+    - unlock location tabs
+2 info panel
+3 tooltips
+4 draggable workers
+5 resource meters
+6 icons
+7 raid popup
+
+
+
 
 ##UI Components
 -popup (battle)
@@ -32,12 +45,7 @@
 with Beds AND high morale get new WORKER
 - explore new region
 - unlock workshop
-- 
 
-
-Every X minutes, Z attack.
-threat increases danger of attack.
-defense score stops attack.
 
 
 
@@ -48,130 +56,6 @@ Timer -
     threat increases rate of Z growth
     morale attracts survivors
 
-
-Absolute:
-# place workers to do jobs
-# manage food and water resrouces
-# penalty for running out of food/water
-
-running out of food/water kills morale
-morale dropping loses dudes (as before)
-morale and threat can go positive/negative
-
-
-UI:
-    attack meter
-    threat meter
-    morale meter
-
-    resources
-    regions
-    subregions
-
-    jobs
-
-Controllers:
-    job controller
-        assign worker
-        remove worker
-
-        get text data.
-
-    resource controller (read only)
-        get current resources
-        get max resources
-
-    meter controller (read only)
-        get current % progress
-
-content.
-how to unlock content.
-
-#build models
-#build views
-    ##design views
-        RegionMap
-            Region
-                SubregionMap
-
-#build content
-    ##design content
-
-
-
-    Drag workers from job to job
-        rest job
-        scavenge job
-        worker icon
-        scrap meter
-        threat counter
-        morale counter
-        panel
-
-Mechanics = DONE.
-
-UI design.
-Content design.
-Mechanics implementation!
-
-
-UI COMPONENTS
-
-    Horde Panel
-        Threat Meter
-        Attack Meter
-    Survivor Panel
-        Rest Job
-            Morale Meter
-        Neighborhood Panel
-            Regions: Scout > Clear > Scavenge
-        HQ Panel
-            Facilities: Upgrade, On/Off
-        Workshop Panel
-            Traps: Build
-            Upgrades: Research
-    Resource Panel
-        Resources
-    Message/Info Panel
-    Popup Panel.
-
-The player starts with the Rest Job, the neighborhood with one unlocked location, and one survivor.
-
-Morale is positive.
-Threat is non-increasing.
-
-Entity Tree
-
-Job > Worker Pool
-    > Facility
-    > Region
-
-
-
-GameService
-    timers
-LocationService
-    Neighborhood
-        regions
-    HQ
-        facilities
-    *Workshop
-        *upgrades
-HordeService
-ResourceService
-    all resources including threat, morale, survivors, defense.
-InfoService?
-PopupService
-
-
-
-Regions {
-    state:
-    scoutDifficulty: int
-    dangerLevel: int
-    threatModifier: int
-    scavengeReward:[{weight:int, reward:function}] 
-}
 
 
 #Content.
@@ -282,26 +166,5 @@ The only action a player has access to is moving workers.
 ----------------------
 |       info         |
 ----------------------
-
-ResourcePanelController
-ThreatPanelController
-MoralePanelController
-JobPanelController
-    neighborhoodPanelController
-    hqPanelController
-    workshopPanelController
-InfoPanelController
-
-ResourceService : NO DEPENDENCIES
-    resources +/-
-     < ResourceService
-MoraleService < ResourceService
-JobService < < ResourceService
-InfoService : no dependencies
-
-
-
-
-
 
 

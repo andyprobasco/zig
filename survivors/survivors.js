@@ -74,11 +74,9 @@ angular
 
 		function processMorale () {
 			var morale = resourceService.morale.totalChangePerSecond;
-			if (morale > 5) {
-				survivorService.moraleSurvivorChange.progress += 1;
-			} else if (morale < -5) {
-				survivorService.moraleSurvivorChange.progress -= 1;
-			}
+			
+			survivorService.moraleSurvivorChange.progress += morale;
+	
 
 			if (survivorService.moraleSurvivorChange.progress >= 50) {
 				if (resourceService.survivors.max > resourceService.survivors.current) {

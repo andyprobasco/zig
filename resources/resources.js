@@ -116,7 +116,7 @@ angular
 		this.defense = resourceFactory.getInstance({name:'Defense Rating', current:0, max:10000})
 		this.morale = resourceFactory.getInstance({name:'Morale', max:100,min:-100});
 		this.threat = resourceFactory.getInstance({name:'Threat', max:100,min:-100});
-		this.survivors = resourceFactory.getInstance({name:'Survivors', current:10, max:10});
+		this.survivors = resourceFactory.getInstance({name:'Survivors', current:1, max:10});
 
 		this.food = resourceFactory.getInstance({name:'Food'});
 		this.water = resourceFactory.getInstance({name:'Water'});
