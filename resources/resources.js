@@ -1,13 +1,14 @@
 angular
 	.module('resources', [])
 	.controller('resourcePanelController', ['$scope', 'resourceService', function($scope, resourceManager) {
-		$scope.threat = resourceManager.threat;
-		$scope.morale = resourceManager.morale;
-		$scope.resources = [
-			resourceManager.food,
-			resourceManager.water,
-			resourceManager.scrap
-		]
+		$scope.refresh = function () {
+			$scope.resources = [
+				resourceManager.food,
+				resourceManager.water,
+				resourceManager.scrap
+			]
+		}
+		$scope.refresh();
 	}])
 
 angular
@@ -18,16 +19,12 @@ angular
 				var resource = {};
 				resource.changePerSecondSources = [];
 				resource.tooltip = "<h3>Total: 0 p/s</h3>";
-				var multiplierSources = [];
 
 				resource.name = params.name || 'Resource';
 				resource.current = params.current || 0;
 				resource.min = params.min || 0;
 				resource.percentFull = resource.current/resource.max*100;
-				resource.max = params.max;
-				if (resource.max === undefined) {
-					resource.max = 100;
-				}
+				resource.max = params.max || 100;
 
 				resource.totalChangePerSecond = 0;
 
@@ -104,6 +101,17 @@ angular
 					}
 					this.tooltip += "<p></p>"
 				}
+
+				resource.reset = function (params) {
+					params = params || {};
+					while (this.changePerSecondSources.length > 0) {
+						this.changePerSecondSources.pop();
+					}
+					this.totalChangePerSecond = 0;
+					this.current = params.current || 0;
+					this.max = params.max || 100;
+					this.setTooltip();
+				}
 				return resource;
 			}
 		}
@@ -112,16 +120,18 @@ angular
 angular
 	.module('resources')
 	.service('resourceService', ['resourceFactory', function (resourceFactory) {
-		this.horde = resourceFactory.getInstance({name:'Horde',current:0,max:100000});
-		this.defense = resourceFactory.getInstance({name:'Defense Rating', current:0, max:10000})
-		this.morale = resourceFactory.getInstance({name:'Morale', max:100,min:-100});
-		this.threat = resourceFactory.getInstance({name:'Threat', max:100,min:-100});
-		this.survivors = resourceFactory.getInstance({name:'Survivors', current:1, max:10});
 
-		this.food = resourceFactory.getInstance({name:'Food'});
-		this.water = resourceFactory.getInstance({name:'Water'});
-		this.scrap = resourceFactory.getInstance({name:'Scrap', current:100, max:100});
-		
+		this.init = function (params) {
+			this.horde.reset({max:100000});
+			this.defense.reset({max:10000});// = resourceFactory.getInstance({name:'Defense Rating', current:0, max:10000})
+			this.morale.reset({max:100,min:-100});// = resourceFactory.getInstance({name:'Morale', max:100,min:-100});
+			this.threat.reset({max:100,min:-100});// = resourceFactory.getInstance({name:'Threat', max:100,min:-100});
+			this.survivors.reset({current:4, max:10});// = resourceFactory.getInstance({name:'Survivors', current:4, max:10});
+			this.food.reset();// = resourceFactory.getInstance({name:'Food'});
+			this.water.reset();// = resourceFactory.getInstance({name:'Water'});
+			this.scrap.reset();// = resourceFactory.getInstance({name:'Scrap', current:0, max:100});
+		}
+
 		this.canPayCost = function (cost) {
 			if (cost.survivors && cost.survivors > this.survivors.current) return false;
 			if (cost.morale && cost.morale > this.morale.current) return false;
@@ -144,6 +154,16 @@ angular
 			this.water.tick();
 			this.scrap.tick();
 		}
+
+		this.horde = resourceFactory.getInstance({name:'Horde'});
+		this.defense = resourceFactory.getInstance({name:'Defense Rating'})
+		this.morale = resourceFactory.getInstance({name:'Morale'});
+		this.threat = resourceFactory.getInstance({name:'Threat'});
+		this.survivors = resourceFactory.getInstance({name:'Survivors'});
+		this.food = resourceFactory.getInstance({name:'Food'});
+		this.water = resourceFactory.getInstance({name:'Water'});
+		this.scrap = resourceFactory.getInstance({name:'Scrap'});
+		this.init();
 	}])
 
 angular

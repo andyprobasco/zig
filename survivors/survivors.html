@@ -1,11 +1,15 @@
-<div ng-controller="survivorPanelController">
-	<h3>morale</h3>
-	Morale:{{morale.totalChangePerSecond}}
-	{{moraleSurvivorChange.text}}:{{moraleSurvivorChange.progress}}
-	<div id="freeSurvivors">
+<div id="survivorPanel" ng-controller="survivorPanelController">
+	<h3><button ng-click="refreshSurvivors();">morale</button></h3>
+	<div style="border:1px solid black;margin:2px;padding:2px;">
+		Morale:{{morale.totalChangePerSecond}}
+		{{moraleSurvivorChange.text}}:{{moraleSurvivorChange.progress}}
 		Total Survivors:{{survivors.current}}/{{survivors.max}}
+	</div>
+	<div style="border:1px solid black;margin:2px;padding:2px;" id="freeSurvivors" zg-droppable drop="handleDrop">
 		<div>
 		Idle Survivors:{{idleSurvivors.currentWorkers}}
 		</div>
+		<div class="worker" ng-show="idleSurvivors.currentWorkers > 0" zg-draggable id="freeSurvivors-worker"></div>
+
 	</div>
 </div>

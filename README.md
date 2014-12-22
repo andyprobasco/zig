@@ -5,26 +5,24 @@
 
 
 #TODO
-1 core mechanics
-    - zombie attack
-    - unlock new regions
-    - unlock buildings
-    - game end / restart
-    - unlock location tabs
+
 2 info panel
 3 tooltips
-4 draggable workers
+
 5 resource meters
 6 icons
-7 raid popup
 
-
+* "Disabled" job state
+* Max Workers
 
 
 ##UI Components
 -popup (battle)
 -popup (tutorial)
 -popup (information)
+-popup (on region or subregion unlock)
+
+
 
 ##mechanical walkthrough
 - battle popup (dead!)
@@ -124,6 +122,9 @@ Upgrades:
         Barricade
         Watchtower
 
+0.15
+    unlock buildings via scavenge finds
+
 0.2 workshop
     Regions
         Garage > workbench
@@ -131,6 +132,9 @@ Upgrades:
         workbench
     Upgrades
         Traps
+
+0.25 scavenge pack
+    make scavenging worse over time.
 
 0.3 power
     Regions

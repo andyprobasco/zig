@@ -1,20 +1,38 @@
 angular
 	.module('survivors', [])
-	.controller('survivorPanelController', ['$scope', 'resourceService', 'survivorService', function ($scope, resourceService, survivorService) {
-		$scope.survivors = resourceService.survivors;
-		$scope.idleSurvivors = survivorService.idleSurvivors;
-		$scope.morale = resourceService.morale;
-		$scope.moraleSurvivorChange = survivorService.moraleSurvivorChange;
+	.controller('survivorPanelController', ['$scope', 'resourceService', 'survivorService', 'locationService', function ($scope, resourceService, survivorService, locationService) {
+
+		$scope.refresh = function () {
+			$scope.survivors = resourceService.survivors;
+			$scope.idleSurvivors = survivorService.idleSurvivors;
+			$scope.morale = resourceService.morale;
+			$scope.moraleSurvivorChange = survivorService.moraleSurvivorChange;
+		}
+
+		$scope.refresh();
+
+		$scope.handleDrop = function (itemID, binID) {
+			locationService.transferWorker (itemID, binID);
+		}
+
 	}])
 	.service('survivorService', ['resourceService', function (resourceService) {
-		var survivorService = this;
 		this.idleSurvivors = {
-			currentWorkers: resourceService.survivors.current
+			currentWorkers: 0
 		}
 		this.moraleSurvivorChange = {
 			text: "Attracting New Survivors",
 			progress: 0
 		}
+
+
+		this.init = function () {
+			this.idleSurvivors.currentWorkers = resourceService.survivors.current;
+			this.moraleSurvivorChange.text = "Attracting New Survivors";
+			this.moraleSurvivorChange.progress = 0;
+		}
+
+		var survivorService = this;
 		
 		this.tick = function () {
 			consumeResources();
@@ -110,5 +128,98 @@ angular
 			}*/
 		}
 
-	}]);
+	}])
+	.directive('zgDraggable', function () {
+		return function (scope, element) {
+			var el = element[0];
+			el.draggable = true;
 
+			el.addEventListener(
+				'dragstart',
+				function(e) {
+					e.dataTransfer.effectAllowed = 'move';
+					console.log("dragging " + this.id);
+					console.log(this);
+					e.dataTransfer.setData('Text', this.id);
+					this.classList.add('drag');
+					return false;
+				},
+				false
+			);
+
+			el.addEventListener(
+				'dragend',
+				function(e) {
+					this.classList.remove('drag');
+					return false;
+				},
+				false
+			);
+		}
+	})
+	.directive('zgDroppable', function () {
+		return {
+			scope: {
+				drop: '&' ,
+				bin: '='
+			},
+			link: function (scope, element) {
+				var el = element[0];
+				el.addEventListener(
+					'dragover',
+					function(e) {
+						e.dataTransfer.dropEffect = 'move';
+						// allows us to drop
+						if (e.preventDefault) e.preventDefault();
+						this.classList.add('over');
+						return false;
+					},
+					false
+				);
+
+				el.addEventListener(
+					'dragenter',
+					function(e) {
+						this.classList.add('over');
+						return false;
+					},
+					false
+				);
+
+				el.addEventListener(
+					'dragleave',
+					function(e) {
+						this.classList.remove('over');
+						return false;
+					},
+					false
+				);
+
+				el.addEventListener(
+					'drop',
+					function(e) {
+						// Stops some browsers from redirecting.
+						if (e.stopPropagation) {e.stopPropagation();}
+						if (e.preventDefault) {e.preventDefault();}
+
+						this.classList.remove('over');
+
+						var binId = this.id;
+						var item = document.getElementById(e.dataTransfer.getData('Text'));
+						console.log(e.dataTransfer.getData('Text'));
+						//this.appendChild(item); //
+						scope.$apply(function (scope) {
+							var fn = scope.drop();
+							if ('undefined' !== typeof fn) {
+								fn(item.id, binId);
+							}
+						});
+
+						return false;
+					},
+					false
+				);
+
+			}
+		}
+	})

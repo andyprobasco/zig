@@ -1,30 +1,37 @@
 angular
 	.module('game', [])
 	.service('gameService', ['$interval', 'resourceService', 'locationService', 'survivorService', 'infoService', 'hordeService', function ($interval, resourceService, locationService, survivorService, infoService, hordeService) {
+
 		function gameTick(){
-			ticktock();
 			locationService.tick();
 			hordeService.tick();
 			survivorService.tick();
 			resourceService.tick();
 		}
-		this.launchGameTick = function () {
+
+		function init () {
+			locationService.init(); //
+			resourceService.init(); //
+			hordeService.init(); 
+			survivorService.init(); 
+			infoService.init(); 
+		}
+
+		function launchGameTick () {
 			$interval(gameTick, 1000);
 		}
-		this.launchGameTick();
 
-
-		var x = 1;
-		function ticktock () {
-			if (x) {
-				infoService.setMessage("tick");
-				x=0;
-			} else {
-				infoService.setMessage("tock");
-				x=1;
-			}
-
+		this.newGame = function () {
+			init();
 		}
+
+		init();
+		launchGameTick();
+
 	}])
-	.controller('gameController', ['$scope', 'gameService', function ($scope, gameManager){
+	.controller('gameController', ['$scope', 'gameService', 'resourceService', 'infoService', function ($scope, gameService, resourceService, infoService){
+		$scope.newGame = gameService.newGame;
+		$scope.popUp = function () {
+			infoService.openPopUp('testing popup');
+		}
 	}])

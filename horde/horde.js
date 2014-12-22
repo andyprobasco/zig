@@ -1,12 +1,15 @@
 angular
 	.module('horde', [])
 	.controller('hordePanelController', ['$scope', 'resourceService', 'hordeService', function ($scope, resourceService, hordeService) {
-		$scope.attackProgress = hordeService.attackProgress;
-		$scope.horde = hordeService.horde;
-		$scope.threat = resourceService.threat;
-		$scope.defense = resourceService.defense;
+		$scope.refresh = function () {
+			$scope.attackProgress = hordeService.attackProgress;
+			$scope.horde = hordeService.horde;
+			$scope.threat = resourceService.threat;
+			$scope.defense = resourceService.defense;
+		}
+		$scope.refresh();
 	}])
-	.service('hordeService', ['resourceService', function (resourceService) {
+	.service('hordeService', ['resourceService', 'infoService', function (resourceService, infoService) {
 		var hordeService = this;
 		this.attackProgress = {
 			attackIn: 100
@@ -15,6 +18,12 @@ angular
 		this.horde = {
 			size: 0,
 			nextZombieProgress: 0
+		}
+
+		this.init = function () {
+			this.attackProgress.attackIn = 100;
+			this.horde.size = 0;
+			this.horde.nextZombieProgress = 0;
 		}
 
 		this.tick = function () {
@@ -42,6 +51,11 @@ angular
 		}
 
 		function launchAttack () {
+			if (hordeService.horde.size > resourceService.defense.count) {
+				infoService.setMessage("Zombies attacked: you lost!");
+			} else {
+				infoService.setMessage("Zombies attacked: you won!");
+			}
 			hordeService.horde.size = 0;
 			hordeService.horde.nextZombieProgress = 0;
 		}
