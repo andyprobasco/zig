@@ -7,6 +7,7 @@
 				<button ng-click='s.removeWorker()'>-</button>{{s.currentWorkers}}/{{s.workerMax}}<button ng-click='s.addWorker();'>+</button>
 				<br>
 				Progress:{{s.progress}}/{{s.progressNeeded}}
+				<div zg-status-bar percent-full="r.percentProgress"></div>
 				<br>
 				<div class="worker" ng-show="s.currentWorkers > 0" zg-draggable id="subregion-{{$parent.$index}}-{{$index}}-worker"></div>
 

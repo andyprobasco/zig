@@ -39,6 +39,13 @@ angular
 			calculateMorale();
 			processMorale();
 		}
+		this.microTick = function () {
+			processMorale();
+		}
+		this.macroTick = function () {
+			consumeResources();
+			calculateMorale();
+		}
 
 		function consumeResources () {
 			var survivors = resourceService.survivors.current;

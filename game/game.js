@@ -2,6 +2,27 @@ angular
 	.module('game', [])
 	.service('gameService', ['$interval', 'resourceService', 'locationService', 'survivorService', 'infoService', 'hordeService', function ($interval, resourceService, locationService, survivorService, infoService, hordeService) {
 
+		var t = 0;
+		function microTick(){
+			//progress location jobs
+			//progress morale
+			//progress threat
+			//progress attack
+
+			locationService.tick();
+			hordeService.tick();
+			survivorService.microTick();
+
+			if (t++ > 10) {
+				t = 0;
+				macroTick();
+			}
+
+		}
+		function macroTick(){
+			survivorService.macroTick();
+			resourceService.tick();
+		}
 		function gameTick(){
 			locationService.tick();
 			hordeService.tick();
@@ -10,6 +31,7 @@ angular
 		}
 
 		function init () {
+			t = 0;
 			locationService.init(); //
 			resourceService.init(); //
 			hordeService.init(); 
@@ -18,7 +40,8 @@ angular
 		}
 
 		function launchGameTick () {
-			$interval(gameTick, 1000);
+			//$interval(gameTick, 1000);
+			$interval(microTick, 100);
 		}
 
 		this.newGame = function () {

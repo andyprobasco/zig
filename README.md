@@ -10,10 +10,10 @@
 3 tooltips
 
 5 resource meters
-6 icons
 
-* "Disabled" job state
-* Max Workers
+* enhanced worker icons (show multiples) 
+* Content - buildings
+* morale loss for proportion of starving / thirsty survivors, not just fixed #
 
 
 ##UI Components
@@ -21,8 +21,6 @@
 -popup (tutorial)
 -popup (information)
 -popup (on region or subregion unlock)
-
-
 
 ##mechanical walkthrough
 - battle popup (dead!)
@@ -39,21 +37,6 @@
     + subregion map
     + "Scavenge" job ("workshop/patrol" remaining)
 - repair old subregions OR explore new region OR build up supplies
-
-with Beds AND high morale get new WORKER
-- explore new region
-- unlock workshop
-
-
-
-
-Timer - 
-    attack gets closer to happening
-    jobs get closer to being finished
-    basic jobs add to threat rate/morale rate
-    threat increases rate of Z growth
-    morale attracts survivors
-
 
 
 #Content.
