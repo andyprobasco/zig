@@ -1,9 +1,8 @@
 <div id="hordePanel" ng-controller="hordePanelController">
-	<h3>horde</h3>
-	<div style="border:1px solid black;margin:2px;padding:2px;">
+	<div class="wide-info-panel">
 		{{horde.size}} Zombies vs {{defense.totalChangePerSecond}} Defense; Attack in: {{attackProgress.attackIn}}
 	</div>
-	<div style="border:1px solid black;margin:2px;padding:2px;">
+	<div class="wide-info-panel">
 		Threat: {{threat.totalChangePerSecond}}; Next Zombie Progress {{horde.nextZombieProgress}}
 	</div>
 </div>
