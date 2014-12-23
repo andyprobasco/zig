@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"sur",
+				"survivorsToUnlock"
+			],
+			[
+				"info",
+				"infoService"
+			],
+			[
+				"refre",
+				"refreshControllers"
+			],
+			[
+				"subregion",
+				"subregionService"
+			],
+			[
+				"garden",
+				"gardenFactory"
+			],
+			[
 				"ho",
 				"horde"
 			],
@@ -50,10 +70,6 @@
 			[
 				"to",
 				"totalChangePerSecond"
-			],
-			[
-				"sur",
-				"survivors"
 			],
 			[
 				"resou",
@@ -179,6 +195,62 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 2835,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/resources.js",
+			"settings":
+			{
+				"buffer_size": 6004,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "survivors/survivors.js",
+			"settings":
+			{
+				"buffer_size": 6026,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "game/game.js",
+			"settings":
+			{
+				"buffer_size": 1770,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "locations/subregions.js",
+			"settings":
+			{
+				"buffer_size": 2925,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "locations/regions.js",
+			"settings":
+			{
+				"buffer_size": 4132,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "locations/hq.html",
+			"settings":
+			{
+				"buffer_size": 677,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -232,37 +304,41 @@
 	},
 	"file_history":
 	[
-		"/Users/aprobasco/Projects/github/zig/game/main.html",
-		"/Users/aprobasco/Projects/github/zig/resources/resources.js",
-		"/Users/aprobasco/Projects/github/zig/horde/horde.html",
-		"/Users/aprobasco/Projects/github/zig/app.js",
-		"/Users/aprobasco/Projects/github/zig/locations/locations.js",
-		"/Users/aprobasco/Projects/github/zig/jobs/jobs.js",
-		"/Users/aprobasco/Projects/github/zig/survivors/survivors.html",
-		"/Users/aprobasco/Projects/github/zig/survivors/survivors.js",
-		"/Users/aprobasco/Projects/github/zig/horde/horde.js",
+		"/Users/aprobasco/Projects/github/zig/locations/neighborhood.html",
 		"/Users/aprobasco/Projects/github/zig/game/game.js",
+		"/Users/aprobasco/Projects/github/zig/locations/hq.html",
 		"/Users/aprobasco/Projects/github/zig/styles/css.css",
+		"/Users/aprobasco/Projects/github/zig/resources/resource.html",
+		"/Users/aprobasco/Projects/github/zig/survivors/survivors.js",
+		"/Users/aprobasco/Projects/github/zig/locations/regions.js",
+		"/Users/aprobasco/Projects/github/zig/game/adminPanel.html",
 		"/Users/aprobasco/Projects/github/zig/index.html",
-		"/Users/aprobasco/Projects/github/zig/morale/morale.html",
-		"/Users/aprobasco/Projects/github/zig/morale/morale.js",
+		"/Users/aprobasco/Projects/github/zig/jobs/jobs.js",
+		"/Users/aprobasco/Projects/github/zig/info/popup.html",
+		"/Users/aprobasco/Projects/github/zig/resources/resources.html",
+		"/Users/aprobasco/Projects/github/zig/survivors/survivors.html",
+		"/Users/aprobasco/Projects/github/zig/resources/resources.js",
+		"/Users/aprobasco/Projects/github/zig/locations/locations.js",
 		"/Users/aprobasco/Projects/github/zig/README.md",
-		"/Users/aprobasco/Projects/github/zig/backup (seriously?)/scripts/resources/survivorService.js",
+		"/Users/aprobasco/Projects/github/zig/info/info.js",
+		"/Users/aprobasco/Projects/github/zig/game/main.html",
+		"/Users/aprobasco/Projects/github/zig/locations/subregions.js",
+		"/Users/aprobasco/Projects/github/zig/horde/horde.js",
+		"/Users/aprobasco/Projects/github/zig/horde/horde.html",
 		"/Users/aprobasco/Projects/github/zig/locations/locations.html",
 		"/Users/aprobasco/Projects/github/zig/info/info.html",
-		"/Users/aprobasco/Projects/github/zig/resources/resources.html",
-		"/Users/aprobasco/Projects/github/zig/info/info.js",
+		"/Users/aprobasco/Projects/github/zig/app.js",
+		"/Users/aprobasco/Projects/github/zig/morale/morale.html",
+		"/Users/aprobasco/Projects/github/zig/morale/morale.js",
+		"/Users/aprobasco/Projects/github/zig/backup (seriously?)/scripts/resources/survivorService.js",
 		"/Users/aprobasco/Projects/github/zig/threat/threat.html",
 		"/Users/aprobasco/Projects/github/zig/horde/threat.html",
-		"/Users/aprobasco/Projects/github/zig/locations/neighborhood.html",
 		"/Users/aprobasco/Projects/github/zig/backup (seriously?)/scripts/location/location.html",
-		"/Users/aprobasco/Projects/github/zig/locations/hq.html",
 		"/Users/aprobasco/Projects/github/zig/locations/workshop.html",
 		"/Users/aprobasco/Projects/github/zig/backup (seriously?)/scripts/location/subregion/subregion.html",
 		"/Users/aprobasco/Projects/github/zig/location/locations.html",
 		"/Users/aprobasco/Projects/github/zig/location/locations.js",
 		"/Users/aprobasco/Projects/github/zig/backup (seriously?)/scripts/location/subregion/subregionFactory.js",
-		"/Users/aprobasco/Projects/github/zig/resources/resource.html",
 		"/Users/aprobasco/Projects/github/zig/resource/resources.html",
 		"/Users/aprobasco/Projects/github/zig/backup (seriously?)/scripts/app.js",
 		"/Users/aprobasco/Projects/github/zig/css/css.css",
@@ -355,11 +431,7 @@
 		"/Users/aprobasco/Downloads/Clickpocalypse Source/Clickpocalypse_source/default_big.html",
 		"/Users/aprobasco/jboss/smartnetexperiences/jboss-5.0.1.GA/server/default/conf/smartnet-experiences-configuration.properties",
 		"/Volumes/Archive_extracts/moveit.sh",
-		"/Users/aprobasco/Desktop/SmartNet Deployment Instructions",
-		"/Users/aprobasco/Projects/s7 stat tracker/s7_reporter.py.mine",
-		"/Users/aprobasco/jboss-4.2.3.GA/server/default/conf/login-config.xml",
-		"/Users/aprobasco/Downloads/Scripts.zip",
-		"/Users/aprobasco/Projects/s7 stat tracker/ADD_COLUMN_METADATA.txt"
+		"/Users/aprobasco/Desktop/SmartNet Deployment Instructions"
 	],
 	"find":
 	{
@@ -377,6 +449,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"adminPanel",
 			"style",
 			"console.",
 			"math.pow",
@@ -443,8 +516,199 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 2835,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1914,
+								1914
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1458.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/resources.js",
+					"settings":
+					{
+						"buffer_size": 6004,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4504,
+								4504
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1697.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "survivors/survivors.js",
+					"settings":
+					{
+						"buffer_size": 6026,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3648,
+								3648
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 16.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "game/game.js",
+					"settings":
+					{
+						"buffer_size": 1770,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1754,
+								1754
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 183.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "locations/subregions.js",
+					"settings":
+					{
+						"buffer_size": 2925,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2554,
+								2554
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "locations/regions.js",
+					"settings":
+					{
+						"buffer_size": 4132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1317.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "locations/hq.html",
+					"settings":
+					{
+						"buffer_size": 677,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								482,
+								482
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
@@ -481,7 +745,7 @@
 		"cols":
 		[
 			0.0,
-			0.959774738536,
+			0.827687689993,
 			1.0
 		],
 		"rows":

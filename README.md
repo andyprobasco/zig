@@ -9,8 +9,6 @@
 2 info panel
 3 tooltips
 
-5 resource meters
-
 * enhanced worker icons (show multiples) 
 * Content - buildings
 * morale loss for proportion of starving / thirsty survivors, not just fixed #

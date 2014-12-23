@@ -116,9 +116,6 @@ angular
 			}
 		}
 
-		function addNewSurvivor() {
-			resourceService.survivors.a
-		}
 
 		function pullAWorker () {
 			/*var regions = locationManager.neighborhood.regions

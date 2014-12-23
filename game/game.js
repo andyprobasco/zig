@@ -52,9 +52,20 @@ angular
 		launchGameTick();
 
 	}])
-	.controller('gameController', ['$scope', 'gameService', 'resourceService', 'infoService', function ($scope, gameService, resourceService, infoService){
+	.controller('gameController', ['$scope', 'gameService', 'resourceService', 'infoService', 'survivorService', function ($scope, gameService, resourceService, infoService, survivorService){
 		$scope.newGame = gameService.newGame;
 		$scope.popUp = function () {
 			infoService.openPopUp('testing popup');
+		}
+		$scope.maxResources = function () {
+			resourceService.food.changeBy(1000000);
+			resourceService.water.changeBy(1000000);
+			resourceService.scrap.changeBy(1000000);
+		}
+
+		$scope.newSurvivor = function () {
+			resourceService.survivors.changeMaxBy(1);
+			resourceService.survivors.changeBy(1);
+			survivorService.idleSurvivors.currentWorkers += 1;
 		}
 	}])

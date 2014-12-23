@@ -12,17 +12,17 @@ angular
 			this.regions.push([]);
 			this.regions.push([]);
 
-			this.regions[0].push(warehouseFactory.getInstance());
-			this.regions[0].push(warehouseFactory.getInstance());
-			this.regions[0].push(warehouseFactory.getInstance());
+			this.regions[0].push(warehouseFactory.getInstance(2));
+			this.regions[0].push(warehouseFactory.getInstance(3));
+			this.regions[0].push(warehouseFactory.getInstance(4));
 
-			this.regions[1].push(warehouseFactory.getInstance());
+			this.regions[1].push(warehouseFactory.getInstance(1));
 			this.regions[1].push(hqFactory.getInstance());
-			this.regions[1].push(warehouseFactory.getInstance());
+			this.regions[1].push(warehouseFactory.getInstance(5));
 
-			this.regions[2].push(warehouseFactory.getInstance());
-			this.regions[2].push(warehouseFactory.getInstance());
-			this.regions[2].push(warehouseFactory.getInstance());
+			this.regions[2].push(warehouseFactory.getInstance(6));
+			this.regions[2].push(warehouseFactory.getInstance(7));
+			this.regions[2].push(warehouseFactory.getInstance(8));
 		}
 
 		this.tick = function () {
@@ -129,12 +129,13 @@ angular
 		}	
 	}])
 	.factory('warehouseFactory', ['regionFactory', 'resourceService', function (regionFactory, resourceService) {
-		function buildWarehouse () {
+		function buildWarehouse (survivorsToUnlock) {
+			survivorsToUnlock = survivorsToUnlock || 1;
 			var warehouse = regionFactory.getInstance({
 				name: 'Warehouse',
 				defaultState: 'Locked',
 				checkForUnlock: function () {
-					if (this.state === "Locked" && resourceService.survivors.current > 3) {
+					if (this.state === "Locked" && resourceService.survivors.current >= survivorsToUnlock) {
 						this.changeState('Scouting');
 					}
 				}
@@ -142,8 +143,8 @@ angular
 			return warehouse;
 		}
 		return {
-			getInstance: function () {
-				return buildWarehouse();
+			getInstance: function (survivorsToUnlock) {
+				return buildWarehouse(survivorsToUnlock);
 			}
 		}
 	}])

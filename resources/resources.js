@@ -126,7 +126,7 @@ angular
 			this.defense.reset({max:10000});// = resourceFactory.getInstance({name:'Defense Rating', current:0, max:10000})
 			this.morale.reset({max:100,min:-100});// = resourceFactory.getInstance({name:'Morale', max:100,min:-100});
 			this.threat.reset({max:100,min:-100});// = resourceFactory.getInstance({name:'Threat', max:100,min:-100});
-			this.survivors.reset({current:4, max:10});// = resourceFactory.getInstance({name:'Survivors', current:4, max:10});
+			this.survivors.reset({current:1, max:2});// = resourceFactory.getInstance({name:'Survivors', current:4, max:10});
 			this.food.reset();// = resourceFactory.getInstance({name:'Food'});
 			this.water.reset();// = resourceFactory.getInstance({name:'Water'});
 			this.scrap.reset();// = resourceFactory.getInstance({name:'Scrap', current:0, max:100});
