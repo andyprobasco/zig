@@ -12,17 +12,17 @@ angular
 			this.regions.push([]);
 			this.regions.push([]);
 
-			this.regions[0].push(warehouseFactory.getInstance(2));
 			this.regions[0].push(warehouseFactory.getInstance(3));
 			this.regions[0].push(warehouseFactory.getInstance(4));
+			this.regions[0].push(warehouseFactory.getInstance(5));
 
-			this.regions[1].push(warehouseFactory.getInstance(1));
+			this.regions[1].push(warehouseFactory.getInstance(2));
 			this.regions[1].push(hqFactory.getInstance());
-			this.regions[1].push(warehouseFactory.getInstance(5));
+			this.regions[1].push(warehouseFactory.getInstance(6));
 
-			this.regions[2].push(warehouseFactory.getInstance(6));
 			this.regions[2].push(warehouseFactory.getInstance(7));
 			this.regions[2].push(warehouseFactory.getInstance(8));
+			this.regions[2].push(warehouseFactory.getInstance(9));
 		}
 
 		this.tick = function () {
