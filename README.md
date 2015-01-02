@@ -1,24 +1,17 @@
 #zig
 ##zombie incremental game
 
-`ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"`
-
+`
+ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
+`
 
 #TODO
 
-2 info panel
-3 tooltips
 
 * enhanced worker icons (show multiples) 
 * Content - buildings
 * morale loss for proportion of starving / thirsty survivors, not just fixed #
-
-
-##UI Components
--popup (battle)
--popup (tutorial)
--popup (information)
--popup (on region or subregion unlock)
+* show info for each card in info area
 
 ##mechanical walkthrough
 - battle popup (dead!)
@@ -91,7 +84,7 @@ Upgrades:
 0.1 alpha
     Regions
         Compound
-        Warehouse > generic scavenge
+        Warehouse > generic Scavenge
     Subregions
         Resource Facilities
             Vegetable Garden
@@ -129,9 +122,6 @@ Upgrades:
         power tools > powered workshop
 
 
-
-
-
 The only action a player has access to is moving workers.
 - each job only has one result?
 - upgrade building vs work at building.
@@ -151,5 +141,3 @@ The only action a player has access to is moving workers.
 ----------------------
 |       info         |
 ----------------------
-
-

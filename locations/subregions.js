@@ -1,6 +1,6 @@
 angular
 	.module('locations')
-	.service('subregionService', ['subregionFactory', 'gardenFactory', function (subregionFactory, gardenFactory) {
+	.service('subregionService', ['subregionFactory', 'gardenFactory', 'waterCollectorFactory', 'storageFactory', 'bedsFactory', function (subregionFactory, gardenFactory, waterCollectorFactory, storageFactory, bedsFactory) {
 		this.subregions = [];
 
 		this.tick = function () {
@@ -20,16 +20,16 @@ angular
 			this.subregions.push([]);
 
 			this.subregions[0].push(gardenFactory.getInstance());
-			this.subregions[0].push(subregionFactory.getInstance());
-			this.subregions[0].push(subregionFactory.getInstance());
+			this.subregions[0].push(waterCollectorFactory.getInstance());
+			//this.subregions[0].push(subregionFactory.getInstance());
 
-			this.subregions[1].push(subregionFactory.getInstance());
-			this.subregions[1].push(subregionFactory.getInstance());
-			this.subregions[1].push(subregionFactory.getInstance());
+			this.subregions[1].push(storageFactory.getInstance());
+			this.subregions[1].push(bedsFactory.getInstance());
+			//this.subregions[1].push(subregionFactory.getInstance());
 
-			this.subregions[2].push(subregionFactory.getInstance());
-			this.subregions[2].push(subregionFactory.getInstance());
-			this.subregions[2].push(subregionFactory.getInstance());
+			//this.subregions[2].push(subregionFactory.getInstance());
+			//this.subregions[2].push(subregionFactory.getInstance());
+			//this.subregions[2].push(subregionFactory.getInstance());
 
 			this.subregions.unlocked = false;
 		}
@@ -72,16 +72,16 @@ angular
 				return buildSubregion(params);
 			}
 		}
-
 	}])
 	.factory('gardenFactory', ['subregionFactory', 'resourceService', function (subregionFactory, resourceService) {
 		return {
 			getInstance: function () {
 				params = {};
 				params.name = "Vegetable Garden";
-				params.updateLevel = function () {
-					var level = this.level;
-					this.states['Upgrading'].progressNeeded = 5 * level;
+				params.updateLevel = function (level) {
+					level =  level || this.level;
+					this.level = level;
+					this.states['Upgrading'].progressNeeded = 5 * level * level;
 					if (this.state == 'Upgrading') {
 						this.progressNeeded = this.states['Upgrading'].progressNeeded;
 					}
@@ -89,8 +89,84 @@ angular
 					this.percentProgress = this.progress/this.progressNeeded*100;
 				}
 				params.progressNeededToBuild = 100;
-				var garden = subregionFactory.getInstance(params);
-				return garden;
+
+				return subregionFactory.getInstance(params);
 			}
 		}
 	}])
+	.factory('waterCollectorFactory', ['subregionFactory', 'resourceService', function (subregionFactory, resourceService) {
+		return {
+			getInstance: function () {
+				params = {};
+				params.name = "Water Collector";
+
+				params.updateLevel = function (level) {
+					level = level || this.level;
+					this.level = level;
+					this.states['Upgrading'].progressNeeded = 5 * level * level;
+					if (this.state == 'Upgrading') {
+						this.progressNeeded = this.states['Upgrading'].progressNeeded;
+					}
+
+					resourceService.water.setChangePerSecond(level, 'Water Collector');
+					this.percentProgress = this.progress/this.progressNeeded*100;
+				}
+				params.progressNeededToBuild = 100;
+
+				return subregionFactory.getInstance(params);
+			}
+		}
+	}])
+	.factory('storageFactory', ['subregionFactory', 'resourceService', function (subregionFactory, resourceService) {
+		return {
+			getInstance: function () {
+				params = {};
+				params.name = "Storage";
+
+				params.updateLevel = function (level) {
+					level = level || this.level;
+					this.level = level;
+					this.states['Upgrading'].progressNeeded = 5 * level * level;
+					if (this.state == 'Upgrading') {
+						this.progressNeeded = this.states['Upgrading'].progressNeeded;
+					}
+					resourceService.food.max = (level + 1) * 100;
+					resourceService.water.max = (level + 1) * 100;
+					resourceService.scrap.max = (level + 1) * 100;
+
+					this.percentProgress = this.progress/this.progressNeeded*100;
+				}
+				params.progressNeededToBuild = 100;
+
+
+				return subregionFactory.getInstance(params);
+			}
+		}
+	}])
+	.factory('bedsFactory', ['subregionFactory', 'resourceService', function (subregionFactory, resourceService) {
+		return {
+			getInstance: function () {
+				params = {};
+				params.name = "Beds";
+
+
+				params.updateLevel = function (level) {
+					level = level || this.level;
+					this.level = level;
+					this.states['Upgrading'].progressNeeded = 5 * level * level;
+					if (this.state == 'Upgrading') {
+						this.progressNeeded = this.states['Upgrading'].progressNeeded;
+					}
+					resourceService.survivors.max = level + 1;
+
+					this.percentProgress = this.progress/this.progressNeeded*100;
+				}
+				params.progressNeededToBuild = 100;
+
+
+
+				return subregionFactory.getInstance(params);
+			}
+		}
+	}])
+

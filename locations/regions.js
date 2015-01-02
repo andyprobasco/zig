@@ -12,17 +12,17 @@ angular
 			this.regions.push([]);
 			this.regions.push([]);
 
-			this.regions[0].push(warehouseFactory.getInstance(2));
 			this.regions[0].push(warehouseFactory.getInstance(3));
 			this.regions[0].push(warehouseFactory.getInstance(4));
+			this.regions[0].push(warehouseFactory.getInstance(5));
 
-			this.regions[1].push(warehouseFactory.getInstance(1));
+			this.regions[1].push(warehouseFactory.getInstance(2));
 			this.regions[1].push(hqFactory.getInstance());
-			this.regions[1].push(warehouseFactory.getInstance(5));
+			this.regions[1].push(warehouseFactory.getInstance(6));
 
-			this.regions[2].push(warehouseFactory.getInstance(6));
 			this.regions[2].push(warehouseFactory.getInstance(7));
 			this.regions[2].push(warehouseFactory.getInstance(8));
+			this.regions[2].push(warehouseFactory.getInstance(9));
 		}
 
 		this.tick = function () {
@@ -42,7 +42,7 @@ angular
 			params.states = params.states || {};
 			if (!params.states["Scouting"]) {
 				params.states["Scouting"] = {
-					progressNeeded: 3,
+					progressNeeded: 75,
 					onComplete: function () {
 						this.changeState("Clearing");
 					}
@@ -50,7 +50,7 @@ angular
 			}
 			if (!params.states["Clearing"]) {
 				params.states["Clearing"] = {
-					progressNeeded: 5,
+					progressNeeded: 150,
 					onComplete: function () {
 						this.changeState("Scavenging");
 					}
@@ -58,7 +58,7 @@ angular
 			}
 			if (!params.states["Scavenging"]) {
 				params.states["Scavenging"] = {
-					progressNeeded: 5,
+					progressNeeded: 200,
 					onComplete: function () {
 						this.getScavengeReward();
 					}
@@ -106,14 +106,14 @@ angular
 				defaultState: 'Scouting',
 				states: {
 					'Clearing': {
-						progressNeeded: 5,
+						progressNeeded: 150,
 						onComplete: function () {
 							this.changeState("Patrolling");
 							subregionService.subregions.unlocked = true;
 						}
 					},
 					'Patrolling': {
-						progressNeeded: 1,
+						progressNeeded: 0,
 						onWorkerUpdate: function () {
 							resourceService.threat.setChangePerSecond(-this.currentWorkers, 'Patrolling Survivors');
 						}
