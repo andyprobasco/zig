@@ -4,9 +4,8 @@
 			<div ng-hide="s.state == 'Locked'" class="location" zg-droppable drop="handleDrop" id="subregion-{{$parent.$index}}-{{$index}}">
 				{{s.name}} {{s.level}} ({{s.state}}):
 				<br>
-				<button ng-click='s.removeWorker()'>-</button>{{s.currentWorkers}}/{{s.workerMax}}<button ng-click='s.addWorker();'>+</button>
+				<button ng-click='s.removeWorker()'>-</button>{{s.currentWorkers}}<button ng-click='s.addWorker();'>+</button>
 				<br>
-				Progress:{{s.progress}}/{{s.progressNeeded}}
 				<div zg-status-bar percent-full="s.percentProgress"></div>
 				<br>
 				<div class="worker" ng-show="s.currentWorkers > 0" zg-draggable id="subregion-{{$parent.$index}}-{{$index}}-worker"></div>
