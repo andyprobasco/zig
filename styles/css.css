@@ -1,12 +1,16 @@
 body {
 	cursor:default;
 	font-family: "Century Gothic";
+	font-family: "Roboto", sans-serif;
 	/*background-image: url(images/RustMixed0093_M.jpg);*/
-	font-weight:bold;
+	/*font-weight:bold;*/
+	background-color:#333333;
 }
 
 .active-tab {
-	color:white;
+	color: white;
+	border-bottom: 2px solid white;
+	padding-bottom: 2px;
 }
 
 h3, h4 {
@@ -30,47 +34,96 @@ ul {
 	margin: 0;
 }
 
+#locationPanel {
+	background-color:lightgray;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	padding:15px;
+	margin:15px;
+
+}
+#freeSurvivors {
+	min-height: 80px;
+}
+
 .worker {
-	width: 30px;
-	height: 30px;
-	background-color: blue;
+	width: 144px;
+	height: 144px;
 	margin: 5px;
 	border-radius: 100%;
+	
+	/*
 	border: 1px solid black;
 	background-color: darkgreen;
 	box-shadow: 0 0 2px 1px, 0 0 1px 0.5px white inset;
+	*/
+
+
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	background-color: teal;
+	background-size:100% 100%;
+
+	width:48px;
+	height:48px;
+	border-radius:0;
+	background-image: url(assets/worker.png);
+
 }
 
 .wide-info-panel {
-	border: 1px solid black;
-	padding: 2px;
+	/*border: 1px solid black;
 	background-image: linear-gradient(to bottom, rgba(200, 200, 200, .6), rgba(100, 100, 100, .6));
-	box-shadow: 0px 0px 5px 2px black, 0px 0px 1px 0px white inset;
-	/*margin: 2px;
-	margin-bottom:5px;*/
-	margin:0;
+	box-shadow: 0px 0px 5px 2px black, 0px 0px 1px 0px white inset;*/
+
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	background-color: lightgray;
+	
+	padding: 2px;
+	margin: 15px;
 }
 
 #content {
 	margin-left: 100px;
 	margin-right: 100px;
-	background-image: linear-gradient(to bottom, rgba(56, 49, 39, .8), rgba(56, 49, 39, .8));
-	/*box-shadow: 0px 0px 10px 5px black;*/
-	/*border-radius: 10px;*/
+	
 	padding:10px;
-	box-shadow: 0px 0px 5px 2px white, 0px 0px 1px 0px white inset;
-	border: 2px solid black;
+	
+	/*box-shadow: 0px 0px 5px 2px white, 0px 0px 1px 0px white inset;
+	background-image: linear-gradient(to bottom, rgba(56, 49, 39, .8), rgba(56, 49, 39, .8));
+	border: 2px solid black;*/
+
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	background-color: grey;
+
+
+
 }
 
 .location {
-	border: 1px solid black;
 	width: 160px;
 	height: 160px;
 	margin: 2px;
 	padding: 2px;
-	background-image: linear-gradient(to bottom, rgba(200, 200, 200, .6), rgba(100, 100, 100, .6));
-	box-shadow: 0px 0px 5px 2px black, 0px 0px 1px 0px white inset;
 	position:relative;
+
+	/*border: 1px solid black;
+	background-image: linear-gradient(to bottom, rgba(200, 200, 200, .6), rgba(100, 100, 100, .6));
+	box-shadow: 0px 0px 5px 2px black, 0px 0px 1px 0px white inset;*/
+
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	background-color: tan;
+
+	background-color:#333333;
+	color:white;
+	background-image: url(assets/building.png);
+	background-size:100% 100%;
+
+}
+
+.location-worker {
+	position: absolute;
+	left: 80px;
+	margin-left: -24px;
+	bottom: 24px;
 }
 
 button:active {
@@ -81,14 +134,17 @@ background-color: darkgray;
 }
 button {
 background-color: lightgray;
-border: 1px solid black;
 margin: 4px;
-box-shadow: 0 0 1px .5px black;
+/*box-shadow: 0 0 1px .5px black;
+border: 1px solid black;*/
+box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+border:0;
+
+
 }
 
 .popup-box {
 	z-index:9001;
-	border:1px solid black;
 	background-color:white;
 	position:fixed;
 	width:400px;height:400px;
@@ -99,6 +155,7 @@ box-shadow: 0 0 1px .5px black;
 	padding:15px;
 	text-align:center;
 	vertical-align: middle;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .popup-overlay {
 	position:fixed;
@@ -109,6 +166,7 @@ box-shadow: 0 0 1px .5px black;
 	min-width:100%;
 	background-color:gray;
 	opacity:.75;
+	z-index: 9000;
 }
 
 .status-bar {
@@ -122,7 +180,7 @@ box-shadow: 0 0 1px .5px black;
 	background-color: rgb(139, 26, 26);
 	position: relative;
 	height: 100%;
-	box-shadow: 0 0 1px 2px;
+	/*box-shadow: 0 0 1px 2px;*/
 }
 
 .resource-meter-container {

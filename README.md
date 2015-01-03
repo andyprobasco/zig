@@ -9,10 +9,8 @@ ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => 
 
 
 * enhanced worker icons (show multiples) 
-* Content - buildings
-* morale loss for proportion of starving / thirsty survivors, not just fixed #
 * show info for each card in info area
-
+ 
 ##mechanical walkthrough
 - battle popup (dead!)
 - unlock:

@@ -25,6 +25,9 @@ angular
 			progress: 0
 		}
 
+		var drinkRate = -1;
+		var eatRate = -1;
+
 
 		this.init = function () {
 			this.idleSurvivors.currentWorkers = resourceService.survivors.current;
@@ -54,47 +57,32 @@ angular
 		}
 
 		function calculateMorale() {
-			//var moraleFactor = -1;
-
-			if (survivorsAreThirsty()) {
-				//statusService.setStatus('Thirsty', true);
-				resourceService.morale.setChangePerSecond(-1, "Thirsty Survivors");
-			} else {
-				//statusService.setStatus('Thirsty', false);
-				resourceService.morale.setChangePerSecond(0, "Thirsty Survivors");
-			}
-			if (survivorsAreHungry()) {
-				//statusService.setStatus('Starving', true);
-				resourceService.morale.setChangePerSecond(-1, "Starving Survivors");
-			} else {
-				//statusService.setStatus('Starving', false);
-				resourceService.morale.setChangePerSecond(0, "Starving Survivors");
-			}
-			if (survivorsAreScared()) {
-				//statusService.setStatus('High Threat', true);
-				resourceService.morale.setChangePerSecond(-2, "Scared Survivors");
-			} else {
-				//statusService.setStatus('High Threat', false);
-				resourceService.morale.setChangePerSecond(0, "Scared Survivors");
-			}
-			resourceService.morale.setChangePerSecond(survivorService.idleSurvivors.currentWorkers * 2);
-			resourceService.morale.setChangePerSecond(resourceService.survivors.current, "Survivors");
+			resourceService.morale.setChangePerSecond(-getNumberOfThirstySurvivors(), "Thirsty Survivors");
+			resourceService.morale.setChangePerSecond(-getNumberOfHungrySurvivors(), "Hungry Survivors");
+			//survivor fear/danger level
+			resourceService.morale.setChangePerSecond(survivorService.idleSurvivors.currentWorkers * 2, "Resting Survivors");
+			resourceService.morale.setChangePerSecond(-resourceService.survivors.current, "Total Survivors");
+			console.log(resourceService.morale.tooltip)
 		}
 
-		function survivorsAreThirsty () {
-			if (resourceService.water.current <= 0) {
-				return true;
-			}
+		function getNumberOfThirstySurvivors () {
+			var waterLeftNextTick = (resourceService.water.current + resourceService.water.totalChangePerSecond);
+			var count = waterLeftNextTick * drinkRate;
+			var numberOfSurvivors = resourceService.survivors.current;
+
+			if (count > numberOfSurvivors) return numberOfSurvivors;
+			if (count <= 0) return 0;
+			return count;
 		}
-		function survivorsAreHungry () {
-			if (resourceService.food.current <= 0) {
-				return true;
-			}
-		}
-		function survivorsAreScared () {
-			if (resourceService.threat.current >= 100) {
-				return true;
-			}
+
+		function getNumberOfHungrySurvivors () {
+			var foodLeftNextTick = (resourceService.food.current + resourceService.food.totalChangePerSecond);
+			var count = foodLeftNextTick * eatRate;
+			var numberOfSurvivors = resourceService.survivors.current;
+
+			if (count > numberOfSurvivors) return numberOfSurvivors;
+			if (count <= 0) return 0;
+			return count;
 		}
 
 		function processMorale () {
@@ -111,7 +99,7 @@ angular
 				} else {
 					survivorService.moraleSurvivorChange.progress = 50;
 				}
-			} else if (survivorService.moraleSurvivorChange.progres < 0) {
+			} else if (survivorService.moraleSurvivorChange.progress < 0) {
 				survivorService.moraleSurvivorChange.progress  = 0;
 			}
 		}
