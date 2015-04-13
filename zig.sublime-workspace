@@ -200,19 +200,92 @@
 	"buffers":
 	[
 		{
-			"file": "styles/css.css",
-			"settings":
-			{
-				"buffer_size": 3337,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 2733,
-				"line_ending": "Unix"
+				"buffer_size": 2633,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "game/main.html",
+			"settings":
+			{
+				"buffer_size": 731,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/incomingAttack.html",
+			"settings":
+			{
+				"buffer_size": 423,
+				"line_ending": "Windows",
+				"name": "incomingAttack.html"
+			}
+		},
+		{
+			"file": "views/resources.html",
+			"settings":
+			{
+				"buffer_size": 253,
+				"line_ending": "Windows",
+				"name": "resources.html"
+			}
+		},
+		{
+			"file": "views/morale.html",
+			"settings":
+			{
+				"buffer_size": 51,
+				"line_ending": "Windows",
+				"name": "morale.html"
+			}
+		},
+		{
+			"file": "views/survivors.html",
+			"settings":
+			{
+				"buffer_size": 57,
+				"line_ending": "Windows",
+				"name": "survivors.html"
+			}
+		},
+		{
+			"file": "views/threat.html",
+			"settings":
+			{
+				"buffer_size": 54,
+				"line_ending": "Windows",
+				"name": "threat.html"
+			}
+		},
+		{
+			"file": "views/locations.html",
+			"settings":
+			{
+				"buffer_size": 76,
+				"line_ending": "Windows",
+				"name": "locations.html"
+			}
+		},
+		{
+			"contents": "body {\n	cursor:default;\n	background-size:100%;\n	background-image: url(assets/background.jpg);\n}\n\n.panel {\n	font-family: \"Bangers\";\n	background-color: rgba(200,200,200,0.5);\n	position:absolute;\n\n\n	/* panel labels */\n	font-size:32px;\n	color:white;\n	text-shadow:2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black, -2px 2px 0 black;\n}\n\n#panel-incomingAttack {\n	left:25;\n	top:25;\n	height:200px;\n	width:200px;\n}\n\n#panel-resources {\n	left:25;\n	top:225px;\n	height:400px;\n	width:200px;\n}\n\n#panel-morale {\n	left:225px;\n	top:25;\n	height:100px;\n	width:100px;\n}\n\n#panel-survivors {\n	left:350px;\n	top:25;\n	height:100px;\n	width:550px;\n}\n#panel-threat {\n	left:925px;\n	top:25;\n	height:100px;\n	width:100px;\n}\n#panel-locations {\n	left:225px;\n	top:125px;\n	height:500px;\n	width:800px;\n}\n\n/*\n\nbody {\n	cursor:default;\n	font-family: \"Century Gothic\";\n	font-family: \"Roboto\", sans-serif;\n	background-color:#333333;\n}\n\n.active-tab {\n	color: white;\n	border-bottom: 2px solid white;\n	padding-bottom: 2px;\n}\n\nh3, h4 {\n	color:#aaaaaa;\n	text-align:center;\n}\ntable {\n	margin-left:auto;\n	margin-right:auto;\n}\nul {\n	display:0;\n	margin:0;\n}\nli {\n	display: inline-block;\n	padding: 0px;\n	margin: 0px;\n}\nul {\n	margin: 0;\n}\n\n#locationPanel {\n	background-color:lightgray;\n	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n	padding:15px;\n	margin:15px;\n\n}\n#freeSurvivors {\n	min-height: 80px;\n}\n\n.worker {\n	width: 144px;\n	height: 144px;\n	margin: 5px;\n	border-radius: 100%;\n	\n	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n	background-color: teal;\n	background-size:100% 100%;\n\n	width:48px;\n	height:48px;\n	border-radius:0;\n	background-image: url(assets/worker.png);\n\n}\n\n.wide-info-panel {\n	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n	background-color: lightgray;\n	\n	padding: 2px;\n	margin: 15px;\n}\n\n#content {\n	margin-left: 100px;\n	margin-right: 100px;\n	\n	padding:10px;\n	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n	background-color: grey;\n\n\n\n}\n\n.location {\n	width: 160px;\n	height: 160px;\n	margin: 2px;\n	padding: 2px;\n	position:relative;\n\n	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n	background-color: tan;\n\n	background-color:#333333;\n	color:white;\n	background-image: url(assets/building.png);\n	background-size:100% 100%;\n\n}\n\n.location-worker {\n	position: absolute;\n	left: 80px;\n	margin-left: -24px;\n	bottom: 24px;\n}\n\nbutton:active {\nbackground-color: gray;\n}\nbutton:hover {\nbackground-color: darkgray;\n}\nbutton {\nbackground-color: lightgray;\nmargin: 4px;\nbox-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\nborder:0;\n\n\n}\n\n.popup-box {\n	z-index:9001;\n	background-color:white;\n	position:fixed;\n	width:400px;height:400px;\n	left:50%;\n	top:50%;\n	margin-left:-200px;\n	margin-top:-200px;\n	padding:15px;\n	text-align:center;\n	vertical-align: middle;\n	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n}\n.popup-overlay {\n	position:fixed;\n	left:0;\n	top:0;\n	height:auto;\n	min-height:100%;\n	min-width:100%;\n	background-color:gray;\n	opacity:.75;\n	z-index: 9000;\n}\n\n.status-bar {\n	height: 20px;\n	bottom: 1px;\n	position: absolute;\n	left: 1px;\n	right: 1px;\n}\n.status-bar-inner {\n	background-color: rgb(139, 26, 26);\n	position: relative;\n	height: 100%;\n}\n\n.resource-meter-container {\n	position:relative;\n	width:100px;\n	height:25px;\"\n}\n\n*/\n\n\n/* box-shadows */\n/*\n.shadow-level-1 {\n	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n}\n.shadow-level-2 {\n	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);\n}\n.shadow-level-3 {\n	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n}\n.shadow-level-4 {\n	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);\n}\n.shadow-level-5 {\n	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);\n}\n*/\n/*\n.tooltip {\n	font-family:sans-serif;\n	font-size:12px;\n	position: absolute;\n	min-width:200px;\n	max-width:500px;\n	padding-left:10px;\n	color: black;\n	background: white;\n	text-align: left;\n	border-radius: 6px;\n	border: 1px solid black;\n	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);\n	box-shadow: 0 5px 10px rgba(0,0,0,.2);\n	z-index: 1000;\n	margin-left:115px;\n	margin-top:-25px;\n}\n.tooltip:after {\n  content: '';\n  position: absolute;\n  top: 18px;\n  right: 100%;\n  margin-top: -8px;\n  width: 0; height: 0;\n  border-right: 8px solid white;\n  border-top: 8px solid transparent;\n  border-bottom: 8px solid transparent;\n  z-index: 1000;\n}\n*/\n",
+			"file": "styles/css.css",
+			"file_size": 4702,
+			"file_write_time": 130733322836812242,
+			"settings":
+			{
+				"buffer_size": 4444,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "horde/horde.html",
+			"settings":
+			{
+				"buffer_size": 345,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -268,6 +341,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Andy/git/zig/styles/css.css",
 		"/Users/aprobasco/Projects/github/zig/README.md",
 		"/Users/aprobasco/Projects/github/zig/styles/css.css",
 		"/Users/aprobasco/Projects/github/zig/resources/resource.html",
@@ -394,8 +468,7 @@
 		"/Users/aprobasco/Library/Application Support/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
 		"/Users/aprobasco/Downloads/Clickpocalypse Source/Clickpocalypse_source/default_big.html",
 		"/Users/aprobasco/jboss/smartnetexperiences/jboss-5.0.1.GA/server/default/conf/smartnet-experiences-configuration.properties",
-		"/Volumes/Archive_extracts/moveit.sh",
-		"/Users/aprobasco/Desktop/SmartNet Deployment Instructions"
+		"/Volumes/Archive_extracts/moveit.sh"
 	],
 	"find":
 	{
@@ -480,23 +553,240 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 8,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "styles/css.css",
+					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 3337,
+						"buffer_size": 2633,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2352,
-								2421
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "game/main.html",
+					"settings":
+					{
+						"buffer_size": 731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								59,
+								59
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/incomingAttack.html",
+					"settings":
+					{
+						"buffer_size": 423,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								423,
+								354
+							]
+						],
+						"settings":
+						{
+							"auto_name": "incomingAttack.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/resources.html",
+					"settings":
+					{
+						"buffer_size": 253,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								196
+							]
+						],
+						"settings":
+						{
+							"auto_name": "resources.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "views/morale.html",
+					"settings":
+					{
+						"buffer_size": 51,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								51,
+								51
+							]
+						],
+						"settings":
+						{
+							"auto_name": "morale.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/survivors.html",
+					"settings":
+					{
+						"buffer_size": 57,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								57,
+								57
+							]
+						],
+						"settings":
+						{
+							"auto_name": "survivors.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "views/threat.html",
+					"settings":
+					{
+						"buffer_size": 54,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								54,
+								54
+							]
+						],
+						"settings":
+						{
+							"auto_name": "threat.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "views/locations.html",
+					"settings":
+					{
+						"buffer_size": 76,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								69,
+								69
+							]
+						],
+						"settings":
+						{
+							"auto_name": "locations.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "styles/css.css",
+					"settings":
+					{
+						"buffer_size": 4444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								192,
+								192
 							]
 						],
 						"settings":
@@ -505,32 +795,30 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1424.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "README.md",
+					"buffer": 9,
+					"file": "horde/horde.html",
 					"settings":
 					{
-						"buffer_size": 2733,
+						"buffer_size": 345,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								353,
-								353
+								345,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

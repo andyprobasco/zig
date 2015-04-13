@@ -1,9 +1,66 @@
 body {
 	cursor:default;
+	background-size:100%;
+	background-image: url(assets/background.jpg);
+}
+
+.panel {
+	font-family: "Bangers";
+	background-color: rgba(200,200,200,0.5);
+	position:absolute;
+
+	font-size:32px;
+
+	color:white;
+	text-shadow:2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black, -2px 2px 0 black;
+}
+
+#panel-incomingAttack {
+	left:25;
+	top:25;
+	height:200px;
+	width:200px;
+}
+
+#panel-resources {
+	left:25;
+	top:225px;
+	height:400px;
+	width:200px;
+}
+
+#panel-morale {
+	left:225px;
+	top:25;
+	height:100px;
+	width:100px;
+}
+
+#panel-survivors {
+	left:350px;
+	top:25;
+	height:100px;
+	width:550px;
+}
+#panel-threat {
+	left:925px;
+	top:25;
+	height:100px;
+	width:100px;
+}
+#panel-locations {
+	left:225px;
+	top:125px;
+	height:500px;
+	width:800px;
+}
+
+/*
+
+body {
+	cursor:default;
 	font-family: "Century Gothic";
 	font-family: "Roboto", sans-serif;
-	/*background-image: url(images/RustMixed0093_M.jpg);*/
-	/*font-weight:bold;*/
 	background-color:#333333;
 }
 
@@ -51,13 +108,6 @@ ul {
 	margin: 5px;
 	border-radius: 100%;
 	
-	/*
-	border: 1px solid black;
-	background-color: darkgreen;
-	box-shadow: 0 0 2px 1px, 0 0 1px 0.5px white inset;
-	*/
-
-
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	background-color: teal;
 	background-size:100% 100%;
@@ -70,10 +120,6 @@ ul {
 }
 
 .wide-info-panel {
-	/*border: 1px solid black;
-	background-image: linear-gradient(to bottom, rgba(200, 200, 200, .6), rgba(100, 100, 100, .6));
-	box-shadow: 0px 0px 5px 2px black, 0px 0px 1px 0px white inset;*/
-
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	background-color: lightgray;
 	
@@ -86,11 +132,6 @@ ul {
 	margin-right: 100px;
 	
 	padding:10px;
-	
-	/*box-shadow: 0px 0px 5px 2px white, 0px 0px 1px 0px white inset;
-	background-image: linear-gradient(to bottom, rgba(56, 49, 39, .8), rgba(56, 49, 39, .8));
-	border: 2px solid black;*/
-
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	background-color: grey;
 
@@ -104,10 +145,6 @@ ul {
 	margin: 2px;
 	padding: 2px;
 	position:relative;
-
-	/*border: 1px solid black;
-	background-image: linear-gradient(to bottom, rgba(200, 200, 200, .6), rgba(100, 100, 100, .6));
-	box-shadow: 0px 0px 5px 2px black, 0px 0px 1px 0px white inset;*/
 
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	background-color: tan;
@@ -135,8 +172,6 @@ background-color: darkgray;
 button {
 background-color: lightgray;
 margin: 4px;
-/*box-shadow: 0 0 1px .5px black;
-border: 1px solid black;*/
 box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 border:0;
 
@@ -180,7 +215,6 @@ border:0;
 	background-color: rgb(139, 26, 26);
 	position: relative;
 	height: 100%;
-	/*box-shadow: 0 0 1px 2px;*/
 }
 
 .resource-meter-container {
@@ -189,8 +223,11 @@ border:0;
 	height:25px;"
 }
 
-/* box-shadows */
+*/
 
+
+/* box-shadows */
+/*
 .shadow-level-1 {
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
@@ -206,7 +243,7 @@ border:0;
 .shadow-level-5 {
 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
-
+*/
 /*
 .tooltip {
 	font-family:sans-serif;
