@@ -7,7 +7,6 @@ ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => 
 
 #TODO
 
-
 * enhanced worker icons (show multiples) 
 * show info for each card in info area
  
@@ -120,22 +119,11 @@ Upgrades:
         power tools > powered workshop
 
 
-The only action a player has access to is moving workers.
-- each job only has one result?
-- upgrade building vs work at building.
+TODO:
+-multiple survivor icons.
+-show info in info panel?
+-change color of morale/threat labels
+-survivor icon
+-location icon
+popups
 
-
-----------------------
-|      Resources     |
-----------------------
-|       Threat       |
-----------------------
-|       Morale       |
-----------------------
-| tab    tab     tab |
-|                    |
-|       JOBS         |
-|                    |
-----------------------
-|       info         |
-----------------------

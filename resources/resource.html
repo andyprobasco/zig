@@ -1,2 +1,6 @@
-{{r.name}}:{{r.current}}/{{r.max}}
-<div zg-status-bar percent-full="r.percentFull" class="resource-meter-container"></div>
+<div class="resource">
+	<div style="display:inline-block;" class="resource-label">{{r.name}}</div>
+	<div style="display:inline-block;">
+		<div class="resource-counter">{{r.current}}/{{r.max}}</div>
+	</div>
+</div>

@@ -4,6 +4,9 @@
 	</ul>
 </div>-->
 
-<div id="panel-resources" class="panel">
-Resources
+<div id="panel-resources" class="panel" ng-controller="resourcePanelController">
+	<h1>Resources</h1>
+	<ul>
+		<li ng-repeat="r in resources" zg-resource="r" tooltip="{{r.tooltip}}"></li>
+	</ul>
 </div>

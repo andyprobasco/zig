@@ -1,3 +1,15 @@
-<div id="panel-locations" class="panel">
-Neighborhood | HQ | Workshop
+<div id="panel-locations" class="panel" ng-controller="locationPanelController">
+	<h1>
+		<span ng-click="activeTab='neighborhood'" ng-class="{ 'active-tab': (activeTab=='neighborhood')}">neighborhood</span>
+		<span ng-show="subregions.unlocked"> |
+			<span ng-click="activeTab='hq'" ng-class="{ 'active-tab': (activeTab=='hq')}">hq</span>
+		</span>
+		<span ng-show="false"> | 
+			<span ng-click="activeTab='workshop'" ng-class="{ 'active-tab': (activeTab=='workshop')}">workshop</span>
+		</span>
+	</h1>
+		<div id="neighborhood" ng-include src="'locations/neighborhood.html'" ng-show="activeTab=='neighborhood'"></div>
+	<div id="hq"  ng-show="activeTab=='hq'" ng-include src="'locations/hq.html'">HQ Panel</div>
+	<div id="workshop"  ng-show="activeTab=='workshop'" ng-include src="'locations/workshop.html'" >Workshop</div>
+
 </div>

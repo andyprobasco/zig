@@ -1,18 +1,21 @@
+
 body {
 	cursor:default;
 	background-size:100%;
 	background-image: url(assets/background.jpg);
+	font-family: "Roboto";
+}
+ul {
+	list-style:none;
+	padding:0px;
 }
 
+/* Panels */
+
 .panel {
-	font-family: "Bangers";
 	background-color: rgba(200,200,200,0.5);
 	position:absolute;
-
-	font-size:32px;
-
-	color:white;
-	text-shadow:2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black, -2px 2px 0 black;
+	padding:5px;
 }
 
 #panel-incomingAttack {
@@ -25,7 +28,7 @@ body {
 #panel-resources {
 	left:25;
 	top:225px;
-	height:400px;
+	height:475px;
 	width:200px;
 }
 
@@ -37,10 +40,10 @@ body {
 }
 
 #panel-survivors {
-	left:350px;
+	left:345px;
 	top:25;
 	height:100px;
-	width:550px;
+	width:560px;
 }
 #panel-threat {
 	left:925px;
@@ -51,9 +54,147 @@ body {
 #panel-locations {
 	left:225px;
 	top:125px;
-	height:500px;
+	height:575px;
 	width:800px;
 }
+
+h1 {
+	margin: 5px;
+	text-align:center;
+	font-family: "Bangers";
+	font-size:28px;
+	color:white;
+	text-shadow:2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black, -2px 2px 0 black;
+}
+
+/*           */
+
+.threat-counter, .morale-counter {
+	font-family: "Bangers";
+	font-size:32px;
+	text-align:center;
+	color:white;
+	text-shadow:2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black, -2px 2px 0 black;
+}
+
+
+/* Resources */
+
+.resource-label {
+	display:inline-block;
+	font-size:24px;
+	font-weight:bold;
+	padding:2px;
+}
+
+.resource-counter {
+	padding:2px;
+	display:inline-block;
+	vertical-align:top;
+	font-size:16px;
+}
+
+/* Location */
+
+.worker {
+	width: 144px;
+	height: 144px;
+	margin: 5px;
+	border-radius: 100%;
+	
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	background-color: teal;
+	background-size:100% 100%;
+
+	width:48px;
+	height:48px;
+	border-radius:0;
+	background-image: url(assets/worker.png);
+
+}
+
+
+.active-tab {
+	color:red;
+}
+
+.location {
+	width: 160px;
+	height: 160px;
+	margin: 2px;
+	padding: 2px;
+	position:relative;
+
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	background-color: tan;
+
+	background-color:#333333;
+	color:white;
+	background-image: url(assets/building.png);
+	background-size:100% 100%;
+
+}
+
+.location-worker {
+	position: absolute;
+	left: 80px;
+	margin-left: -24px;
+	bottom: 24px;
+}
+
+
+/*status bar*/
+
+.status-bar {
+	height: 20px;
+	bottom: 1px;
+	position: absolute;
+	left: 1px;
+	right: 1px;
+}
+.status-bar-inner {
+	background-color: rgb(139, 26, 26);
+	position: relative;
+	height: 100%;
+}
+
+.resource-meter-container {
+	position:relative;
+	width:100px;
+	height:25px;"
+}
+
+/* Popup */
+
+.popup-box {
+	z-index:9001;
+	background-color:white;
+	position:fixed;
+	width:400px;height:400px;
+	left:50%;
+	top:50%;
+	margin-left:-200px;
+	margin-top:-200px;
+	padding:15px;
+	text-align:center;
+	vertical-align: middle;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.popup-overlay {
+	position:fixed;
+	left:0;
+	top:0;
+	height:auto;
+	min-height:100%;
+	min-width:100%;
+	background-color:gray;
+	opacity:.75;
+	z-index: 9000;
+}
+
+
+
+
 
 /*
 
@@ -174,35 +315,8 @@ background-color: lightgray;
 margin: 4px;
 box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 border:0;
-
-
 }
 
-.popup-box {
-	z-index:9001;
-	background-color:white;
-	position:fixed;
-	width:400px;height:400px;
-	left:50%;
-	top:50%;
-	margin-left:-200px;
-	margin-top:-200px;
-	padding:15px;
-	text-align:center;
-	vertical-align: middle;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-.popup-overlay {
-	position:fixed;
-	left:0;
-	top:0;
-	height:auto;
-	min-height:100%;
-	min-width:100%;
-	background-color:gray;
-	opacity:.75;
-	z-index: 9000;
-}
 
 .status-bar {
 	height: 20px;

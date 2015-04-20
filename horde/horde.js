@@ -1,11 +1,16 @@
 angular
 	.module('horde', [])
-	.controller('hordePanelController', ['$scope', 'resourceService', 'hordeService', function ($scope, resourceService, hordeService) {
+	.controller('incomingAttackPanelController',['$scope', 'resourceService', 'hordeService', function ($scope, resourceService, hordeService) {
 		$scope.refresh = function () {
 			$scope.attackProgress = hordeService.attackProgress;
 			$scope.horde = hordeService.horde;
-			$scope.threat = resourceService.threat;
 			$scope.defense = resourceService.defense;
+		}
+		$scope.refresh();
+	}])
+	.controller('threatPanelController',['$scope', 'resourceService', function ($scope, resourceService) {
+		$scope.refresh = function () {
+			$scope.threat = resourceService.threat;
 		}
 		$scope.refresh();
 	}])
