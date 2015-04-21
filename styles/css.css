@@ -17,6 +17,10 @@ ul {
 	position:absolute;
 	padding:5px;
 }
+#panel-admin {
+	right:0px;
+	width:100px;
+}
 
 #panel-incomingAttack {
 	left:25;
@@ -80,18 +84,37 @@ h1 {
 
 /* Resources */
 
+.resource {
+	display:table;
+}
 .resource-label {
 	display:inline-block;
-	font-size:24px;
+	font-size:36px;
 	font-weight:bold;
+	vertical-align: middle;
 	padding:2px;
+	min-width:100px;
 }
 
-.resource-counter {
-	padding:2px;
+.resource-info {
 	display:inline-block;
-	vertical-align:top;
+	vertical-align:middle;
+	padding:2px;
+}
+.resource-info-table {
+	display:table;
+}
+.resource-info-counter {
+	display:table-row;
+	vertical-align:bottom;
 	font-size:16px;
+	font-weight: bold;
+}
+.resource-info-delta {
+	display:table-row;
+	vertical-align:top;
+	font-size:10px;
+
 }
 
 /* Location */
@@ -153,10 +176,19 @@ h1 {
 	right: 1px;
 }
 .status-bar-inner {
+	height:100%;
+	position:absolute;
 	background-color: rgb(139, 26, 26);
-	position: relative;
-	height: 100%;
 }
+.status-bar-label {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	color:white;
+	text-shadow:2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black, -2px 2px 0 black;
+	text-align:center;
+}
+
 
 .resource-meter-container {
 	position:relative;

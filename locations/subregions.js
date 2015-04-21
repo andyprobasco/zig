@@ -86,7 +86,7 @@ angular
 						this.progressNeeded = this.states['Upgrading'].progressNeeded;
 					}
 					resourceService.food.setChangePerSecond(this.level, 'Vegetable Garden');
-					this.percentProgress = this.progress/this.progressNeeded*100;
+					this.status.percentFull = this.progress/this.progressNeeded*100;
 				}
 				params.progressNeededToBuild = 100;
 
@@ -109,7 +109,7 @@ angular
 					}
 
 					resourceService.water.setChangePerSecond(level, 'Water Collector');
-					this.percentProgress = this.progress/this.progressNeeded*100;
+					this.status.percentFull = this.progress/this.progressNeeded*100;
 				}
 				params.progressNeededToBuild = 100;
 
@@ -134,7 +134,7 @@ angular
 					resourceService.water.max = (level + 1) * 100;
 					resourceService.scrap.max = (level + 1) * 100;
 
-					this.percentProgress = this.progress/this.progressNeeded*100;
+					this.status.percentFull = this.progress/this.progressNeeded*100;
 				}
 				params.progressNeededToBuild = 100;
 
@@ -159,7 +159,7 @@ angular
 					}
 					resourceService.survivors.max = level + 1;
 
-					this.percentProgress = this.progress/this.progressNeeded*100;
+					this.status.percentFull = this.progress/this.progressNeeded*100;
 				}
 				params.progressNeededToBuild = 100;
 

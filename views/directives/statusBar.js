@@ -4,7 +4,7 @@ angular
 		return {
 			templateUrl: "views/directives/statusBar.html",
 			scope: {
-				percentFull: "="// zg-status-bar"
+				statusObject: "="
 			}
 		}
 	})

@@ -5,6 +5,9 @@
 ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
 `
 
+`
+angular.element($0).scope() 
+`
 #TODO
 
 * enhanced worker icons (show multiples) 
@@ -126,4 +129,33 @@ TODO:
 -survivor icon
 -location icon
 popups
+
+
+UI Fluff:
+    attack panel
+    morale / threat panel
+    survivor panel
+    location panel:
+        location widget
+Functional UI:
+    popups
+    info panel
+    message panel
+    resource shows change per/second
+Mechanics:
+    zed attack
+    game over/reset
+    workshop/upgrades
+    ...
+    power
+    prestige
+    alternate jobs
+    -alternate survivors
+
+
+
+
+
+
+
 

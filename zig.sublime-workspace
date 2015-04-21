@@ -200,6 +200,14 @@
 	"buffers":
 	[
 		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 2710,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "views/incomingAttack.html",
 			"settings":
 			{
@@ -209,59 +217,82 @@
 			}
 		},
 		{
-			"file": "views/locations.html",
+			"file": "styles/css.css",
 			"settings":
 			{
-				"buffer_size": 830,
-				"line_ending": "Windows",
-				"name": "locations.html"
-			}
-		},
-		{
-			"file": "horde/horde.js",
-			"settings":
-			{
-				"buffer_size": 1941,
+				"buffer_size": 6541,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "survivors/survivors.js",
+			"file": "resources/resources.js",
 			"settings":
 			{
-				"buffer_size": 6113,
+				"buffer_size": 6091,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "views/survivors.html",
+			"file": "views/directives/statusBar.html",
 			"settings":
 			{
-				"buffer_size": 446,
-				"line_ending": "Windows"
+				"buffer_size": 179,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/directives/statusBar.js",
+			"settings":
+			{
+				"buffer_size": 174,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "locations/neighborhood.html",
+			"settings":
+			{
+				"buffer_size": 586,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "locations/subregions.js",
+			"settings":
+			{
+				"buffer_size": 5356,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "jobs/jobs.js",
+			"settings":
+			{
+				"buffer_size": 2513,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "locations/hq.html",
+			"settings":
+			{
+				"buffer_size": 589,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "views/morale.html",
 			"settings":
 			{
-				"buffer_size": 376,
+				"buffer_size": 473,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "styles/css.css",
-			"settings":
-			{
-				"buffer_size": 6019,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "views/threat.html",
 			"settings":
 			{
-				"buffer_size": 363,
+				"buffer_size": 359,
 				"line_ending": "Unix"
 			}
 		},
@@ -269,23 +300,15 @@
 			"file": "game/main.html",
 			"settings":
 			{
-				"buffer_size": 733,
+				"buffer_size": 726,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "README.md",
+			"file": "game/adminPanel.html",
 			"settings":
 			{
-				"buffer_size": 2313,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "resources/resource.html",
-			"settings":
-			{
-				"buffer_size": 213,
+				"buffer_size": 291,
 				"line_ending": "Unix"
 			}
 		}
@@ -342,17 +365,20 @@
 	},
 	"file_history":
 	[
+		"/Users/aprobasco/zig/resources/resource.html",
+		"/Users/aprobasco/zig/views/locations.html",
+		"/Users/aprobasco/zig/horde/horde.js",
+		"/Users/aprobasco/zig/survivors/survivors.js",
+		"/Users/aprobasco/zig/views/survivors.html",
+		"/Users/aprobasco/zig/views/morale.html",
 		"/Users/aprobasco/zig/views/threat.html",
+		"/Users/aprobasco/zig/game/main.html",
 		"/Users/aprobasco/zig/locations/locations.html",
 		"/Users/aprobasco/zig/views/resources.html",
-		"/Users/aprobasco/zig/views/morale.html",
-		"/Users/aprobasco/zig/views/survivors.html",
 		"/Users/aprobasco/zig/styles/css.css",
-		"/Users/aprobasco/zig/resources/resource.html",
 		"/Users/aprobasco/zig/horde/horde.html",
 		"/Users/aprobasco/zig/index.html",
 		"/Users/aprobasco/zig/README.md",
-		"/Users/aprobasco/zig/game/main.html",
 		"/C/Users/Andy/git/zig/styles/css.css",
 		"/Users/aprobasco/Projects/github/zig/README.md",
 		"/Users/aprobasco/Projects/github/zig/styles/css.css",
@@ -466,10 +492,7 @@
 		"/Users/aprobasco/Desktop/image rename tool upgrades",
 		"/Users/aprobasco/Desktop/grixis",
 		"/Users/aprobasco/Desktop/svn to git cloning",
-		"/Users/aprobasco/Projects/github/zig/scripts/view/_buildui.js",
-		"/Users/aprobasco/Projects/github/zig/scripts/model/_gamedata.js",
-		"/Users/aprobasco/Projects/github/zig/scripts/_main.js",
-		"/Users/aprobasco/Projects/github/zig/scripts/require.js"
+		"/Users/aprobasco/Projects/github/zig/scripts/view/_buildui.js"
 	],
 	"find":
 	{
@@ -487,6 +510,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"drop",
+			"percent",
+			"percentProgress",
+			"percent",
+			"percentPro",
 			"adminPanel",
 			"style",
 			"console.",
@@ -554,11 +582,39 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 12,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 2710,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								166,
+								195
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2430.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
 					"file": "views/incomingAttack.html",
 					"settings":
 					{
@@ -569,8 +625,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								91,
+								91
 							]
 						],
 						"settings":
@@ -585,73 +641,46 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "views/locations.html",
-					"settings":
-					{
-						"buffer_size": 830,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								495,
-								495
-							]
-						],
-						"settings":
-						{
-							"auto_name": "locations.html",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 2,
-					"file": "horde/horde.js",
+					"file": "styles/css.css",
 					"settings":
 					{
-						"buffer_size": 1941,
+						"buffer_size": 6541,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								473,
-								473
+								301,
+								301
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 91.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "survivors/survivors.js",
+					"file": "resources/resources.js",
 					"settings":
 					{
-						"buffer_size": 6113,
+						"buffer_size": 6091,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								837,
-								837
+								824,
+								824
 							]
 						],
 						"settings":
@@ -660,25 +689,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1041.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "views/survivors.html",
+					"file": "views/directives/statusBar.html",
 					"settings":
 					{
-						"buffer_size": 446,
+						"buffer_size": 179,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								160,
-								160
+								105,
+								105
 							]
 						],
 						"settings":
@@ -693,23 +722,23 @@
 				},
 				{
 					"buffer": 5,
-					"file": "views/morale.html",
+					"file": "views/directives/statusBar.js",
 					"settings":
 					{
-						"buffer_size": 376,
+						"buffer_size": 174,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								86,
-								86
+								140,
+								140
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -719,71 +748,18 @@
 				},
 				{
 					"buffer": 6,
-					"file": "styles/css.css",
+					"file": "locations/neighborhood.html",
 					"settings":
 					{
-						"buffer_size": 6019,
+						"buffer_size": 586,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2326,
-								2326
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2020.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "views/threat.html",
-					"settings":
-					{
-						"buffer_size": 363,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								262,
-								356
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "game/main.html",
-					"settings":
-					{
-						"buffer_size": 733,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4,
-								4
+								213,
+								213
 							]
 						],
 						"settings":
@@ -798,47 +774,179 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "README.md",
+					"buffer": 7,
+					"file": "locations/subregions.js",
 					"settings":
 					{
-						"buffer_size": 2313,
+						"buffer_size": 5356,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2312,
-								2312
+								610,
+								610
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1774.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "jobs/jobs.js",
+					"settings":
+					{
+						"buffer_size": 2513,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1851,
+								1851
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "locations/hq.html",
+					"settings":
+					{
+						"buffer_size": 589,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								555,
+								555
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 10,
-					"file": "resources/resource.html",
+					"file": "views/morale.html",
 					"settings":
 					{
-						"buffer_size": 213,
+						"buffer_size": 473,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								134,
-								134
+								425,
+								425
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "views/threat.html",
+					"settings":
+					{
+						"buffer_size": 359,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								310,
+								310
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "game/main.html",
+					"settings":
+					{
+						"buffer_size": 726,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								54,
+								54
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "game/adminPanel.html",
+					"settings":
+					{
+						"buffer_size": 291,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								66,
+								66
 							]
 						],
 						"settings":

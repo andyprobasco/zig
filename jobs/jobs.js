@@ -22,7 +22,12 @@ angular
 			this.addWorker = addWorker;
 			this.removeWorker = removeWorker;
 			this.tick = tick;
-			this.percentProgress = 0;
+			//this.percentProgress = 0;
+			this.status = {
+				percentFull:0,
+				text:""
+			};
+
 
 			this.changeState(params.defaultState || "Locked");
 		}
@@ -35,7 +40,7 @@ angular
 				this.progress = 0;
 			}
 			//
-			this.percentProgress = this.progress/this.progressNeeded*100;
+			this.status.percentFull = this.progress/this.progressNeeded*100;
 			this.checkForUnlock();
 			//
 		}
@@ -65,6 +70,7 @@ angular
 			if (state) {
 				clearWorkers.call(this);
 				this.state = newState;
+				this.status.text = newState;
 				this.onTick = state.onTick || function () {};
 				this.onWorkerUpdate = state.onWorkerUpdate || function () {};
 				this.onComplete = state.onComplete || function () {};

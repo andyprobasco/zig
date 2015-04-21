@@ -7,6 +7,7 @@ angular
 				resourceManager.water,
 				resourceManager.scrap
 			]
+			console.log(resourceManager.food);
 		}
 		$scope.refresh();
 	}])
@@ -23,8 +24,11 @@ angular
 				resource.name = params.name || 'Resource';
 				resource.current = params.current || 0;
 				resource.min = params.min || 0;
-				resource.percentFull = resource.current/resource.max*100;
 				resource.max = params.max || 100;
+				resource.status = {
+					percentFull: resource.current/resource.max*100,
+					text: ""
+				}
 
 				resource.totalChangePerSecond = 0;
 
@@ -35,14 +39,14 @@ angular
 					} else if (this.current < this.min) {
 						this.current = this.min;
 					}
-					this.percentFull = this.current/this.max*100;
+					this.status.percentFull = this.current/this.max*100;
 				};
 				resource.changeMaxBy = function (increment) {
 					this.max += increment;
 					if (this.max < this.min) {
 						this.max = this.min;
 					}
-					this.percentFull = this.current/this.max*100;
+					this.status.percentFull = this.current/this.max*100;
 				}
 
 				resource.modifyChangePerSecond = function (changeBy, source) {

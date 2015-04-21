@@ -2,14 +2,13 @@
 	<tr ng-repeat="row in subregions">
 		<td ng-repeat="s in row">
 			<div ng-hide="s.state == 'Locked'" class="location" zg-droppable drop="handleDrop" id="subregion-{{$parent.$index}}-{{$index}}">
-				{{s.name}} {{s.level}} ({{s.state}}):
+				{{s.name}} {{s.level}}:
 				<br>
 				<button ng-click='s.removeWorker()'>-</button>{{s.currentWorkers}}<button ng-click='s.addWorker();'>+</button>
 				<br>
-				<div zg-status-bar percent-full="s.percentProgress"></div>
+				<div zg-status-bar status-object="s.status"></div>
 				<br>
 				<div class="worker" ng-show="s.currentWorkers > 0" zg-draggable id="subregion-{{$parent.$index}}-{{$index}}-worker"></div>
-
 			</div>
 		</td>
 	</tr>

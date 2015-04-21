@@ -1,6 +1,9 @@
 <div class="resource">
-	<div style="display:inline-block;" class="resource-label">{{r.name}}</div>
-	<div style="display:inline-block;">
-		<div class="resource-counter">{{r.current}}/{{r.max}}</div>
+	<div class="resource-label">{{r.name}}</div>
+	<div class="resource-info">
+		<div class="resource-info-table">
+			<div class="resource-info-counter">{{r.current}}/{{r.max}}</div>
+			<div class="resource-info-delta">+1 p/s</div>
+		</div>
 	</div>
 </div>
