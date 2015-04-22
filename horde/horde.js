@@ -22,7 +22,8 @@ angular
 
 		this.horde = {
 			size: 0,
-			nextZombieProgress: 0
+			nextZombieProgress: 0,
+			percentFull: 0
 		}
 
 		this.init = function () {
@@ -45,6 +46,8 @@ angular
 			} else if (hordeService.horde.nextZombieProgress < 0) {
 				hordeService.horde.nextZombieProgress = 0;
 			}
+			hordeService.horde.percentFull = hordeService.horde.nextZombieProgress/50*100
+
 		}
 
 		function advanceAttack () {

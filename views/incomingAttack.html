@@ -1,4 +1,15 @@
 <div id="panel-incomingAttack" class="panel" ng-controller="incomingAttackPanelController">
+
 	<h1>Attack Incoming!</h1>
-	{{horde.size}} Zombies vs {{defense.totalChangePerSecond}} Defense; Attack in: {{attackProgress.attackIn}}
+
+	<div class="incomingAttack-info">
+		<div><h1>{{horde.size}}</h1>Zombies</div>
+		<div> vs </div>
+		<div><h1>{{defense.totalChangePerSecond}}</h1>Defense</div>
+	</div>
+
+	<div class="incomingAttack-progress">
+		Attack in: {{attackProgress.attackIn}}
+	</div>
+
 </div>

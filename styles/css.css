@@ -136,7 +136,6 @@ h1 {
 
 }
 
-
 .active-tab {
 	color:red;
 }
@@ -195,6 +194,30 @@ h1 {
 	width:100px;
 	height:25px;"
 }
+
+/* Incoming Attack*/
+
+.incomingAttack-progress {
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	text-align:center;
+}
+
+.incomingAttack-info {
+	display:table;
+	width:100%;
+	padding-top:10px;
+}
+.incomingAttack-info div {
+	display:table-cell;
+	text-align:center;
+}
+.incomingAttack-info h1 {
+	font-size:64px;
+}
+
 
 /* Popup */
 

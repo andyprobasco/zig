@@ -23,7 +23,8 @@ angular
 		}
 		this.moraleSurvivorChange = {
 			text: "Attracting New Survivors",
-			progress: 0
+			progress: 0,
+			percentFull: 0
 		}
 
 		var drinkRate = -1;
@@ -103,6 +104,8 @@ angular
 			} else if (survivorService.moraleSurvivorChange.progress < 0) {
 				survivorService.moraleSurvivorChange.progress  = 0;
 			}
+
+			survivorService.moraleSurvivorChange.percentFull = survivorService.moraleSurvivorChange.progress/50*100
 		}
 
 

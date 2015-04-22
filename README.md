@@ -132,7 +132,6 @@ popups
 
 
 UI Fluff:
-    attack panel
     morale / threat panel
     survivor panel
     location panel:
