@@ -1,8 +1,9 @@
 angular
 	.module('info', [])
-	.controller('infoPanelController', ['$scope', 'infoService', function ($scope, infoService) {
+	.controller('infoPanelController', ['$scope', 'infoService', 'featureLockService', function ($scope, infoService, featureLockService) {
 		$scope.refresh = function () {
 			$scope.message = infoService.message;
+			$scope.featureLockService = featureLockService;
 		}
 		$scope.refresh();
 	}])

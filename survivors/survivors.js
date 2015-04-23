@@ -1,19 +1,21 @@
 angular
 	.module('survivors', [])
-	.controller('survivorPanelController', ['$scope', 'resourceService', 'survivorService', 'locationService', function ($scope, resourceService, survivorService, locationService) {
+	.controller('survivorPanelController', ['$scope', 'resourceService', 'survivorService', 'locationService', 'featureLockService', function ($scope, resourceService, survivorService, locationService, featureLockService) {
 		$scope.refresh = function () {
 			$scope.survivors = resourceService.survivors;
 			$scope.idleSurvivors = survivorService.idleSurvivors;
+			$scope.featureLockService = featureLockService;
 		}
 		$scope.handleDrop = function (itemID, binID) {
 			locationService.transferWorker (itemID, binID);
 		}
 		$scope.refresh();
 	}])
-	.controller('moralePanelController', ['$scope', 'resourceService', 'survivorService', 'locationService', function ($scope, resourceService, survivorService, locationService) {
+	.controller('moralePanelController', ['$scope', 'resourceService', 'survivorService', 'locationService', 'featureLockService', function ($scope, resourceService, survivorService, locationService, featureLockService) {
 		$scope.refresh = function () {
 			$scope.morale = resourceService.morale;
 			$scope.moraleSurvivorChange = survivorService.moraleSurvivorChange;
+			$scope.featureLockService = featureLockService;
 		}
 		$scope.refresh();
 	}])

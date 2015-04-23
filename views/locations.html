@@ -1,4 +1,4 @@
-<div id="panel-locations" class="panel" ng-controller="locationPanelController">
+<div id="panel-locations" class="panel" ng-controller="locationPanelController" ng-class="featureLockService.locationPanelClass">
 	<h1>
 		<span ng-click="activeTab='neighborhood'" ng-class="{ 'active-tab': (activeTab=='neighborhood')}">neighborhood</span>
 		<span ng-show="subregions.unlocked"> |

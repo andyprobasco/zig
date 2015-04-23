@@ -1,4 +1,4 @@
-<div id="panel-threat" class="panel" ng-controller="threatPanelController">
+<div id="panel-threat" class="panel" ng-controller="threatPanelController" ng-class="featureLockService.threatPanelClass">
 	<h1>Threat</h1>
 	<div class="threat-counter">
 		{{threat.totalChangePerSecond}}
@@ -6,6 +6,6 @@
 	<!--<div style="font-size:8pt;">
 		Next Zombie Progress {{horde.nextZombieProgress}}
 	</div>-->
-	<div zg-status-bar status-object="nextZombieProgress" class="resource-meter-container"></div>
+	<div zg-status-bar status-object="horde" class="resource-meter-container"></div>
 
 </div>

@@ -1,4 +1,4 @@
-<div id="panel-survivors" class="panel" ng-controller="survivorPanelController" zg-droppable drop="handleDrop">
+<div id="panel-survivors" class="panel" ng-controller="survivorPanelController" ng-class="featureLockService.survivorsPanelClass" zg-droppable drop="handleDrop">
 	<h1 style="display:inline-block;text-align:left">Survivors</h1>
 	<div style="display:inline-block">
 		Total Survivors:{{survivors.current}}/{{survivors.max}}

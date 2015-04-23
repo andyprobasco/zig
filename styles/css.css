@@ -2,7 +2,8 @@
 body {
 	cursor:default;
 	background-size:100%;
-	background-image: url(assets/background.jpg);
+	/*background-image: url(assets/background.jpg);*/
+	background-color:black;
 	font-family: "Roboto";
 }
 ul {
@@ -10,56 +11,69 @@ ul {
 	padding:0px;
 }
 
-/* Panels */
+/* Panel Layout */
 
 .panel {
 	background-color: rgba(200,200,200,0.5);
 	position:absolute;
 	padding:5px;
+	transition:opacity 1s linear;
+	opacity:100%;
 }
+
+.panel-disabled {
+	opacity:0;
+}
+
 #panel-admin {
 	right:0px;
 	width:100px;
 }
 
 #panel-incomingAttack {
-	left:25;
-	top:25;
+	left:25px;
+	top:25px;
 	height:200px;
 	width:200px;
 }
 
 #panel-resources {
-	left:25;
-	top:225px;
+	left:25px;
+	top:250px;
 	height:475px;
 	width:200px;
 }
 
 #panel-morale {
-	left:225px;
-	top:25;
+	left:250px;
+	top:25px;
 	height:100px;
 	width:100px;
 }
 
 #panel-survivors {
-	left:345px;
-	top:25;
+	left:375px;
+	top:25px;
 	height:100px;
-	width:560px;
+	width:550px;
 }
 #panel-threat {
-	left:925px;
-	top:25;
+	left:950px;
+	top:25px;
 	height:100px;
 	width:100px;
 }
 #panel-locations {
-	left:225px;
-	top:125px;
+	left:250px;
+	top:150px;
 	height:575px;
 	width:800px;
+}
+#panel-info {
+	left: 1075px;
+	top: 25px;
+	height:700px;
+	width:200px;
 }
 
 h1 {
@@ -117,7 +131,7 @@ h1 {
 
 }
 
-/* Location */
+/* Locationn Panel */
 
 .worker {
 	width: 144px;
@@ -162,6 +176,22 @@ h1 {
 	left: 80px;
 	margin-left: -24px;
 	bottom: 24px;
+}
+
+/* Morale Panel */
+#panel-morale .status-bar-label {
+	font-size:8pt;
+	text-shadow:none;
+	color:black;
+	font-weight: bold;
+}
+
+/* Threat Panel */
+#panel-threat .status-bar-label {
+	font-size:8pt;
+	text-shadow:none;
+	color:black;
+	font-weight: bold;
 }
 
 

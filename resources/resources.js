@@ -1,12 +1,13 @@
 angular
 	.module('resources', [])
-	.controller('resourcePanelController', ['$scope', 'resourceService', function($scope, resourceManager) {
+	.controller('resourcePanelController', ['$scope', 'resourceService', 'featureLockService', function($scope, resourceManager, featureLockService) {
 		$scope.refresh = function () {
 			$scope.resources = [
 				resourceManager.food,
 				resourceManager.water,
 				resourceManager.scrap
 			]
+			$scope.featureLockService = featureLockService;
 			console.log(resourceManager.food);
 		}
 		$scope.refresh();

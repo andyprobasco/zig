@@ -1,12 +1,13 @@
 angular
 	.module('locations', [])
-	.controller('locationPanelController', ['$scope', 'resourceService', 'locationService', function ($scope, resourceService, locationService) {
+	.controller('locationPanelController', ['$scope', 'resourceService', 'locationService', 'featureLockService', function ($scope, resourceService, locationService, featureLockService) {
 		$scope.refresh = function () {
 			$scope.activeTab = "neighborhood";
 			$scope.survivors = resourceService.survivors;
 			$scope.restJob = locationService.restJob;
 			$scope.regions = locationService.regions;
 			$scope.subregions = locationService.subregions;
+			$scope.featureLockService = featureLockService;
 		}
 		$scope.refresh();
 		$scope.handleDrop = function (itemID, binID) {

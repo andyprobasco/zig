@@ -1,16 +1,19 @@
 angular
 	.module('horde', [])
-	.controller('incomingAttackPanelController',['$scope', 'resourceService', 'hordeService', function ($scope, resourceService, hordeService) {
+	.controller('incomingAttackPanelController',['$scope', 'resourceService', 'hordeService', 'featureLockService', function ($scope, resourceService, hordeService, featureLockService) {
 		$scope.refresh = function () {
 			$scope.attackProgress = hordeService.attackProgress;
 			$scope.horde = hordeService.horde;
 			$scope.defense = resourceService.defense;
+			$scope.featureLockService = featureLockService;
 		}
 		$scope.refresh();
 	}])
-	.controller('threatPanelController',['$scope', 'resourceService', function ($scope, resourceService) {
+	.controller('threatPanelController',['$scope', 'resourceService', 'hordeService', 'featureLockService', function ($scope, resourceService, hordeService, featureLockService) {
 		$scope.refresh = function () {
+			$scope.horde = hordeService.horde;
 			$scope.threat = resourceService.threat;
+			$scope.featureLockService = featureLockService;
 		}
 		$scope.refresh();
 	}])
@@ -23,13 +26,15 @@ angular
 		this.horde = {
 			size: 0,
 			nextZombieProgress: 0,
-			percentFull: 0
+			percentFull: 0,
+			text: "Zombies Gathering",
 		}
 
 		this.init = function () {
 			this.attackProgress.attackIn = 100;
 			this.horde.size = 0;
 			this.horde.nextZombieProgress = 0;
+			this.horde.percentFull = this.horde.nextZombieProgress / 50 * 100;
 		}
 
 		this.tick = function () {
