@@ -1,8 +1,7 @@
 <div id="panel-survivors" class="panel" ng-controller="survivorPanelController" ng-class="featureLockService.survivorsPanelClass" zg-droppable drop="handleDrop">
 	<h1 style="display:inline-block;text-align:left">Survivors</h1>
 	<div style="display:inline-block">
-		Total Survivors:{{survivors.current}}/{{survivors.max}}
-		Idle Survivors:{{idleSurvivors.currentWorkers}}
+		{{idleSurvivors.currentWorkers}}/{{survivors.current}}/{{survivors.max}}
 	</div>
 	<div class="worker" ng-show="idleSurvivors.currentWorkers > 0" zg-draggable id="freeSurvivors-worker"></div>
 </div>

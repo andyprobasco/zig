@@ -129,8 +129,8 @@ angular
 		this.init = function (params) {
 			this.horde.reset({max:100000});
 			this.defense.reset({max:10000});// = resourceFactory.getInstance({name:'Defense Rating', current:0, max:10000})
-			this.morale.reset({max:100,min:-100});// = resourceFactory.getInstance({name:'Morale', max:100,min:-100});
-			this.threat.reset({max:100,min:-100});// = resourceFactory.getInstance({name:'Threat', max:100,min:-100});
+			this.morale.reset({max:100});// = resourceFactory.getInstance({name:'Morale', max:100,min:-100});
+			this.threat.reset({max:100});// = resourceFactory.getInstance({name:'Threat', max:100,min:-100});
 			this.survivors.reset({current:1, max:1});// = resourceFactory.getInstance({name:'Survivors', current:4, max:10});
 			this.food.reset();// = resourceFactory.getInstance({name:'Food'});
 			this.water.reset();// = resourceFactory.getInstance({name:'Water'});

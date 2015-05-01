@@ -34,7 +34,7 @@ angular
 			this.attackProgress.attackIn = 100;
 			this.horde.size = 0;
 			this.horde.nextZombieProgress = 0;
-			this.horde.percentFull = this.horde.nextZombieProgress / 50 * 100;
+			this.horde.percentFull = this.horde.nextZombieProgress; // 50 * 100;
 		}
 
 		this.tick = function () {
@@ -45,13 +45,18 @@ angular
 		function processThreat () {
 			var threat = resourceService.threat.totalChangePerSecond;
 			hordeService.horde.nextZombieProgress += threat;
-			if (hordeService.horde.nextZombieProgress > 50) {
+			if (hordeService.horde.nextZombieProgress > 100) {
 				hordeService.horde.size += 1;
 				hordeService.horde.nextZombieProgress = 0;
 			} else if (hordeService.horde.nextZombieProgress < 0) {
-				hordeService.horde.nextZombieProgress = 0;
+				if (hordeService.horde.size > 0) {
+					hordeService.horde.nextZombieProgress = 100;
+					hordeService.horde.size -= 1;
+				} else {
+					hordeService.horde.nextZombieProgress = 0;
+				}
 			}
-			hordeService.horde.percentFull = hordeService.horde.nextZombieProgress/50*100
+			hordeService.horde.percentFull = hordeService.horde.nextZombieProgress;///50*100
 
 		}
 

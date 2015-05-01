@@ -95,19 +95,25 @@ angular
 			survivorService.moraleSurvivorChange.progress += morale;
 	
 
-			if (survivorService.moraleSurvivorChange.progress >= 50) {
+			if (survivorService.moraleSurvivorChange.progress >= 100) {
 				if (resourceService.survivors.max > resourceService.survivors.current) {
 					resourceService.survivors.changeBy(1);
 					survivorService.idleSurvivors.currentWorkers += 1;
 					survivorService.moraleSurvivorChange.progress = 0;
 				} else {
-					survivorService.moraleSurvivorChange.progress = 50;
+					survivorService.moraleSurvivorChange.progress = 100;
 				}
-			} else if (survivorService.moraleSurvivorChange.progress < 0) {
-				survivorService.moraleSurvivorChange.progress  = 0;
+			} else if (survivorService.moraleSurvivorChange.progress <= 0) {
+				if (resourceService.survivors.current > 1) {
+					resourceService.survivors.changeBy(-1);
+					survivorService.moraleSurvivorChange.progress = 100;
+				} else {
+					survivorService.moraleSurvivorChange.progress = 0;
+				}
+				
 			}
 
-			survivorService.moraleSurvivorChange.percentFull = survivorService.moraleSurvivorChange.progress/50*100
+			survivorService.moraleSurvivorChange.percentFull = survivorService.moraleSurvivorChange.progress;///50*100
 		}
 
 
