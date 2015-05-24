@@ -1,5 +1,8 @@
 angular
 	.module('locations')
+	.directive('zgSubregion', function () {
+		return {templateUrl: "locations/subregion.html"}
+	})
 	.service('subregionService', ['subregionFactory', 'gardenFactory', 'waterCollectorFactory', 'storageFactory', 'bedsFactory', function (subregionFactory, gardenFactory, waterCollectorFactory, storageFactory, bedsFactory) {
 		this.subregions = [];
 
@@ -169,4 +172,5 @@ angular
 			}
 		}
 	}])
+
 
